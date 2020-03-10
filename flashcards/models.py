@@ -1,23 +1,27 @@
 from django.db import models
-{% comment %} from django.contrib.auth.models import AbstractUser {% endcomment %}
+from django.utils.text import slugify
+from datetime import datetime
+from django.contrib.auth import get_user_model
+from users.models import User
 
 
-{% comment %} class User(AbstractUser):
-    user = models.CharField(max_length=250)
-    password = models.CharField(max_length=50) {% endcomment %}
-
-
-class Deck(Models.model)
-
+class Deck(models.Model):
     name = models.CharField(max_length=60)
     subject = models.CharField(max_length=60)
 
+    user = models.ForeignKey(
+        User, null=True, related_name='user', on_delete=models.CASCADE)
 
-class Card(Models.model)
-    question = models.CharField(max_length= 300)
-    answer = models.CharField(max_length= 300)
-
-question =
+    def __str__(self):
+        return f'{self.name} {self.subject}'
 
 
-pass
+class Card(models.Model):
+
+    deck = models.ForeignKey(
+        'Deck', on_delete=models.CASCADE, related_name='deck')
+    question = models.CharField(max_length=300)
+    answer = models.CharField(max_length=300)
+
+    def __str__(self):
+        return {self.deck}

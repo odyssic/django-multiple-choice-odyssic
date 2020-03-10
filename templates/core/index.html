@@ -1,2 +1,16 @@
-{% extends 'base.html'} {% load static %} {% block meta %}
+{% extends 'base.html' %} 
+{% load static %} 
+{% block meta %}
 <script static src=static/js/flashcards.js></script>
+{% endblock %}
+
+ {% block title %} {% csrf_token %}
+<title>Index</title>
+{% endblock %} 
+
+{% block content %} <
+<h1>"You badass you"</h1>
+{% for card in cards %} 
+{% endfor %} 
+{% endblock %}
+

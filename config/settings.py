@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'registration',
+    'flashcards',
 
     # Third-party
     'debug_toolbar',
@@ -131,6 +132,7 @@ STATICFILES_DIRS = [
 # Custom user model
 
 AUTH_USER_MODEL = 'users.User'
+
 
 # Debug toolbar config
 

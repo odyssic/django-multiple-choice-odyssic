@@ -17,18 +17,16 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
-
+from flashcards import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
-]
-
-urlpatterns = [
-    # Other URL patterns ...
+    path('', views.index, name='home'),
+    path('accounts/', include('django.contrib.auth.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
-    # More URL patterns ...
+
 ]
+
 
 if settings.DEBUG:
     import debug_toolbar
