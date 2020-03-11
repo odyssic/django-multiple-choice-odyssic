@@ -1,9 +1,9 @@
 {% extends 'base.html' %} {% load static %} {% block meta %}
-<script static src=static/js/flashcards.js></script>
+<script static src=static/js/flashcards.js>
 {% endblock %} {% block title %} {% csrf_token %}
 <title>FlashCards</title>
 {% endblock %} {% block content %}
-< <h1>{{deck.subject}} Cards</h1>
+< <h1>{{deck.subject}} Cards </h1>
     <h3>Hover over the image below:</h3>
 
     {% for card in cards %}
@@ -36,9 +36,22 @@
 
     <div id='button' class='button'>Flip Card</div>
 
-    <a id='class-link' class='deck-link' href='{% url 'decks' %}'>
+    <a class='button' href='{% url 'decks' %}'>
         <p>Decks</p>
     </a>
+
+    {% comment %} <div id="app-cover">
+  <input type="checkbox" id="checkbox">
+  <div id="bin-icon">
+    <div id="lid"></div>
+    <div id="box">
+      <div id="box-inner">
+        <div id="bin-lines"></div>
+      </div>
+    </div>
+  </div>
+  <div id="layer"></div>
+</div> {% endcomment %}
 
     </body>
 
