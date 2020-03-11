@@ -24,4 +24,4 @@ class Card(models.Model):
     answer = models.CharField(max_length=300)
 
     def __str__(self):
-        return {self.deck}
+        return f'{self.deck}'

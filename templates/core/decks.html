@@ -1,9 +1,10 @@
-{%extends 'base.html'%}
+{%extends 'base.html'%} 
 
-{% block content%}
-    
+{% block content%} 
     {% for deck in decks %}
+        <div class="deck-container">
+            <div class="flip-card">{{deck.name}}</div>
+        </div>
 
-    {% endfor %}
-
-    {% endblock %}
+    {% endfor %} 
+{% endblock %}

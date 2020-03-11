@@ -1,16 +1,47 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block meta %}
+{% extends 'base.html' %} {% load static %} {% block meta %}
 <script static src=static/js/flashcards.js></script>
-{% endblock %}
+{% endblock %} {% block title %} {% csrf_token %}
+<title>FlashCards</title>
+{% endblock %} {% block content %}
+< <h1>{{deck.subject}} Cards</h1>
+    <h3>Hover over the image below:</h3>
 
- {% block title %} {% csrf_token %}
-<title>Index</title>
-{% endblock %} 
+    {% for card in cards %}
 
-{% block content %} <
-<h1>"You badass you"</h1>
-{% for card in cards %} 
-{% endfor %} 
-{% endblock %}
+    <div class='deck-container'>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h1> question: </h1>
+                        <p>Question: </p>
+                        <p>{{card.question}}</p>
+                        <p>{{deck.subject}}</p>
 
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>Answer</h1>
+                        <p>ANSWER: </p>
+                        <p>{{card.answer}}</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div>
+        <div>
+
+        </div>
+
+    </div>
+
+    <div id='button' class='button'>Flip Card</div>
+
+    <a id='class-link' class='deck-link' href='{% url 'decks' %}'>
+        <p>Decks</p>
+    </a>
+
+    </body>
+
+
+
+    {% endblock %}

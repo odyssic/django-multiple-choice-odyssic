@@ -25,7 +25,13 @@ def my_view(request):
 
 def index(request):
     users = User.objects.all()
-    decks = Deck.objects.all()
     cards = Card.objects.all()
+    deck = Deck.objects.all()
 
-    return render(request, "core/index.html", {'users': users, "decks": decks, "cards": cards})
+    return render(request, "core/index.html", {'users': users, 'deck': deck, 'cards': cards})
+
+
+def decks(request):
+    decks = Deck.objects.all()
+
+    return render(request, "core/decks.html", {'decks': decks})
