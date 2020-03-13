@@ -36,7 +36,7 @@ def index(request):
 
 def flashcards(request, pk):
     deck = Deck.objects.get(pk=pk)
-    cards = deck.cards.all()
+    cards = deck.cards.all().order_by('?')
 
     return render(request, "core/flashcards.html", {'deck': deck, 'cards': cards, 'pk': pk})
 
@@ -73,9 +73,9 @@ register = template.Library()
 
 
 @register.filter
-def shuffle(arg):
-    aux = list(arg)[:]
-    random.shuffle(aux)
-    return aux
+def shuffle(cards):
+    shuffled_cards = list(cards)[:]
+    random.shuffle(shuffled_cards)
+    return shuffled_cards
 
 # def add_card()
