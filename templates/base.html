@@ -1,15 +1,17 @@
-{% load static %}
+
 
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
 <head>
 
+    
+    <link rel="stylesheet" href="{% static 'CSS/styles.css' %}"/> 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-    <link rel="stylesheet" href="{% static "/CSS/styles.css" %}"/> 
     <link href="https://fonts.googleapis.com/css?family=Londrina+Outline&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <title>Decks</title>
 </head>
 <header>

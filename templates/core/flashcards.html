@@ -1,20 +1,15 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
+{% extends 'base.html' %} {% block content %}
 < <h1>{{deck.subject}} Cards</h1>
 
     {% for card in cards %}
 
-    <div class='card-container'>
+    <div class="card-container">
         <div class=" flip-card ">
             <div class="flip-card-inner ">
                 <div class="flip-card-front ">
                     <h1> question: </h1>
 
                     <p>{{card.question}}</p>
-                    
-
                 </div>
                 <div class="flip-card-back ">
                     <h1>Answer</h1>
@@ -22,10 +17,6 @@
                     <p>{{card.answer}}</p>
                 </div>
             </div>
-
         </div>
     </div>
-    {% endfor %}
-
-
-{% endblock %}
+    {% endfor %} {% endblock %}

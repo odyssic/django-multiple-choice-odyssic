@@ -6,13 +6,13 @@ verify_ssl = true
 [packages]
 django = "*"
 django-extensions = "*"
-django-debug-toolbar = "*"
 werkzeug = "*"
 django-environ = "*"
 registration-redux = "*"
 django-registration-redux = "*"
 install = "*"
 pillow = "*"
+django-debug-toolbar = "*"
 
 [requires]
 python_version = "3.7"
