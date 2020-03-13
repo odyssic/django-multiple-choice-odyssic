@@ -126,9 +126,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
 
 
 # Custom user model
@@ -144,5 +141,11 @@ INTERNAL_IPS = [
     # ...
 ]
 
-ACCOUNT_ACTIVATION_DAYS = 1
+
 REGISTRATION_AUTO_LOGIN = True
+
+ACCOUNT_ACTIVATION_DAYS = 1
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
