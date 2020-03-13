@@ -1,29 +1,41 @@
 {% extends 'base.html' %} {% load static %} {% block meta %}
-<script static src=static/js/flashcards.js>
+
 {% endblock %} {% block title %} {% csrf_token %}
 <title>FlashCards</title>
 {% endblock %} {% block content %}
-< <h1>{{deck.subject}} Cards </h1>
-    <h3>Hover over the image below:</h3>
+< <h1>Your Decks</h1>
+<div class="deck-container">
+    {% for deck in decks %}
+
+        
+            <div class="deck"><h2>{{deck.name}}</h2>
+            <a href={% url 'delete-deck' pk=deck.pk %}>Delete</a>
+            <a href={% url 'flashcards' pk=deck.pk %}>Practice</a>
+          
+            </div>
+        
+{% endfor %}
+</div>
 
     {% for card in cards %}
 
-    <div class='deck-container'>
+    <div class='card-container'>
             <div class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
                         <h1> question: </h1>
-                        <p>Question: </p>
+                
                         <p>{{card.question}}</p>
                         <p>{{deck.subject}}</p>
 
                     </div>
                     <div class="flip-card-back">
                         <h1>Answer</h1>
-                        <p>ANSWER: </p>
+                        
                         <p>{{card.answer}}</p>
                     </div>
                 </div>
+            
         </div>
     </div>
     {% endfor %}
@@ -34,27 +46,9 @@
 
     </div>
 
-    <div id='button' class='button'>Flip Card</div>
-
-    <a class='button' href='{% url 'decks' %}'>
-        <p>Decks</p>
-    </a>
-
-    {% comment %} <div id="app-cover">
-  <input type="checkbox" id="checkbox">
-  <div id="bin-icon">
-    <div id="lid"></div>
-    <div id="box">
-      <div id="box-inner">
-        <div id="bin-lines"></div>
-      </div>
-    </div>
-  </div>
-  <div id="layer"></div>
-</div> {% endcomment %}
-
+    <div id='button' class='general-button'>Flip Card</div>
+    
     </body>
-
 
 
     {% endblock %}

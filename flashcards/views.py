@@ -4,6 +4,7 @@ from .models import Deck, Card
 from .forms import DeckForm, CardForm
 from django.contrib.auth import authenticate, login
 from users.models import User
+from PIL import Image
 
 
 def my_view(request):
@@ -25,13 +26,25 @@ def my_view(request):
 
 def index(request):
     users = User.objects.all()
-    cards = Card.objects.all()
-    deck = Deck.objects.all()
-
-    return render(request, "core/index.html", {'users': users, 'deck': deck, 'cards': cards})
-
-
-def decks(request):
     decks = Deck.objects.all()
 
-    return render(request, "core/decks.html", {'decks': decks})
+    return render(request, "core/index.html", {'users': users, 'decks': decks})
+
+# defines deck by subject, returns all cards in that deck
+
+
+def flashcards(request, pk):
+    deck = Deck.objects.get(pk=pk)
+    cards = deck.cards.all()
+
+    return render(request, "core/flashcards.html", {'deck': deck, 'cards': cards, 'pk': pk})
+
+
+def delete_deck(request, pk):
+    deck = Deck.objects.get(Deck, pk=pk)
+    deck.delete()
+    return redirect('home')
+
+
+def add_deck(request, pk):
+    deck = Deck.objects.get(Deck, pk=pk)

@@ -22,7 +22,8 @@ from flashcards import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='home'),
-    path('decks/', views.decks, name='decks'),
+    path('flashcards/<int:pk>', views.flashcards, name='flashcards'),
+    path('delete-deck/<int:pk>', views.delete_deck, name='delete-deck'),
     path('accounts/', include('django.contrib.auth.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
 

@@ -5,13 +5,42 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* google handwritten script */
+
+
+/* font-family: 'Amatic SC', cursive; */
+
+
+/* font-family: 'Londrina Outline', cursive; */
+
+.banner-heading {
+    font-family: 'Londrina Outline', cursive;
+    font-size: 500%;
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: space-between;
+    align-content: center;
+}
+
+.navlinks {
+    font-family: 'Londrina Outline', cursive;
+    font-size: 200%;
+    color: white;
+}
+
 body {
     background-color: rgba(20, 27, 65, 1)
 }
 
 h1 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Amatic SC', cursive;
     color: white;
+    text-align: center;
 }
 
 h2 {
@@ -34,23 +63,15 @@ h5 {
     color: white;
 }
 
-.deck-container {
+.card-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    position: absolute;
+    /* position: absolute; */
     right: 0;
     left: 0;
     top: 0;
     bottom: 0;
-}
-
-.button {
-    background-color: pink;
-    width: 75px;
-    height: 22px;
-    padding: 1rem;
-    margin: 2rem;
 }
 
 .flip-card {
@@ -98,244 +119,53 @@ h5 {
     transform: rotateY(180deg);
 }
 
-
-/* delete button */
-
-\* {
-    outline: none;
+.general-button {
+    width: 15rem;
+    height: 5 rem;
+    color: white;
+    font-size: 70%;
+    background-color: transparent;
+    border: solid white 5px;
 }
 
-html,
-body {
-    height: 100%;
-    min-height: 100%;
+.general-button: hover {
+    background-color: white;
+    color: black;
 }
 
-body {
-    margin: 0;
-    background-color: #f44336;
+.button {
+    background-color: pink;
+    width: 75px;
+    height: 22px;
+    padding: 1rem;
+    margin: 2rem;
 }
 
-body,
-input {
-    cursor: url(http://k003.kiwi6.com/hotlink/vp054ir5gt/c1.png) 32 32, auto;
-    cursor: -webkit-image-set(url(http://k003.kiwi6.com/hotlink/vp054ir5gt/c1.png) 1x, url(http://k003.kiwi6.com/hotlink/z6fy599487/c2.png) 2x) 32 32, auto;
-}
-
-body:active,
-input:active {
-    cursor: url(http://k003.kiwi6.com/hotlink/3p6w4icbzt/c1a.png) 32 32, auto;
-    cursor: -webkit-image-set( url(http://k003.kiwi6.com/hotlink/3p6w4icbzt/c1a.png) 1x, url(http://k003.kiwi6.com/hotlink/6ma7828al1/c2a.png) 2x) 32 32, auto;
-}
-
-#app-cover {
-    position: absolute;
-    top: 50%;
+.deck-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    height: auto;
+    align-items: flex-start;
     right: 0;
     left: 0;
-    width: 196px;
-    height: 196px;
-    margin: -98px auto 0 auto;
-    background-color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 0 0 8px #feeeed;
-    overflow: hidden;
-}
-
-#checkbox {
-    position: absolute;
     top: 0;
-    right: 0;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    opacity: 0;
-    z-index: 3;
+    border: solid red 3px;
+    width: 800px;
+    flex-basis: 20px;
 }
 
-#bin-icon {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    left: 0;
-    width: 42px;
-    height: 58px;
-    margin: -29px auto 0 auto;
-    border-radius: 50%;
-    z-index: 2;
-}
-
-#lid {
-    position: relative;
-    width: 50px;
-    height: 4px;
-    left: -4px;
-    border-radius: 4px;
-}
-
-#lid:before {
-    content: '';
-    position: absolute;
-    top: -4px;
-    right: 0;
-    left: 0;
-    width: 10px;
-    height: 6px;
-    margin: 0 auto;
-    border-radius: 10px 10px 0 0;
-}
-
-#box {
-    position: relative;
-    height: 52px;
-    margin-top: 2px;
-    border-radius: 0 0 8px 8px;
-}
-
-#box-inner {
-    position: relative;
-    top: 4px;
-    width: 34px;
-    height: 44px;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 0 0 5px 5px;
-}
-
-#bin-lines {
-    position: relative;
-    top: 7px;
-    margin: 0 auto;
-}
-
-#bin-lines,
-#bin-lines:before,
-#bin-lines:after {
-    width: 3px;
-    height: 30px;
-    border-radius: 4px;
-}
-
-#bin-lines:before,
-#bin-lines:after {
-    content: '';
-    position: absolute;
-}
-
-#bin-lines:before {
-    left: -10px;
-}
-
-#bin-lines:after {
-    left: 10px;
-}
-
-#layer {
-    position: absolute;
-    right: -20px;
-    bottom: -20px;
-    width: 0;
-    height: 0;
-    background-color: #03A9F4;
-    border-radius: 50%;
-    transition: 0.25s ease all;
-    z-index: 1;
-}
-
-#lid,
-#lid:before,
-#box,
-#bin-lines,
-#bin-lines:before,
-#bin-lines:after {
-    background-color: #F44336;
-    transition: 0.2s ease background-color;
-}
-
-#checkbox:checked~#bin-icon #lid,
-#checkbox:checked~#bin-icon #lid:before,
-#checkbox:checked~#bin-icon #box,
-#checkbox:checked~#bin-icon #box-inner {
-    background-color: #fff;
-}
-
-#checkbox:checked~#bin-icon #bin-lines,
-#checkbox:checked~#bin-icon #bin-lines:before,
-#checkbox:checked~#bin-icon #bin-lines:after {
-    background-color: #03A9F4;
-}
-
-#checkbox:checked+#bin-icon #box {
-    animation: shake 0.2s ease 0.1s;
-}
-
-#checkbox:checked+#bin-icon #lid {
-    animation: lift-up 0.8s ease 0.1s, shake_u 0.8s ease 0.1s, shake_l 0.2s ease 0.8s;
-}
-
-#checkbox:checked~#layer {
-    width: 226px;
-    height: 226px;
-}
-
-@keyframes shake {
-    0% {
-        transform: rotateZ(3deg);
-    }
-    25% {
-        transform: rotateZ(0);
-    }
-    75% {
-        transform: rotateZ(-3deg);
-    }
-    100% {
-        transform: rotateZ(0);
-    }
-}
-
-@keyframes lift-up {
-    0% {
-        top: 0;
-    }
-    50% {
-        top: -35px;
-    }
-    100% {
-        top: 0;
-    }
-}
-
-@keyframes shake_u {
-    0% {
-        transform: rotateZ(0);
-    }
-    25% {
-        transform: rotateZ(-15deg);
-    }
-    50% {
-        transform: rotateZ(0deg);
-    }
-    75% {
-        transform: rotateZ(15deg);
-    }
-    100% {
-        transform: rotateZ(0);
-    }
-}
-
-@keyframes shake_l {
-    0% {
-        transform: rotateZ(0);
-    }
-    80% {
-        transform: rotateZ(3deg);
-    }
-    90% {
-        transform: rotateZ(-3deg);
-    }
-    100% {
-        transform: rotateZ(0);
-    }
+.deck {
+    color: rgb(42, 59, 85);
+    font-family: sans-serif;
+    height: 200px;
+    width: 200px;
+    background-color: lightblue;
+    border: solid rgb(148, 54, 54) 3px;
+    text-align: center;
+    border-radius: 25px;
+    justify-content: center;
+    padding: 25px;
+    padding-top: 65px;
 }

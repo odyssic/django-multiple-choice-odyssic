@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'registration',
     'flashcards',
 
+
     # Third-party
     'debug_toolbar',
     'django_extensions',

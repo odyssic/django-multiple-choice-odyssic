@@ -3,6 +3,7 @@ from django.utils.text import slugify
 from datetime import datetime
 from django.contrib.auth import get_user_model
 from users.models import User
+from PIL import Image
 
 
 class Deck(models.Model):
@@ -10,7 +11,7 @@ class Deck(models.Model):
     subject = models.CharField(max_length=60)
 
     user = models.ForeignKey(
-        User, null=True, related_name='user', on_delete=models.CASCADE)
+        User, null=True, related_name='decks', on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.name} {self.subject}'
@@ -18,10 +19,10 @@ class Deck(models.Model):
 
 class Card(models.Model):
 
-    deck = models.ForeignKey(
-        'Deck', on_delete=models.CASCADE, related_name='deck')
+    cards = models.ForeignKey(
+        'Deck', on_delete=models.CASCADE, related_name='cards', default='cards')
     question = models.CharField(max_length=300)
     answer = models.CharField(max_length=300)
 
     def __str__(self):
-        return f'{self.deck}'
+        return f'{self.cards}'

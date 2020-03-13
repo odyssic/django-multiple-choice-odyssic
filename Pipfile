@@ -12,6 +12,7 @@ django-environ = "*"
 registration-redux = "*"
 django-registration-redux = "*"
 install = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"

@@ -3,13 +3,30 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> {% load static %}
+    <script defer src="{% static 'static/js/flashcards.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Outline&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet" />
     <link static rel="stylesheet" type="text/css" href="static/CSS/styles.css" />
     <title>Decks</title>
 </head>
+
+<header>
+    <div class="banner">
+        <p class="banner-heading">Flash Cards</p>
+        <div class="button-container">
+            <ul>
+                <li class="navlinks">Home</li>
+                {% comment %} <a class='navlinks' href={% url 'decks' %}>Decks</a> {% endcomment %}
+                <li class="navlinks">Progress</li>
+            </ul>
+        </div>
+    </div>
+</header>
 
 <body>
     {% block content %} {% endblock %}
 </body>
 
 </html>
+
