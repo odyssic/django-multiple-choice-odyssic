@@ -1,56 +1,15 @@
-{% extends 'base.html' %} {% load static %} {% block meta %}
-
-{% endblock %} {% block title %} {% csrf_token %}
-<title>FlashCards</title>
-{% endblock %} {% block content %}
+{% extends 'base.html' %} {% block content %}
 < <h1>Your Decks</h1>
 <div class="deck-container">
+<a href='{% url 'add-deck' %}'>Add Deck</a>
     {% for deck in decks %}
 
-        
             <div class="deck"><h2>{{deck.name}}</h2>
             <a href={% url 'delete-deck' pk=deck.pk %}>Delete</a>
             <a href={% url 'flashcards' pk=deck.pk %}>Practice</a>
           
-            </div>
+</div>
         
 {% endfor %}
-</div>
-
-<div> <img src="{% static 'images/trash-can.png' %}"> </div>
-
-    {% for card in cards %}
-
-    <div class='card-container'>
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <h1> question: </h1>
-                
-                        <p>{{card.question}}</p>
-                        <p>{{deck.subject}}</p>
-
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>Answer</h1>
-                        
-                        <p>{{card.answer}}</p>
-                    </div>
-                </div>
-            
-        </div>
-    </div>
-    {% endfor %}
-    <div>
-        <div>
-
-        </div>
-
-    </div>
-
-    <div id='button' class='general-button'>Flip Card</div>
-    
-    </body>
-
 
     {% endblock %}

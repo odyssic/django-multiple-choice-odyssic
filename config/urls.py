@@ -24,7 +24,8 @@ urlpatterns = [
     path('', views.index, name='home'),
     path('flashcards/<int:pk>', views.flashcards, name='flashcards'),
     path('delete-deck/<int:pk>', views.delete_deck, name='delete-deck'),
-    path('create-deck/', views.create_deck, name='create-deck'),
+    path('add-deck/', views.add_deck, name='add-deck'),
+    path('add-card/<int:pk>', views.add_card, name='add-card'),
     path('accounts/', include('django.contrib.auth.urls')),
     url(r'^accounts/', include('registration.backends.simple.urls')),
 

@@ -4,7 +4,8 @@ from .models import Deck, Card
 from .forms import DeckForm, CardForm
 from django.contrib.auth import authenticate, login
 from users.models import User
-from PIL import Image
+import random
+from django import template
 
 
 def my_view(request):
@@ -46,15 +47,35 @@ def delete_deck(request, pk):
     return redirect('home')
 
 
-def create_deck(request):
+def add_deck(request):
     if request.method == 'POST':
         form = DeckForm(request.POST)
         if form.is_valid():
             deck = form.save()
+            return redirect("add_card")
+    else:
+        form = DeckForm()
+    return render(request, 'core/add_deck.html', {'form': form})
+
+
+def add_card(request, pk):
+    if request.method == 'POST':
+        form = CardForm(request.POST)
+        if form.is_valid():
+            card = form.save()
             return redirect("home")
     else:
         form = DeckForm()
-    return render(request, 'core/create_deck.html', {'form': form})
+    return render(request, 'core/add_card.html', {'form': form, 'pk': pk})
 
+
+register = template.Library()
+
+
+@register.filter
+def shuffle(arg):
+    aux = list(arg)[:]
+    random.shuffle(aux)
+    return aux
 
 # def add_card()
