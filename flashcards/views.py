@@ -46,5 +46,15 @@ def delete_deck(request, pk):
     return redirect('home')
 
 
-def add_deck(request, pk):
-    deck = Deck.objects.get(Deck, pk=pk)
+def create_deck(request):
+    if request.method == 'POST':
+        form = DeckForm(request.POST)
+        if form.is_valid():
+            deck = form.save()
+            return redirect("home")
+    else:
+        form = DeckForm()
+    return render(request, 'core/create_deck.html', {'form': form})
+
+
+# def add_card()
