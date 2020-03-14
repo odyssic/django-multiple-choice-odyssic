@@ -48,6 +48,12 @@ def delete_deck(request, pk):
     return redirect('home')
 
 
+def delete_card(request, pk):
+    card = Card.objects.get(Card, pk=pk)
+    card.delete()
+    return redirect('flashcards')
+
+
 def add_deck(request):
     if request.method == 'POST':
         form = DeckForm(request.POST)
@@ -59,7 +65,7 @@ def add_deck(request):
     return render(request, 'core/add_deck.html', {'form': form})
 
 
-def add_card(request, pk):
+def add_card(request):
     if request.method == 'POST':
         form = CardForm(request.POST)
         if form.is_valid():
@@ -67,24 +73,20 @@ def add_card(request, pk):
             return redirect("home")
     else:
         form = DeckForm()
-    return render(request, 'core/add_card.html', {'form': form, 'pk': pk})
+    return render(request, 'core/add_card.html', {'form': form})
 
 
-@require_POST
 def edit_card(request, pk):
-    form = CardForm(request.POST)
-    if form.is_valid():
-        card = form.save()
-        return redirect("flashcards")
-    else:
-        form = CardForm()
-    return render(request, 'core/edit_card.html', {'form': form, 'pk': pk})
-
-
-def delete_card(request, pk):
     card = Card.objects.get(Card, pk=pk)
-    card.delete()
-    return redirect('flashcards')
+    if request.method == 'POST':
+        form = CardForm(request.POST, instance=card)
+        if form.is_valid():
+            card = form.save()
+            return redirect("flashcards")
+        else:
+            form = CardForm(instance=card)
+        return render(request, 'core/edit_card.html', {'form': form, 'pk': pk})
+
 
 # @register.filter
 # def shuffle(cards):

@@ -2,7 +2,9 @@
 
 <img src="{% static "/images/trash-can.png" %} < <h1>Your Decks</h1>
 <div class="deck-container">
-    <a href={% url 'add-deck' %}>Add Deck</a> {% for deck in decks %}
+    <div class='add-deck' href={% url 'add-deck' %}><h2>Add Deck</h2></div> 
+    
+{% for deck in decks %}
 
     <div class="deck">
         <h2>{{deck.name}}</h2>
@@ -10,6 +12,6 @@
         <a href={% url 'flashcards' pk=deck.pk %}>Practice</a>
 
     </div>
-    </div>
+</div>
 
     {% endfor %} {% endblock %}
