@@ -10,6 +10,8 @@
                     <h1> question: </h1>
 
                     <p>{{card.question}}</p>
+                    <div><a href={% url 'delete-card' pk=card.pk %}>Delete</a>
+                        <a href={% url 'edit-card' pk=card.pk %}>Practice</a></div>
                 </div>
                 <div class="flip-card-back ">
                     <h1>Answer</h1>

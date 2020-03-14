@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login
 from users.models import User
 import random
 from django import template
+from django.views.decorators.http import require_http_methods, require_POST
 
 
 def my_view(request):
@@ -69,13 +70,26 @@ def add_card(request, pk):
     return render(request, 'core/add_card.html', {'form': form, 'pk': pk})
 
 
-register = template.Library()
+@require_POST
+def edit_card(request, pk):
+    form = CardForm(request.POST)
+    if form.is_valid():
+        card = form.save()
+        return redirect("flashcards")
+    else:
+        form = CardForm()
+    return render(request, 'core/edit_card.html', {'form': form, 'pk': pk})
 
 
-@register.filter
-def shuffle(cards):
-    shuffled_cards = list(cards)[:]
-    random.shuffle(shuffled_cards)
-    return shuffled_cards
+def delete_card(request, pk):
+    card = Card.objects.get(Card, pk=pk)
+    card.delete()
+    return redirect('flashcards')
+
+# @register.filter
+# def shuffle(cards):
+#     shuffled_cards = list(cards)[:]
+#     random.shuffle(shuffled_cards)
+#     return shuffled_cards
 
 # def add_card()

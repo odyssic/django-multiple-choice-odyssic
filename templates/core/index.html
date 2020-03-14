@@ -1,14 +1,15 @@
 {% extends 'base.html' %}{% load static %} {% block content %}
 
 <img src="{% static "/images/trash-can.png" %} < <h1>Your Decks</h1>
-<div class="deck-container ">
+<div class="deck-container">
     <a href={% url 'add-deck' %}>Add Deck</a> {% for deck in decks %}
 
-    <div class="deck ">
+    <div class="deck">
         <h2>{{deck.name}}</h2>
         <a href={% url 'delete-deck' pk=deck.pk %}>Delete</a>
         <a href={% url 'flashcards' pk=deck.pk %}>Practice</a>
 
+    </div>
     </div>
 
     {% endfor %} {% endblock %}
