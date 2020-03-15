@@ -13,6 +13,8 @@ django-registration-redux = "*"
 install = "*"
 pillow = "*"
 django-debug-toolbar = "*"
+bootstrap-icons = "*"
+django-fontawesome = "*"
 
 [requires]
 python_version = "3.7"

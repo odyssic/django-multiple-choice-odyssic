@@ -136,6 +136,13 @@ STATICFILES_DIRS = (os.path.join('static'), )
 
 AUTH_USER_MODEL = 'users.User'
 
+PROJECT_PATH = os.path.dirname(__file__)
+MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
+MEDIA_URL = '/media/'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.media',
+)
 
 # Debug toolbar config
 

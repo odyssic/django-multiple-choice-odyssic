@@ -4,6 +4,12 @@ from datetime import datetime
 from django.contrib.auth import get_user_model
 from users.models import User
 from PIL import Image
+from fontawesome.fields import IconField
+
+
+class Category(models.Model):
+    ...
+    icon = IconField()
 
 
 class Deck(models.Model):
@@ -19,7 +25,7 @@ class Deck(models.Model):
 
 class Card(models.Model):
 
-    cards = models.ForeignKey(
+    card = models.ForeignKey(
         'Deck', on_delete=models.CASCADE, related_name='cards', default='cards')
     question = models.CharField(max_length=300)
     answer = models.CharField(max_length=300)

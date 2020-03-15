@@ -1,9 +1,11 @@
 {% extends 'base.html' %}{% load static %} {% block content %}
 
-<img src="{% static "/images/trash-can.png" %} < <h1>Your Decks</h1>
+<h1>Your Decks</h1>
 <div class="deck-container">
-    <div class='add-deck' href={% url 'add-deck' %}><h2>Add Deck</h2></div> 
     
+    <div class='add-deck'>
+        <a href={% url 'add-deck' %}><h2>Add Deck</h2></a>
+    </div>   
 {% for deck in decks %}
 
     <div class="deck">
@@ -12,6 +14,7 @@
         <a href={% url 'flashcards' pk=deck.pk %}>Practice</a>
 
     </div>
+     {% endfor %}
 </div>
-
-    {% endfor %} {% endblock %}
+<div class= >Logged in as {{ request.user.username }}</div>
+    {% endblock %}

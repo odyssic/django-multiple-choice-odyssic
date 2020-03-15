@@ -3,8 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
 {% load static %}
+
+
 <head>
-    <link rel="stylesheet" href="{% static 'js/flashcards.js' %}">
+    <link rel="stylesheet" href="{% static 'js/flashcards.js' %}"/>
     <link rel="stylesheet" href="{% static 'CSS/styles.css' %}"/> 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
@@ -17,10 +19,9 @@
     <div class="banner">
         <a href= {% url 'home' %}> <p class="banner-heading">Flash Cards</p></a>
         <div class="button-container">
-            
-                <div class="navlinks">Home</div>
-                {% comment %} <a class='navlinks' href={% url 'decks' %}>Decks</a> {% endcomment %}
-                <div class="navlinks">Progress</div>
+                <a class='navlinks' href={% url 'home' %}>Home</a>
+                <a class='navlinks' href={% url "home" %}> Subjects </a>
+                <div class="navlinks"> Progress </div>
             
         </div>
     </div>

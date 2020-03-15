@@ -23,9 +23,8 @@ def my_view(request):
     else:
         return render('Nope. Invalid Login Credentials')
 
-# @login_required
 
-
+@login_required
 def index(request):
     users = User.objects.all()
     decks = Deck.objects.all()
@@ -59,7 +58,7 @@ def add_deck(request):
         form = DeckForm(request.POST)
         if form.is_valid():
             deck = form.save()
-            return redirect("add_card")
+            return redirect("add-card")
     else:
         form = DeckForm()
     return render(request, 'core/add_deck.html', {'form': form})
@@ -72,7 +71,7 @@ def add_card(request):
             card = form.save()
             return redirect("home")
     else:
-        form = DeckForm()
+        form = CardForm()
     return render(request, 'core/add_card.html', {'form': form})
 
 
@@ -85,7 +84,7 @@ def edit_card(request, pk):
             return redirect("flashcards")
         else:
             form = CardForm(instance=card)
-        return render(request, 'core/edit_card.html', {'form': form, 'pk': pk})
+        return render(request, 'core/edit_card.html', {'form': form})
 
 
 # @register.filter

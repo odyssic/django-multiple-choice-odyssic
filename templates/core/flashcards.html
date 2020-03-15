@@ -1,6 +1,9 @@
-{% extends 'base.html' %} {% block content %}
-< <h1>{{deck.subject}} Cards</h1>
-
+{% extends 'base.html' %} {% block content %}{% load static %}
+< <h1>{{deck.subject}}</h1>
+<div class = 'card-w-button-container'>
+    <div class='button-container' id='button-container'>
+        <div class='navlinks'>Last</div>
+        </div>
     {% for card in cards %}
 
     <div class="card-container">
@@ -32,8 +35,9 @@
     {% endfor %}
     
     <div class='button-container' id='button-container'>
-        <button id = 'next-card' class='button'>Next Card</button>
-        <button id = 'last-card' class='button'>Last Card</button>
+        <div class='navlinks'>Next</div>
+        </div>
+       
     </div>
     
      {% endblock %}
