@@ -1,52 +1,64 @@
 console.log('hi')
 
-const nextCardButton = document.getElementById("next-card")
-const lastCardButton = document.getElementById("last-card")
-const cards = document.getElementById("#")
+// document.addEventListener('DOMContentLoaded', function() {
+//     main()
+// })
+// whatever you want to do when the page loads
 
+function $(selector) {
+    return document.querySelector(selector)
+}
 
-parkingForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-    // nameValidate();
+const nextCardButton = $("#next")
+const lastCardButton = $("#last")
+    // const cards = $("#")
+const flipButton = $("#flip")
 
-});
-
-nextCardButton.addEventListener('click', function(event) {
-    nextCard(cards);
-    console.log('Next Card Pressed!')
-
-});
-
-lastCardButton.addEventListener('click', function(event) {
-
-});
-
-function nextCard(cards) {
+function nextCard() {
     // top card removed
-    cards = document.getElementsByClassName('flip-card');
+    cardsOnPage = document.getElementsByClassName('flip-card');
+    cards = []
+    cards.push(cardsOnPage)
+    console.log('cards = ',
+        cards)
     topCard = cards.shift();
-    //top card added to end of array
+    console.log('top card =',
+            topCard)
+        //top card added to end of array
     cards.push(topCard);
     console.log(cards);
-    console.log('its working!')
+
     return cards
-
-        [0, 1, 2, 3, 4, 5, 6] next cardd
-
-        [1, 2, 3, 4, 5, 6, 0]
-
-
-
-
-    // topCard = cards[0]
-    // index = cards[i]
-    // nextCard = card[i + 1]
-    // nextCard = cards[i - 1]
-
-
-
-
+    console.log('its working!')
 }
+
+nextCardButton.addEventListener('click', function(event) {
+    nextCard();
+    console.log('Next Card Pressed!')
+});
+
+// flipButton.addEventListender('click', function(event) {
+//     clipCard();
+
+// })
+
+// function flipCard() {
+//     const card = $()
+
+
+// }
+
+// lastCardButton.addEventListener('mousedown', function(event) {
+
+// });
+
+
+
+// topCard = cards[0]
+// index = cards[i]
+// nextCard = card[i + 1]
+// nextCard = cards[i - 1]}
+
 
 
 //add event listeners to buttons...banner-heading
@@ -70,9 +82,6 @@ function nextCard(cards) {
 // FUNCTIONS
 
 // flip card (front to back) change classes (simple)
-function FlipCard()
-
-}
 
 // function show next card
 

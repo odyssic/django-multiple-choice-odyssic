@@ -7,6 +7,7 @@ from users.models import User
 import random
 from django import template
 from django.views.decorators.http import require_http_methods, require_POST
+from .forms import NewUserForm
 
 
 def my_view(request):
@@ -22,6 +23,12 @@ def my_view(request):
             ...
     else:
         return render('Nope. Invalid Login Credentials')
+
+
+def logout_request(request):
+    logout(request)
+    messages.info(request, "Logged out successfully!")
+    return redirect("home")
 
 
 @login_required
@@ -94,3 +101,23 @@ def edit_card(request, pk):
 #     return shuffled_cards
 
 # def add_card()
+
+def login_request(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request=request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"You are now logged in as {username}")
+                return redirect('/')
+            else:
+                messages.error(request, "Invalid username or password.")
+        else:
+            messages.error(request, "Invalid username or password.")
+    form = AuthenticationForm()
+    return render(request=request,
+                  template_name="flashcards/login.html",
+                  context={"form": form})

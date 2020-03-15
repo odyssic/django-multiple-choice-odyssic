@@ -1,20 +1,25 @@
 {% extends 'base.html' %}{% load static %} {% block content %}
 
-<h1>Your Decks</h1>
+<h2>Your Decks</h2>
 <div class="deck-container">
-    
+
     <div class='add-deck'>
-        <a href={% url 'add-deck' %}><h2>Add Deck</h2></a>
-    </div>   
-{% for deck in decks %}
+        <a href={% url 'add-deck' %}>
+            <h2>Add Deck</h2>
+        </a>
+    </div>
+    {% for deck in decks %}
 
     <div class="deck">
-        <h2>{{deck.name}}</h2>
-        <a href={% url 'delete-deck' pk=deck.pk %}>Delete</a>
-        <a href={% url 'flashcards' pk=deck.pk %}>Practice</a>
+        <h2>{{deck.subject}}</h2>
+        <div class='minilinks-container'>
+            <a class='minilinks' href={% url 'add-card' %}>Add Cards</a>
+            <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %}>Delete Deck</a>
+            <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Practice</a>
+        </div>
 
     </div>
-     {% endfor %}
+    {% endfor %}
 </div>
-<div class= >Logged in as {{ request.user.username }}</div>
-    {% endblock %}
+<div class=>Logged in as {{ request.user.username }}</div>
+{% endblock %}

@@ -3,13 +3,6 @@ from django.utils.text import slugify
 from datetime import datetime
 from django.contrib.auth import get_user_model
 from users.models import User
-from PIL import Image
-from fontawesome.fields import IconField
-
-
-class Category(models.Model):
-    ...
-    icon = IconField()
 
 
 class Deck(models.Model):
@@ -32,3 +25,9 @@ class Card(models.Model):
 
     def __str__(self):
         return f'{self.cards}'
+
+
+class Progress(models.Model):
+
+    pass
+    answertick = models.BooleanField()

@@ -6,20 +6,6 @@
     color: gray;
 }
 
-.add-deck {
-    color: rgb(42, 59, 85);
-    font-family: sans-serif;
-    height: 200px;
-    width: 200px;
-    border: dashed white 6px;
-    text-align: center;
-    border-radius: 25px;
-    justify-content: center;
-    padding: 25px;
-    padding-top: 65px;
-    margin: 25px;
-}
-
 .card-w-button-container {
     display: flex;
     flex-wrap: row;
@@ -88,14 +74,73 @@ a:active {
     align-content: center;
 }
 
+.Smallnavlinks {
+    font-family: 'Londrina Outline', cursive;
+    font-size: 200%;
+    color: white;
+}
+
+.Smallnavlinks:hover {
+    color: red
+}
+
 .navlinks {
     font-family: 'Londrina Outline', cursive;
     font-size: 300%;
     color: white;
 }
 
+.fliplink {
+    font-family: 'Londrina Outline', cursive;
+    font-size: 300%;
+    color: white;
+    text-align: center;
+}
+
+.fliplink:hover {
+    color: red;
+}
+
 body {
     background-color: rgba(20, 27, 65, 1)
+}
+
+.minilinks-container {
+    display: flex;
+    flex-flow: row;
+    align-items: space-around;
+    align-content: center;
+    width: auto;
+    justify-content: space-evenly;
+}
+
+.minilinks {
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    padding: 10px;
+    font-size: 125%;
+}
+
+.minilinks:hover {
+    color: red;
+}
+
+.cardTitle {
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 25px;
+}
+
+.cardText {
+    font-family: 'Amatic SC', cursive;
+    color: white;
+    font-size: 200%;
+    text-align: center;
+    /* padding-top: 45px; */
+    padding-bottom: 25px;
+    padding-top: 95px;
 }
 
 h1 {
@@ -107,6 +152,7 @@ h1 {
 h2 {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    text-align: center;
 }
 
 h3 {
@@ -207,6 +253,25 @@ h5 {
     margin: 2rem;
 }
 
+.add-deck {
+    color: rgb(42, 59, 85);
+    font-family: sans-serif;
+    height: 200px;
+    width: 200px;
+    border: dashed white 6px;
+    text-align: center;
+    border-radius: 25px;
+    justify-content: center;
+    padding: 25px;
+    padding-top: 65px;
+    margin: 25px;
+}
+
+.add-deck:hover {
+    color: rgb(177, 30, 30) 6px;
+    border: dashed rgb(177, 30, 30) 6px;
+}
+
 .deck-container {
     display: flex;
     flex-flow: row wrap;
@@ -234,4 +299,7 @@ h5 {
     justify-content: center;
     margin: 25px;
     align-content: center;
+    vertical-align: middle;
+    padding: 25px;
+    padding-top: 65px;
 }
