@@ -143,6 +143,14 @@ body {
     padding-top: 95px;
 }
 
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
 h1 {
     font-family: 'Amatic SC', cursive;
     color: white;

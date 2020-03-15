@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+
 from .models import Deck, Card
 from .forms import DeckForm, CardForm
 from django.contrib.auth import authenticate, login
@@ -10,6 +11,7 @@ from django.views.decorators.http import require_http_methods, require_POST
 from .forms import NewUserForm
 
 
+@login_required
 def my_view(request):
     username = request.POST['username']
     password = request.POST['password']
@@ -25,12 +27,6 @@ def my_view(request):
         return render('Nope. Invalid Login Credentials')
 
 
-def logout_request(request):
-    logout(request)
-    messages.info(request, "Logged out successfully!")
-    return redirect("home")
-
-
 @login_required
 def index(request):
     users = User.objects.all()
@@ -41,6 +37,7 @@ def index(request):
 # defines deck by subject, returns all cards in that deck
 
 
+@login_required
 def flashcards(request, pk):
     deck = Deck.objects.get(pk=pk)
     cards = deck.cards.all().order_by('?')
@@ -48,18 +45,21 @@ def flashcards(request, pk):
     return render(request, "core/flashcards.html", {'deck': deck, 'cards': cards, 'pk': pk})
 
 
+@login_required
 def delete_deck(request, pk):
     deck = Deck.objects.get(Deck, pk=pk)
     deck.delete()
     return redirect('home')
 
 
+@login_required
 def delete_card(request, pk):
     card = Card.objects.get(Card, pk=pk)
     card.delete()
     return redirect('flashcards')
 
 
+@login_required
 def add_deck(request):
     if request.method == 'POST':
         form = DeckForm(request.POST)
@@ -71,6 +71,7 @@ def add_deck(request):
     return render(request, 'core/add_deck.html', {'form': form})
 
 
+@login_required
 def add_card(request):
     if request.method == 'POST':
         form = CardForm(request.POST)
@@ -82,6 +83,7 @@ def add_card(request):
     return render(request, 'core/add_card.html', {'form': form})
 
 
+@login_required
 def edit_card(request, pk):
     card = Card.objects.get(Card, pk=pk)
     if request.method == 'POST':
@@ -101,7 +103,7 @@ def edit_card(request, pk):
 #     return shuffled_cards
 
 # def add_card()
-
+@login_required
 def login_request(request):
     if request.method == 'POST':
         form = AuthenticationForm(request=request, data=request.POST)

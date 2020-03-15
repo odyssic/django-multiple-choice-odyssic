@@ -27,7 +27,13 @@ class Card(models.Model):
         return f'{self.cards}'
 
 
-class Progress(models.Model):
-
-    pass
-    answertick = models.BooleanField()
+class Interval(models.Model):
+    user = models.ForeignKey(to=User,
+                             on_delete=models.CASCADE,
+                             related_name='intervals')
+    deck = models.ForeignKey(to=Deck,
+                             on_delete=models.CASCADE,
+                             related_name='intervals')
+    started_at = models.DateTimeField()
+    finished_at = models.DateTimeField(null=True, blank=True)
+    note = models.TextField(null=True, blank=True)
