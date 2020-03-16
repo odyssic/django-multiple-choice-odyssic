@@ -6,6 +6,10 @@
     color: gray;
 }
 
+button {
+    -webkit-appearance: none;
+}
+
 .card-w-button-container {
     display: flex;
     flex-wrap: row;
@@ -17,12 +21,6 @@
 .card-nav-button {
     padding: 60px;
     margin: 100x;
-}
-
-img.resize {
-    width: 20px;
-    /* you can use % */
-    height: auto;
 }
 
 
@@ -93,8 +91,9 @@ a:active {
 .fliplink {
     font-family: 'Londrina Outline', cursive;
     font-size: 300%;
-    color: white;
+    color: rgb(158, 42, 42);
     text-align: center;
+    -webkit-appearance: none;
 }
 
 .fliplink:hover {
@@ -102,7 +101,7 @@ a:active {
 }
 
 body {
-    background-color: rgba(20, 27, 65, 1)
+    background-color: rgb(58, 66, 109)
 }
 
 .minilinks-container {
@@ -178,6 +177,10 @@ h5 {
     color: white;
 }
 
+.container-container {
+    position: relative;
+}
+
 .card-container {
     display: flex;
     justify-content: space-around;
@@ -187,6 +190,8 @@ h5 {
     left: 0;
     top: 0;
     bottom: 0;
+    height: 300px;
+    width: 300px;
 }
 
 .flip-card {
@@ -196,6 +201,9 @@ h5 {
     perspective: 1000px;
     padding: .5rem;
     border-radius: 25px;
+    /* position: absolute; */
+    /* top: 25px;
+    left: -25px; */
 }
 
 .flip-card-inner {
@@ -239,22 +247,9 @@ h5 {
     border-radius: 25px;
 }
 
-.general-button {
-    width: 15rem;
-    height: 5 rem;
-    color: white;
-    font-size: 70%;
-    background-color: transparent;
-    border: solid white 5px;
-}
-
-.general-button: hover {
-    background-color: white;
-    color: black;
-}
-
 .button {
-    background-color: pink;
+    background-color: blue;
+    -webkit-appearance: none;
     width: 75px;
     height: 22px;
     padding: 1rem;

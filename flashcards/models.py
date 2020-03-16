@@ -8,7 +8,8 @@ from users.models import User
 class Deck(models.Model):
     name = models.CharField(max_length=60)
     subject = models.CharField(max_length=60)
-
+    # created_at = models.DateTimeField(auto_now_add=True)
+    # updated_at = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(
         User, null=True, related_name='decks', on_delete=models.CASCADE)
 

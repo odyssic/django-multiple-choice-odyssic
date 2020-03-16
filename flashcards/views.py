@@ -45,18 +45,18 @@ def flashcards(request, pk):
     return render(request, "core/flashcards.html", {'deck': deck, 'cards': cards, 'pk': pk})
 
 
-@login_required
+# @login_required
 def delete_deck(request, pk):
-    deck = Deck.objects.get(Deck, pk=pk)
+    deck = get_object_or_404(Deck, pk=pk)
     deck.delete()
     return redirect('home')
 
 
-@login_required
+# @login_required
 def delete_card(request, pk):
-    card = Card.objects.get(Card, pk=pk)
+    card = get_object_or_404(Card, pk=pk)
     card.delete()
-    return redirect('flashcards')
+    return redirect('flashcards', pk)
 
 
 @login_required

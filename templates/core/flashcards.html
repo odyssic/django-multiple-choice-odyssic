@@ -7,10 +7,10 @@
 < <h1>{{deck.subject}}</h1>
 <div class = 'card-w-button-container'>
     <div class='button-container' id='button-container'>
-        <button id="last" class='Smallnavlinks'>Last</button>
+        <button id="last" class='fliplink'>Last</button>
         </div>
     {% for card in cards %}
-
+    <div class='container-container'>
     <div class="card-container">
         <div id='{{card.pk}}' class=" flip-card ">
             <div class="flip-card-inner">
@@ -33,12 +33,13 @@
             </div>
         </div>
     </div>
+    </div>
 
 
     {% endfor %}
     
     <div class='button-container' id='button-container'>
-        <button ID="next" class='Smallnavlinks'>Next</button>
+        <button ID="next" class='fliplink'>Next</button>
         </div>
        
     </div>

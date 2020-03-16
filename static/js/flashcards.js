@@ -15,18 +15,33 @@ const lastCardButton = $("#last")
 const flipButton = $("#flip")
 
 nextCardButton.addEventListener('click', function(event) {
-    hideCard();
-    console.log('Next Card Pressed!')
+    nextCard();
 });
 
-function hideCard() {
-    // top card removed
+// hiddenCards = []
 
-    let getCard = document.querySelector('.flip-card');
-    const getCardParent = getCard.parentElement;
-    getCard.classList.add("hidden")
+function nextCard() {
+
+    // let sallCards = Array.from(document.querySelectorAll('flip-card'))
+    // let count = allCards.length
+    let topCard = document.querySelector('.flip-card');
+    topCard.classList.add("hidden")
+    topCard.classList.remove(".flip-card")
+
 
 }
+
+function lastCard() {
+
+    // let sallCards = Array.from(document.querySelectorAll('flip-card'))
+    // let count = allCards.length
+    topCard = document.querySelector('.flip-card');
+    topCard.classList.add("hidden")
+    topCard.classList.remove(".flip-card")
+
+
+}
+
 
 // function nextCard() {
 //     // top card removed
