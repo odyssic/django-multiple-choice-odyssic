@@ -68,11 +68,14 @@ a:active {
 .button-container {
     display: flex;
     flex-flow: row nowrap;
-    align-items: space-between;
     align-content: center;
+    width: auto;
+    justify-content: space-evenly;
+    /* border: solid red 6px; */
 }
 
-.Smallnavlinks {
+
+/* .Smallnavlinks {
     font-family: "Londrina Outline", cursive;
     font-size: 200%;
     color: white;
@@ -80,7 +83,7 @@ a:active {
 
 .Smallnavlinks:hover {
     color: red;
-}
+} */
 
 .navlinks {
     font-family: "Londrina Outline", cursive;
@@ -184,9 +187,6 @@ h5 {
 
 .card-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
     position: relative;
     height: 300px;
     width: 300px;
@@ -199,7 +199,7 @@ h5 {
     perspective: 1000px;
     /* padding: 0.5rem; */
     border-radius: 25px;
-    position: relative;
+    position: absolute;
     /* top: 25px;
     left: -25px; */
 }
