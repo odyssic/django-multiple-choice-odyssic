@@ -18,23 +18,33 @@ nextCardButton.addEventListener("click", function(event) {
     nextCard();
 });
 
+lastCardButton.addEventListener("click", function(event) {
+    lastCard();
+});
+
 // hiddenCards = []
 
 function nextCard() {
     // let sallCards = Array.from(document.querySelectorAll('flip-card'))
     // let count = allCards.length
     let topCard = document.querySelector(".flip-card");
+
+    startCards = [];
+    shuffledDeck = document.querySelectorAll("flip-card");
+    startCards.push(shuffledDeck);
     console.log("topCard:", topCard);
     topCard.classList.add("hidden");
     topCard.classList.remove("flip-card");
+    allCards = [];
+    allCards.push(topCard);
 }
 
 function lastCard() {
     // let sallCards = Array.from(document.querySelectorAll('flip-card'))
     // let count = allCards.length
-    topCard = document.querySelector(".flip-card");
-    topCard.classList.add("hidden");
-    topCard.classList.remove(".flip-card");
+    topCard = document.querySelector(".hidden");
+    topCard.classList.add("flip-card");
+    topCard.classList.remove("hidden");
 }
 
 // function nextCard() {
