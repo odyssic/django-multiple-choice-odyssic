@@ -71,6 +71,7 @@ a:active {
     align-content: center;
     width: auto;
     justify-content: space-evenly;
+    padding-bottom: 50px;
     /* border: solid red 6px; */
 }
 
@@ -88,7 +89,7 @@ a:active {
 .navlinks {
     font-family: "Londrina Outline", cursive;
     font-size: 300%;
-    color: white;
+    color: rgb(120, 149, 222);
 }
 
 .fliplink {
@@ -187,6 +188,7 @@ h5 {
 
 .card-container {
     display: flex;
+    float: left;
     position: relative;
     height: 300px;
     width: 300px;
@@ -200,8 +202,9 @@ h5 {
     /* padding: 0.5rem; */
     border-radius: 25px;
     position: absolute;
-    /* top: 25px;
-    left: -25px; */
+    padding-top: 25px;
+    left: -25px;
+    padding-botton: 25px;
 }
 
 .flip-card-inner {
@@ -277,7 +280,7 @@ h5 {
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: center;
-    border: solid red 2px;
+    /* border: solid red 2px; */
     right: 0;
     left: 0;
     top: 0;

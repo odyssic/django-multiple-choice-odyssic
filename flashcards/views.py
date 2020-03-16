@@ -85,14 +85,18 @@ def add_card(request):
 
 @login_required
 def edit_card(request, pk):
-    card = Card.objects.get(Card, pk=pk)
+    card = get_object_or_404(Card, pk=pk)
+
     if request.method == 'POST':
         form = CardForm(request.POST, instance=card)
         if form.is_valid():
-            card = form.save()
+            form.save()
+
             return redirect("flashcards")
+
         else:
             form = CardForm(instance=card)
+
         return render(request, 'core/edit_card.html', {'form': form})
 
 
