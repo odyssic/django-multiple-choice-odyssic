@@ -1,4 +1,4 @@
-console.log('hi')
+console.log("hi");
 
 // document.addEventListener('DOMContentLoaded', function() {
 //     main()
@@ -6,42 +6,36 @@ console.log('hi')
 // whatever you want to do when the page loads
 
 function $(selector) {
-    return document.querySelector(selector)
+    return document.querySelector(selector);
 }
 
-const nextCardButton = document.querySelector("#next")
-const lastCardButton = $("#last")
+const nextCardButton = document.querySelector("#next");
+const lastCardButton = $("#last");
 
-const flipButton = $("#flip")
+const flipButton = $("#flip");
 
-nextCardButton.addEventListener('click', function(event) {
+nextCardButton.addEventListener("click", function(event) {
     nextCard();
 });
 
 // hiddenCards = []
 
 function nextCard() {
-
     // let sallCards = Array.from(document.querySelectorAll('flip-card'))
     // let count = allCards.length
-    let topCard = document.querySelector('.flip-card');
-    topCard.classList.add("hidden")
-    topCard.classList.remove(".flip-card")
-
-
+    let topCard = document.querySelector(".flip-card");
+    console.log("topCard:", topCard);
+    topCard.classList.add("hidden");
+    topCard.classList.remove("flip-card");
 }
 
 function lastCard() {
-
     // let sallCards = Array.from(document.querySelectorAll('flip-card'))
     // let count = allCards.length
-    topCard = document.querySelector('.flip-card');
-    topCard.classList.add("hidden")
-    topCard.classList.remove(".flip-card")
-
-
+    topCard = document.querySelector(".flip-card");
+    topCard.classList.add("hidden");
+    topCard.classList.remove(".flip-card");
 }
-
 
 // function nextCard() {
 //     // top card removed
@@ -60,9 +54,6 @@ function lastCard() {
 //     return cards
 //     console.log('its working!')
 // }
-
-
-
 
 // function nameValidate() {
 //     const wholeName = document.querySelector("#name");
@@ -106,7 +97,6 @@ function lastCard() {
 //     }
 // }
 
-
 // flipButton.addEventListender('click', function(event) {
 //     clipCard();
 
@@ -115,26 +105,20 @@ function lastCard() {
 // function flipCard() {
 //     const card = $()
 
-
 // }
 
 // lastCardButton.addEventListener('mousedown', function(event) {
 
 // });
 
-
-
 // topCard = cards[0]
 // index = cards[i]
 // nextCard = card[i + 1]
 // nextCard = cards[i - 1]}
 
-
-
 //add event listeners to buttons...banner-heading
 
-
-// Event listener 
+// Event listener
 // back
 // go to the last card shown (reorder so that index position is visible)
 
@@ -142,8 +126,7 @@ function lastCard() {
 // next random card
 
 // delete
-// event listener on card perhaps, to delete the card. 
-
+// event listener on card perhaps, to delete the card.
 
 // back, next, flip, deletecard, addcard
 
