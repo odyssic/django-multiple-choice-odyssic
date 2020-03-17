@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'registration',
     'flashcards',
+    'django-heroku',
 
 
     # Third-party
@@ -160,3 +161,7 @@ ACCOUNT_ACTIVATION_DAYS = 1
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
