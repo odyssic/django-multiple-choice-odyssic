@@ -31,7 +31,7 @@ urlpatterns = [
     path('edit-card/<int:pk>', views.edit_card, name='edit-card'),
     path('delete-card/<int:pk>', views.delete_card, name='delete-card'),
     path('accounts/', include('django.contrib.auth.urls')),
-    url(r'^accounts/', include('registration.backends.simple.urls')),
+    path('accounts/', include('registration.backends.simple.urls')),
 
 ]
 
