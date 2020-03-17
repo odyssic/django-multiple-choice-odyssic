@@ -13,7 +13,6 @@ psycopg2 = "*"
 django-heroku = "*"
 gunicorn = "*"
 django-registration-redux = "*"
-registration = "*"
 
 [requires]
 python_version = "3.7"
