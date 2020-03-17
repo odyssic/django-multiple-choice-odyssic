@@ -15,6 +15,7 @@ pillow = "*"
 django-debug-toolbar = "*"
 bootstrap-icons = "*"
 django-fontawesome = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"

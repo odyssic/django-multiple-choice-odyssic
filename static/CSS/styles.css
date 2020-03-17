@@ -72,6 +72,7 @@ a:active {
     width: auto;
     justify-content: space-evenly;
     padding-bottom: 50px;
+    padding-top: 25px;
     /* border: solid red 6px; */
 }
 
@@ -204,7 +205,7 @@ h5 {
     position: absolute;
     padding-top: 25px;
     left: -25px;
-    padding-botton: 25px;
+    padding-bottom: 25px;
 }
 
 .flip-card-inner {
