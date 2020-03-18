@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from pathlib import Path
+import django_heroku
 
 import environ
 
@@ -164,5 +165,5 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Configure Django App for Heroku.
-import django_heroku
+
 django_heroku.settings(locals())
