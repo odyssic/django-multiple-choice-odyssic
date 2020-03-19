@@ -7,10 +7,9 @@
 < <h1>{{deck.subject}}</h1>
 <div class = 'card-w-button-container'>
     
-        <div id="last" class='fliplink'>Last</div>
+        
        
     {% for card in cards %}
-    <div class='container-container'>
     <div class="card-container">
         <div id='{{card.pk}}' class=" flip-card ">
             <div class="flip-card-inner">
@@ -33,14 +32,20 @@
             </div>
         </div>
     </div>
-    </div>
 
 
     {% endfor %}
-    
-   
+     <div class='last-card'>
+     <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Go Again.</a>
+     <a class='minilinks' href={% url 'home' %}>Choose Another Deck</a>
+     <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %}>Delete Deck</a>
+     
+     
+     </div> 
+     </div>
+        <div id="last" class='hidden'>Last</div>
         <div ID="next" class='fliplink'>Next</div>
-      
+    
        
     </div>
 

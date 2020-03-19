@@ -27,6 +27,8 @@ lastCardButton.addEventListener("click", function(event) {
 function nextCard() {
     // let sallCards = Array.from(document.querySelectorAll('flip-card'))
     // let count = allCards.length
+    // activate last card only after 'next' has been pushed (so there is somewhere to go)
+    showLastCardButton();
     let topCard = document.querySelector(".flip-card");
 
     startCards = [];
@@ -37,6 +39,12 @@ function nextCard() {
     topCard.classList.remove("flip-card");
     allCards = [];
     allCards.push(topCard);
+}
+
+function showLastCardButton() {
+    lastCardButton.classList.remove("hidden");
+    lastCardButton.classList.add("fliplink");
+    return lastCardButton;
 }
 
 function lastCard() {

@@ -6,12 +6,33 @@
     color: gray;
 }
 
+.last-card {
+    color: rgb(42, 59, 85);
+    font-family: sans-serif;
+    height: 300px;
+    width: 300px;
+    border: dashed white 6px;
+    text-align: center;
+    border-radius: 25px;
+    justify-content: center;
+    padding: 25px;
+    padding-top: 65px;
+    margin: 25px;
+    position: relative;
+    border-radius: 25px;
+}
+
+.last-card:hover {
+    color: rgb(177, 30, 30) 6px;
+    border: dashed rgb(177, 30, 30) 6px;
+}
+
 button {
     -webkit-appearance: none;
 }
 
 .card-w-button-container {
-    display: flex;
+    /* display: flex; */
     flex-wrap: row;
     align-items: center;
     width: auto;
@@ -188,24 +209,24 @@ h5 {
 } */
 
 .card-container {
-    display: flex;
-    float: left;
-    position: relative;
+    /* display: flex; */
+    position: relativee;
     height: 300px;
     width: 300px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .flip-card {
+    position: relative;
     background-color: transparent;
     width: 300px;
     height: 300px;
-    perspective: 1000px;
+    perspective: 500px;
     /* padding: 0.5rem; */
     border-radius: 25px;
-    position: absolute;
-    padding-top: 25px;
-    left: -25px;
-    padding-bottom: 25px;
+    order: 1;
 }
 
 .flip-card-inner {
