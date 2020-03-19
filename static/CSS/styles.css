@@ -25,6 +25,7 @@
 .last-card:hover {
     color: rgb(177, 30, 30) 6px;
     border: dashed rgb(177, 30, 30) 6px;
+    cursor: pointer;
 }
 
 button {
@@ -124,6 +125,7 @@ a:active {
 
 .fliplink:hover {
     color: red;
+    cursor: pointer;
 }
 
 body {
@@ -148,6 +150,7 @@ body {
 
 .minilinks:hover {
     color: red;
+    cursor: pointer;
 }
 
 .cardTitle {
