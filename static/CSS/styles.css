@@ -17,7 +17,6 @@
     justify-content: center;
     padding: 25px;
     padding-top: 65px;
-    margin: 25px;
     position: relative;
     border-radius: 25px;
 }
@@ -97,17 +96,6 @@ a:active {
     padding-top: 25px;
     /* border: solid red 6px; */
 }
-
-
-/* .Smallnavlinks {
-    font-family: "Londrina Outline", cursive;
-    font-size: 200%;
-    color: white;
-}
-
-.Smallnavlinks:hover {
-    color: red;
-} */
 
 .navlinks {
     font-family: "Londrina Outline", cursive;
@@ -211,30 +199,24 @@ h5 {
     color: white;
 }
 
-
-/* .container-container {
-    position: relative;
-} */
-
 .card-container {
-    /* display: flex; */
-    position: relativee;
+    position: absolute;
     height: 300px;
     width: 300px;
     justify-content: center;
     align-content: center;
     align-items: center;
+    left: 50% auto;
+    right: 50% auto;
 }
 
 .flip-card {
-    position: relative;
     background-color: transparent;
     width: 300px;
     height: 300px;
     perspective: 500px;
     /* padding: 0.5rem; */
     border-radius: 25px;
-    order: 1;
 }
 
 .flip-card-inner {
