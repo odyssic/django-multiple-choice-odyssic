@@ -1,54 +1,52 @@
-{% extends 'base.html' %} 
-{% load static %}
-{% block head %}
+{% extends 'base.html' %} {% load static %} {% block head %}
 <script defer src="{% static 'js/flashcards.js' %}"></script>
-{% endblock %}
-{% block content %}
+{% endblock %} {% block content %}
 < <h1>{{deck.subject}}</h1>
-<div class = 'card-w-button-container'>
-    
-        
-       
-    {% for card in cards %}
-    <div class="card-container">
-        <div id='{{card.pk}}' class=" flip-card ">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    {% comment %} <h1 class='cardTitle'> question: </h1> {% endcomment %}
+    <div class='card-w-button-container'>
 
-                    <p class='cardText'>{{card.question}}</p>
-                </div>
-                <div class="flip-card-back ">
 
-                    {% comment %} <h1 class='cardTitle'>Answer</h1> {% endcomment %}
 
-                    <p class='cardText'>{{card.answer}}</p>
-                     <div>
-                        <a class='minilinks' href={% url 'add-card' %}>Add</a>
-                        <a class='minilinks' href={% url 'edit-card' pk=card.pk %}>Edit</a>
-                        <a class='minilinks' href={% url 'delete-card' pk=card.pk %}>Delete</a>
+        {% for card in cards %}
+        <div class="card-container">
+            <div id='{{card.pk}}' class=" flip-card ">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        {% comment %}
+                        <h1 class='cardTitle'> question: </h1> {% endcomment %}
+
+                        <p class='cardText'>{{card.question}}</p>
+                    </div>
+                    <div class="flip-card-back ">
+
+                        {% comment %}
+                        <h1 class='cardTitle'>Answer</h1> {% endcomment %}
+
+                        <p class='cardText'>{{card.answer}}</p>
+                        <div>
+                            <a class='minilinks' href={% url 'add-card' %}>Add</a>
+                            <a class='minilinks' href={% url 'edit-card' pk=card.pk %}>Edit</a>
+                            <a class='minilinks' href={% url 'delete-card' pk=card.pk %}>Delete</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        {% endfor %}
+        <div class='last-card'>
+            <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Go Again.</a>
+            <a class='minilinks' href={% url 'home' %}>Choose Another Deck</a>
+            <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %}>Delete Deck</a>
+
+
+        </div>
+    </div>
+
+    <div ID="next" class='fliplink'>Next</div>
+
+    <div id="last" class='hidden'>Last</div>
     </div>
 
 
-    {% endfor %}
-     <div class='last-card'>
-     <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Go Again.</a>
-     <a class='minilinks' href={% url 'home' %}>Choose Another Deck</a>
-     <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %}>Delete Deck</a>
-     
-     
-     </div> 
-     </div>
-        <div id="last" class='hidden'>Last</div>
-        <div ID="next" class='fliplink'>Next</div>
-    
-       
-    </div>
-
-    <div id='flip' class='fliplink'>Flip</div>
-    
-     {% endblock %}
+    {% endblock %}

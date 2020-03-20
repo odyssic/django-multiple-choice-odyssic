@@ -12,8 +12,6 @@ function $(selector) {
 const nextCardButton = document.querySelector("#next");
 const lastCardButton = $("#last");
 
-const flipButton = $("#flip");
-
 nextCardButton.addEventListener("click", function(event) {
     nextCard();
 });
@@ -25,9 +23,6 @@ lastCardButton.addEventListener("click", function(event) {
 // hiddenCards = []
 
 function nextCard() {
-    // let sallCards = Array.from(document.querySelectorAll('flip-card'))
-    // let count = allCards.length
-    // activate last card only after 'next' has been pushed (so there is somewhere to go)
     showLastCardButton();
     let topCard = document.querySelector(".flip-card");
 
@@ -114,9 +109,6 @@ function lastCard() {
 //         }
 //     }
 // }
-
-// flipButton.addEventListender('click', function(event) {
-//     clipCard();
 
 // })
 
