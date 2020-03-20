@@ -115,12 +115,17 @@ a:active {
     color: rgb(120, 149, 222);
 }
 
+.ul {
+    list-style-type: none;
+}
+
 .fliplink {
     font-family: "Londrina Outline", cursive;
     font-size: 300%;
     color: white;
     text-align: center;
     -webkit-appearance: none;
+    padding-bottom: 25px;
 }
 
 .fliplink:hover {
@@ -293,6 +298,7 @@ h5 {
     padding: 25px;
     padding-top: 65px;
     margin: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .add-deck:hover {
@@ -330,4 +336,5 @@ h5 {
     vertical-align: middle;
     padding: 25px;
     padding-top: 65px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }

@@ -35,18 +35,23 @@
 
         {% endfor %}
         <div class='last-card'>
-            <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Go Again.</a>
-            <a class='minilinks' href={% url 'home' %}>Choose Another Deck</a>
-            <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %}>Delete Deck</a>
+            <h1 class='fliplink'>The End.</h1>
+            <ul class='ul'>
+                <li><a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Go Again.</a></li>
+                <li><a class='minilinks' href={% url 'home' %}>Choose Another Deck</a></li>
+                <li><a class='minilinks' href={% url 'delete-deck' pk=deck.pk %}>Delete Deck</a></li>
+            </ul>
 
 
         </div>
     </div>
 
     <div ID="next" class='fliplink'>Next</div>
-
     <div id="last" class='hidden'>Last</div>
+
+
     </div>
+
 
 
     {% endblock %}
