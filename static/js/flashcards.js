@@ -39,16 +39,22 @@ function nextCard() {
 }
 
 function arrangeCards() {
-    let cards = document.querySelectorAll(".flip-card")
-    for (let card of cards) {
-        // let zindexClass = card.classList.add("zindex");
-        card.style.zIndex = card.id
-
-        console.log('cards: ', card);
-        console.log('card: ', card.id);
+    let cards = document.querySelectorAll(".flip-card");
+    loopedCards = [];
+    while (cards.length < 0) {
+        for (let card of cards) {
+            for (let i = 0; i < 1; i++) {
+                card.style.zIndex = +i;
+                console.log("zindex", (card.style.zIndex = i));
+                console.log(("id", card.id));
+                loopedCards.push(card);
+                cards.pop(card);
+                console.log(loopedCards);
+                // }
+            }
+        }
     }
 }
-
 
 function showLastCardButton() {
     lastCardButton.classList.remove("hidden");
