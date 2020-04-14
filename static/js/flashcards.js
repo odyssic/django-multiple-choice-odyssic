@@ -1,5 +1,7 @@
 console.log("hi");
 
+window.onload = arrangeCards();
+
 // document.addEventListener('DOMContentLoaded', function() {
 //     main()
 // })
@@ -39,9 +41,8 @@ function nextCard() {
 function arrangeCards() {
     let cards = document.querySelectorAll(".flip-card")
     for (let card of cards) {
-        let cardId = card.id
-        let zindexClass = card.classList.add("zindex");
-        card.style.zIndex = 'cardId';
+        // let zindexClass = card.classList.add("zindex");
+        card.style.zIndex = card.id
 
         console.log('cards: ', card);
         console.log('card: ', card.id);

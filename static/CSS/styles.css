@@ -217,6 +217,8 @@ h5 {
     perspective: 500px;
     /* padding: 0.5rem; */
     border-radius: 25px;
+    /* z-index: 0; */
+    position: absolute;
 }
 
 .flip-card-inner {
