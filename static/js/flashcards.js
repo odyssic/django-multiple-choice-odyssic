@@ -38,19 +38,20 @@ function nextCard() {
 
 function arrangeCards() {
     let cards = document.querySelectorAll(".flip-card")
-    for (const card of cards) {
+    for (let card of cards) {
+        let cardId = card.id
+        let zindexClass = card.classList.add("zindex");
+        card.style.zIndex = 'cardId';
+
         console.log('cards: ', card);
+        console.log('card: ', card.id);
     }
 }
-
-
-
 
 
 function showLastCardButton() {
     lastCardButton.classList.remove("hidden");
     lastCardButton.classList.add("fliplink");
-    return lastCardButton;
 }
 
 function lastCard() {
