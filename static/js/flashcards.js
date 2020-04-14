@@ -36,6 +36,17 @@ function nextCard() {
     allCards.push(topCard);
 }
 
+function arrangeCards() {
+    let cards = document.querySelectorAll(".flip-card")
+    for (const card of cards) {
+        console.log('cards: ', card);
+    }
+}
+
+
+
+
+
 function showLastCardButton() {
     lastCardButton.classList.remove("hidden");
     lastCardButton.classList.add("fliplink");
