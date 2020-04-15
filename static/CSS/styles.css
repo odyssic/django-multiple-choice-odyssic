@@ -200,7 +200,7 @@ h5 {
 }
 
 .card-container {
-    /* position: absolute; */
+    position: absolute;
     height: 300px;
     width: 300px;
     justify-content: center;
@@ -218,7 +218,7 @@ h5 {
     /* padding: 0.5rem; */
     border-radius: 25px;
     /* z-index: 0; */
-    /* position: absolute; */
+    position: absolute;
 }
 
 .flip-card-inner {

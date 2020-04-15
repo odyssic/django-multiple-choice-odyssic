@@ -17,30 +17,28 @@ lastCardButton.addEventListener("click", function(event) {
     lastCard();
 });
 
+// sets z index for all loaded cards on page
+
 function arrangeCards() {
     console.log("arrangeCards ran");
     let cards = document.querySelectorAll(".flip-card");
+    console.log("cards", cards);
     for (let i = 0; i < cards.length; i++) {
         console.log("cards.length", cards.length);
         cards[i].style.zIndex = +i;
         console.log("i", +i);
     }
+    cards = cards.reverse;
+    return cards;
 }
 
-function nextCard(arrangedCards) {
+function nextCard(cards) {
     showLastCardButton();
+    // undefined?
+    console.log("cards", cards);
 
-    let shuffledDeck = document.querySelectorAll(".flip-card");
-    console.log("shuffledDeck:", shuffledDeck);
-    for (let i = 0; i < shuffledDeck.length; i++) {
-        let topCard = shuffledDeck.shift;
-        console.log("topCard:", topCard);
-        topCard.classList.add("hidden");
-        topCard.classList.remove("flip-card");
-        allCards = [];
-        allCards.push(topCard);
-        console.log(allCards);
-    }
+    // topCard.classList.add("hidden");
+    // topCard.classList.remove("flip-card");
 }
 
 function showLastCardButton() {
