@@ -17,36 +17,29 @@ lastCardButton.addEventListener("click", function(event) {
     lastCard();
 });
 
-function nextCard() {
-    showLastCardButton();
-    let topCard = document.querySelector(".flip-card");
-
-    startCards = [];
-    shuffledDeck = document.querySelectorAll("flip-card");
-    startCards.push(shuffledDeck);
-    console.log("topCard:", topCard);
-    topCard.classList.add("hidden");
-    topCard.classList.remove("flip-card");
-    allCards = [];
-    allCards.push(topCard);
+function arrangeCards() {
+    console.log("arrangeCards ran");
+    let cards = document.querySelectorAll(".flip-card");
+    for (let i = 0; i < cards.length; i++) {
+        console.log("cards.length", cards.length);
+        cards[i].style.zIndex = +i;
+        console.log("i", +i);
+    }
 }
 
-function arrangeCards() {
-    let cards = document.querySelectorAll(".flip-card");
-    loopedCards = [];
+function nextCard(arrangedCards) {
+    showLastCardButton();
 
-    for (let card of cards) {
-        for (let i = 0; loopedCards.length <= cards.length; i++) {
-            console.log("loopedCards.length", loopedCards.length);
-            console.log("cards.length", cards.length);
-
-            card.style.zIndex = +i;
-            console.log("i", i);
-            console.log("zindex", (card.style.zIndex = +i));
-            console.log(("id", card.id));
-            loopedCards.push(card);
-            console.log(loopedCards);
-        }
+    let shuffledDeck = document.querySelectorAll(".flip-card");
+    console.log("shuffledDeck:", shuffledDeck);
+    for (let i = 0; i < shuffledDeck.length; i++) {
+        let topCard = shuffledDeck.shift;
+        console.log("topCard:", topCard);
+        topCard.classList.add("hidden");
+        topCard.classList.remove("flip-card");
+        allCards = [];
+        allCards.push(topCard);
+        console.log(allCards);
     }
 }
 
