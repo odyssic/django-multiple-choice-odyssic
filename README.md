@@ -1,4 +1,4 @@
-#Simple Space Invaders built in JavaScript#
+<h1>Simple Space Invaders built in JavaScript</h1>
 
 This is a one level space invaders game built using JavaScript and HTML5Canvas.
 
