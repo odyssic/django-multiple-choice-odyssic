@@ -1,27 +1,17 @@
-# Django Project Template
+#Simple Space Invaders built in JavaScript#
 
-This project was generated from the Momentum Django project template. This template sets up some minimal changes:
+This is a one level space invaders game built using JavaScript and HTML5Canvas.
 
-- [django-extensions](https://django-extensions.readthedocs.io/en/latest/) and [django-debug-toolbar](https://django-debug-toolbar.readthedocs.io/en/latest/) are both installed and set up.
-- [django-environ](https://django-environ.readthedocs.io/en/latest/) is set up and the `DEBUG`, `SECRET_KEY`, and `DATABASES` settings are set by this package.
-- There is a custom user model defined in `users.models.User`.
-- There is a `templates/` and a `static/` directory at the top level, both of which are set up to be used.
-- A `.gitignore` file is provided.
-- Pipenv is used to manage dependencies.
+#Directions to Run#
 
-## Using this template
+Clone the repository
+Create a virtual environment. For example, 'pipenv --three'
+run the virtual environment. For example, 'pipenv shell'
+Navigage to index.html and open it to run it in the browser.
+The game begins! == Stay Alive!
 
-In an empty directory, run:
+#Directions to Play#
 
-```
-pipenv --three
-pipenv install django
-pipenv shell
-rm Pipfile Pipfile.lock
-django-admin startproject --template=https://github.com/momentumlearn/django-project-template/archive/master.zip <your_project_name> .
-pipenv install
-cp <your_project_name>/.env.sample <your_project_name>/.env
-./manage.py migrate
-```
+The enemies will begin shooting projectiles immediately. Navigate away from them by using the left and right arrow. Use the spacebar to fire. Hold down the space bar to let out a stream of projectiles. If you get hit, you lose. If you destroy all of the enemies, you win!
 
-Remember to change `<your_project_name>` to your actual project name. We remove `Pipfile` and `Pipfile.lock` at the beginning because django-admin will not overwrite them with the new ones from our template.
+This is based on Mary Rose Cook's space invaders game that she coded live at a demo.
