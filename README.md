@@ -1,17 +1,19 @@
-<h1>Simple Space Invaders built in JavaScript</h1>
+<h1>Flash Card App</h1>
 
-This is a one level space invaders game built using JavaScript and HTML5Canvas.
+An application where you can create your own flashcards with a question and answer, and practice learning a new skill or language. You can create multiple decks to separate cards by subject. 
 
-#Directions to Run#
+<h2>Directions to Run</h2>
 
 Clone the repository
 Create a virtual environment. For example, 'pipenv --three'
 run the virtual environment. For example, 'pipenv shell'
-Navigage to index.html and open it to run it in the browser.
-The game begins! == Stay Alive!
+Navigate to index.html and open it to run it in the browser.
 
-#Directions to Play#
+<h2>Directions to Play</h2>
 
-The enemies will begin shooting projectiles immediately. Navigate away from them by using the left and right arrow. Use the spacebar to fire. Hold down the space bar to let out a stream of projectiles. If you get hit, you lose. If you destroy all of the enemies, you win!
+Log in and create your first deck. 
+Navigate to the deck to add cards. 
+Hover over the card to flip it and see the answer. 
+Click next card or last card to go forward or backward in the deck. 
 
-This is based on Mary Rose Cook's space invaders game that she coded live at a demo.
+Enjoy!
