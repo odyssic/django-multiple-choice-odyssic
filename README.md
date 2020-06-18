@@ -5,9 +5,11 @@ An application where you can create your own flashcards with a question and answ
 <h2>Directions to Run</h2>
 
 Clone the repository
-Create a virtual environment. For example, 'pipenv --three'
-run the virtual environment. For example, 'pipenv shell'
-Navigate to index.html and open it to run it in the browser.
+Create a virtual environment. For example, 'pipenv --three'.
+
+Run the virtual environment. For example, 'pipenv shell'.
+
+Navigate to index.html and open it to run it in the browser.'
 
 <h2>Directions to Play</h2>
 
