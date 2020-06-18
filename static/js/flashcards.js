@@ -1,7 +1,5 @@
 console.log("hi");
 
-window.onload = arrangeCards();
-
 function $(selector) {
     return document.querySelector(selector);
 }
@@ -11,6 +9,7 @@ const lastCardButton = $("#last");
 
 nextCardButton.addEventListener("click", function(event) {
     nextCard();
+    console.log(nextCardButton);
 });
 
 lastCardButton.addEventListener("click", function(event) {
@@ -25,20 +24,24 @@ function arrangeCards() {
     console.log("cards", cards);
     for (let i = 0; i < cards.length; i++) {
         console.log("cards.length", cards.length);
-        cards[i].style.zIndex = +i;
+        cardsZIndex = cards[i].style.zIndex = +i;
         console.log("i", +i);
     }
-    cards = cards.reverse;
     return cards;
 }
 
-function nextCard(cards) {
-    showLastCardButton();
-    // undefined?
-    console.log("cards", cards);
+window.onload = arrangeCards();
 
-    // topCard.classList.add("hidden");
-    // topCard.classList.remove("flip-card");
+function nextCard() {
+    showLastCardButton();
+    let cards = document.querySelectorAll(".flip-card");
+    cardArray = Object.entries(cards);
+    console.log(cardArray);
+    let topCard = cardArray.slice(-1).pop();
+    console.log("topcard", topCard);
+    topCard.classList.add("hidden");
+    topCard.classList.remove("flip-card");
+    return cardArray;
 }
 
 function showLastCardButton() {
