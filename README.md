@@ -9,7 +9,7 @@ Create a virtual environment. For example, 'pipenv --three'.
 
 Run the virtual environment. For example, 'pipenv shell'.
 
-Navigate to index.html and open it to run it in the browser.'
+Run the server 'python manage.py runserver'. 
 
 <h2>Directions to Play</h2>
 
