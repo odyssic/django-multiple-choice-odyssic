@@ -29,7 +29,15 @@
 </header>
 
 <body>
-    {% block content %} {% endblock %}
+    {% if user.is_authenticated %}
+
+    <p>Logged in as {{request.user}} | <a href='logout'>logout</a></p>
+
+    {% else %}
+
+    <p> You are not currently logged in </p>
+
+    {% endif %} {% block content %} {% endblock %}
 </body>
 
 </html>
