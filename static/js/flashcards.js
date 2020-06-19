@@ -36,11 +36,11 @@ function nextCard() {
     let cards = document.querySelectorAll(".card-container");
     console.log("cards type", typeof cards);
     // topCard = cards.slice(-1).pop();
-    length = cards.length;
+    let length = cards.length;
     console.log(length);
-    topCard = cards[length];
+    let topCard = cards[length - 1];
     topCard.classList.add("hidden");
-    // topCard = cards.item(cards.getLength() - 1);
+    topCard.classList.remove("card-container");
     console.log("topCard", topCard);
 
     console.log("cards", cards);
