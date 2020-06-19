@@ -6,6 +6,11 @@
     color: gray;
 }
 
+.login-text {
+    padding: 1rem;
+    color: white;
+}
+
 .last-card {
     color: rgb(42, 59, 85);
     font-family: sans-serif;
@@ -32,12 +37,12 @@ button {
     -webkit-appearance: none;
 }
 
-.card-w-button-container {
-    /* display: flex; */
-    flex-wrap: row;
-    align-items: center;
-    width: auto;
-    justify-content: space-between;
+.full-deck {
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: auto;
+    padding-right: auto;
 }
 
 .card-nav-button {
@@ -93,7 +98,7 @@ a:active {
     align-content: center;
     width: auto;
     justify-content: space-evenly;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
     padding-top: 25px;
     /* border: solid red 6px; */
 }
@@ -117,8 +122,54 @@ a:active {
     padding-bottom: 25px;
 }
 
+.fliplink-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .fliplink:hover {
     color: red;
+    cursor: pointer;
+}
+
+form {
+    background: #fff;
+    max-width: 441px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+form input,
+textarea {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    font-size: 16px;
+    padding: 5px;
+    border: solid 1px #e5e5e5;
+    font-weight: 400;
+    border-radius: 0.25rem;
+    color: #484848;
+    font-family: "Oswald";
+    letter-spacing: 1px;
+}
+
+textarea {
+    height: 5rem;
+}
+
+button {
+    padding: 0.5rem;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    background: #ff5a5f;
+    width: 100%;
+    color: #fff;
+    border: solid 1px #ff5a5f;
+    border-radius: 0.25rem;
     cursor: pointer;
 }
 
@@ -186,17 +237,14 @@ h2 {
     text-align: center;
 }
 
-h3 {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-}
-
-h4 {
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-}
-
+h3,
+h4,
 h5 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+p {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
@@ -205,8 +253,8 @@ h5 {
     position: absolute;
     height: 300px;
     width: 300px;
-    left: 50% auto;
-    right: 50% auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .flip-card {

@@ -10,6 +10,7 @@ class Deck(models.Model):
     subject = models.CharField(max_length=60)
     # created_at = models.DateTimeField(auto_now_add=True)
     # updated_at = models.DateTimeField(auto_now=True)
+    description = models.TextField(max_length = 300, default = 'Add a Description')
     user = models.ForeignKey(
         User, null=True, related_name='decks', on_delete=models.CASCADE)
 

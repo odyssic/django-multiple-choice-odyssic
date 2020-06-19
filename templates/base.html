@@ -30,12 +30,13 @@
 
 <body>
     {% if user.is_authenticated %}
+    <div class='login-text'>
+        <p>Logged in as {{request.user}} | <a href='logout'>logout</a></p>
 
-    <p>Logged in as {{request.user}} | <a href='logout'>logout</a></p>
+        {% else %}
 
-    {% else %}
-
-    <p> You are not currently logged in </p>
+        <p> Please Log In </p>
+    </div>
 
     {% endif %} {% block content %} {% endblock %}
 </body>

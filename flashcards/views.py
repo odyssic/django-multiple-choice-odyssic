@@ -97,7 +97,7 @@ def edit_card(request, pk):
         if form.is_valid():
             form.save()
 
-            return redirect("flashcards")
+            return HttpResponsePermanentRedirect(request.META.get('HTTP_REFERER', '/'))
 
         else:
             form = CardForm(instance=card)
