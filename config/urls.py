@@ -5,6 +5,7 @@ from django.conf import settings
 from django.urls import include, path
 from flashcards import views
 from django.conf.urls.static import static
+from flashcards.views import LogoutView
 
 
 urlpatterns = [
@@ -18,6 +19,7 @@ urlpatterns = [
     path('delete-card/<int:pk>', views.delete_card, name='delete-card'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('registration.backends.simple.urls')),
+    path('logout', LogoutView.as_view(), name='logout')
 
 ]
 

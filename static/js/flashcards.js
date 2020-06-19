@@ -9,7 +9,6 @@ const lastCardButton = $("#last");
 
 nextCardButton.addEventListener("click", function(event) {
     nextCard();
-    console.log(nextCardButton);
 });
 
 lastCardButton.addEventListener("click", function(event) {
@@ -34,14 +33,26 @@ window.onload = arrangeCards();
 
 function nextCard() {
     showLastCardButton();
-    let cards = document.querySelectorAll(".flip-card");
-    cardArray = Object.entries(cards);
-    console.log(cardArray);
-    let topCard = cardArray.slice(-1).pop();
-    console.log("topcard", topCard);
+    let cards = document.querySelectorAll(".card-container");
+    console.log("cards type", typeof cards);
+    // topCard = cards.slice(-1).pop();
+    let length = cards.length;
+    console.log(length);
+    let topCard = cards[length - 1];
     topCard.classList.add("hidden");
-    topCard.classList.remove("flip-card");
-    return cardArray;
+    topCard.classList.remove("card-container");
+    console.log("topCard", topCard);
+
+    console.log("cards", cards);
+
+    // cardArray = Object.entries(cards);
+    // console.log(cardArray);
+    // console.log("type of", typeof cardArray);
+    // let topCard = cardArray.slice(-1).pop();
+    // console.log(topCard, "topCard");
+    // console.log("typeof topCard", typeof topCard);
+
+    return cards;
 }
 
 function showLastCardButton() {
