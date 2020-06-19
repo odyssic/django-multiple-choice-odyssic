@@ -36,8 +36,9 @@ function nextCard() {
     let cards = document.querySelectorAll(".card-container");
     console.log("cards type", typeof cards);
     // topCard = cards.slice(-1).pop();
-
-    topCard = cards[-1];
+    length = cards.length;
+    console.log(length);
+    topCard = cards[length];
     topCard.classList.add("hidden");
     // topCard = cards.item(cards.getLength() - 1);
     console.log("topCard", topCard);
