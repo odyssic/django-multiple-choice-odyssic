@@ -14,11 +14,12 @@
     border: dashed white 6px;
     text-align: center;
     border-radius: 25px;
-    justify-content: center;
     padding: 25px;
     padding-top: 65px;
-    position: relative;
     border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: -1;
 }
 
 .last-card:hover {
@@ -176,6 +177,7 @@ h1 {
     font-family: "Amatic SC", cursive;
     color: white;
     text-align: center;
+    padding: 1rem;
 }
 
 h2 {
@@ -203,9 +205,6 @@ h5 {
     position: absolute;
     height: 300px;
     width: 300px;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
     left: 50% auto;
     right: 50% auto;
 }
@@ -219,6 +218,8 @@ h5 {
     border-radius: 25px;
     /* z-index: 0; */
     position: absolute;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .flip-card-inner {

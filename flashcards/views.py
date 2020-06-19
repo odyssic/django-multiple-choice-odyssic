@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
-from django.contrib.auth.decorators import login_required
 
+from django.contrib.auth.decorators import login_required
+from django.views.generic.base import View
 from .models import Deck, Card
 from .forms import DeckForm, CardForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from users.models import User
 import random
 from django import template
@@ -36,6 +37,10 @@ def index(request):
 
 # defines deck by subject, returns all cards in that deck
 
+class LogoutView(View):
+    def get(self, request):
+        logout(request)
+        return HttpResponseRedirect('/')
 
 @login_required
 def flashcards(request, pk):
