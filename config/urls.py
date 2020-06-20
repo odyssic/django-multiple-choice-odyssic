@@ -11,7 +11,7 @@ from flashcards.views import LogoutView
 urlpatterns = [
     path('', views.index, name='home'),
     path('admin/', admin.site.urls),
-    path('flashcards/<int:pk>', views.flashcards, name='flashcards'),
+    path('flashcards/deck-<int:pk>', views.flashcards, name='flashcards'),
     path('delete-deck/<int:pk>', views.delete_deck, name='delete-deck'),
     path('add-deck/', views.add_deck, name='add-deck'),
     path('deck/<int:pk>/add-card/', views.add_card, name='add-card'),

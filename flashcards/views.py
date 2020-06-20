@@ -45,7 +45,7 @@ class LogoutView(View):
 @login_required
 def flashcards(request, pk):
     deck = Deck.objects.get(pk=pk)
-    cards = Card.object.filter(deck=deck)
+    cards = Card.objects.filter(deck=deck).order_by('?')
     
     print('deck', deck)
     print('cards', cards)
@@ -83,15 +83,16 @@ def add_deck(request):
 
 @login_required
 def add_card(request, pk):
-    deck = get_object_or_404(Deck, pk=pk)
+    # deck = get_object_or_404(Deck, pk=pk)
     if request.method == 'POST':
-        form = CardForm(request.POST, instance=deck)
+        form = CardForm(request.POST)
+
         if form.is_valid():
             card = form.save()
             return redirect("home")
     else:
         form = CardForm()
-    return render(request, 'core/add_card.html', {'form': form, 'pk':pk, 'deck': deck})
+    return render(request, 'core/add_card.html', {'form': form, 'pk':pk})
 
 
 @login_required
