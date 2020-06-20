@@ -15,7 +15,7 @@ class Deck(models.Model):
         User, null=True, related_name='decks', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.name} {self.subject}'
+        return f'{self.name} {self.subject} {self.description}'
 
 
 class Card(models.Model):
@@ -26,7 +26,7 @@ class Card(models.Model):
     answer = models.CharField(max_length=300)
 
     def __str__(self):
-        return f'{self.question} {self.answer}'
+        return f'{self.deck} {self.question} {self.answer}'
 
 
 class Interval(models.Model):
