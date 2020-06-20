@@ -5,7 +5,7 @@
 
     <div class='add-deck'>
         <a href={% url 'add-deck' %}>
-            <h2>Add Deck</h2>
+            <h2>Create Deck</h2>
         </a>
     </div>
     {% for deck in decks %}
@@ -13,13 +13,16 @@
     <div class="deck">
         <h2>{{deck.subject}}</h2>
         <div class='minilinks-container'>
-            <a class='minilinks' href={% url 'add-card' %}>Add Cards</a>
-            <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %}>Delete Deck</a>
+            <a class='minilinks' href={% url 'add-card' pk=deck.pk %}>Add Cards</a>
+
+            <a href={% url 'delete-deck' pk=deck.pk %}><i class="far fa-times-circle"></i></a>
             <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Practice</a>
         </div>
 
     </div>
     {% endfor %}
 </div>
+
+<script defer src="{% static 'js/index.js' %}"></script>
 
 {% endblock %}

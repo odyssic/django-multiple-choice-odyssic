@@ -4,34 +4,28 @@
 {% load static %}
 
 <head>
-    <script defer src="{% static 'js/flashcards.js' %}"></script>
+    <script src="https://kit.fontawesome.com/5101f599d9.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{% static 'CSS/styles.css' %}" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Londrina+Outline&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
     <title>Decks</title>
 </head>
 <header>
     <div class="banner">
-        <a href={ % url 'home' %}>
-            <p class="banner-heading">Flash Cards</p>
-        </a>
-        <div class="button-container">
-            <a class='navlinks' href={% url 'home' %}>Home</a>
-            <a class='navlinks' href={% url "home" %}> Subjects </a>
-            <div class="navlinks"> Progress </div>
-
-        </div>
+        <a class='banner-heading ' href={% url 'home' %}>Flash Cards</a>
     </div>
+
 </header>
 
 <body>
     {% if user.is_authenticated %}
-    <div class='login-text'>
-        <p>Logged in as {{request.user}} | <a href='logout'>logout</a></p>
+    <div class='login-text '>
+        <p>Logged in as {{request.user}} | <a href='logout '>logout</a></p>
 
         {% else %}
 

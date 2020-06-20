@@ -1,14 +1,20 @@
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
+    margin-left: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: gray;
 }
 
-.login-text {
-    padding: 1rem;
-    color: white;
+:root {
+    --white: #fff;
+    --accent: red;
+    --dark-red: rgb(173, 55, 81);
+    --background-color: rgb(58, 66, 109);
+    --default-text: gray;
+    --dark-gray: #595959;
+    --green-gray: #808f85;
+    --default-fonts: "Saira Condensed", sans-serif;
 }
 
 .last-card {
@@ -28,8 +34,8 @@
 }
 
 .last-card:hover {
-    color: rgb(177, 30, 30) 6px;
-    border: dashed rgb(177, 30, 30) 6px;
+    color: var(--dark-red) 6px;
+    border: dashed var(--dark-red) 6px;
     cursor: pointer;
 }
 
@@ -43,6 +49,7 @@ button {
     margin-left: auto;
     padding-left: auto;
     padding-right: auto;
+    padding-bottom: 200px;
 }
 
 .card-nav-button {
@@ -50,16 +57,9 @@ button {
     margin: 100x;
 }
 
-
-/* $color1: rgba(13, 27, 30, 1);
-$color2: rgba(248, 255, 255, 1);
-$color3: rgba(131, 180, 223, 1);
-$color4: rgba(3, 64, 145, 1);
-$color5: rgba(156, 220, 244, 1); */
-
 a:link {
     text-decoration: none;
-    color: none;
+    color: white;
 }
 
 a:visited {
@@ -76,20 +76,38 @@ a:active {
     color: red;
 }
 
-
-/* google handwritten script */
-
-
-/* font-family: 'Amatic SC', cursive; */
-
-
-/* font-family: 'Londrina Outline', cursive; */
+.banner {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .banner-heading {
-    font-family: "Londrina Outline", cursive;
-    font-size: 500%;
+    font-family: "Raleway", sans-serif;
+    font-size: 300%;
     color: white;
     text-align: center;
+    margin-left: 60px;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: pink;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: pink;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: pink;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: pink;
 }
 
 .button-container {
@@ -165,7 +183,7 @@ button {
     font-size: 16px;
     letter-spacing: 1px;
     margin-top: 1rem;
-    background: #ff5a5f;
+    background: var(--dark-red);
     width: 100%;
     color: #fff;
     border: solid 1px #ff5a5f;
@@ -175,6 +193,7 @@ button {
 
 body {
     background-color: rgb(58, 66, 109);
+    /* margin-left: 50px; */
 }
 
 .minilinks-container {
@@ -235,6 +254,8 @@ h2 {
     font-family: Arial, Helvetica, sans-serif;
     color: white;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h3,
@@ -255,6 +276,7 @@ p {
     width: 300px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
 }
 
 .flip-card {
@@ -297,7 +319,7 @@ p {
 
 .flip-card-front {
     background-color: rgb(173, 55, 81);
-    border: solid rgb(177, 30, 30) 6px;
+    border: solid rgb(173, 30, 30) 6px;
     color: black;
     border-radius: 25px;
 }
@@ -329,7 +351,8 @@ p {
     border-radius: 25px;
     justify-content: center;
     padding: 25px;
-    padding-top: 65px;
+    padding-top: 35px;
+    padding-bottom: 65px;
     margin: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -345,19 +368,10 @@ p {
     margin-left: auto;
     margin-right: auto;
     width: 800px;
-    /* justify-content: flex-start;
-    align-items: center; */
-    /* border: solid red 2px; */
-    /* right: 0;
-    left: 0;
-    top: 0;
-    bottom: 0; */
-    /* height: auto;
-    width: auto; */
+    flex: 1;
 }
 
 .deck {
-    flex-flow: row wrap;
     color: rgb(42, 59, 85);
     font-family: sans-serif;
     height: 200px;
@@ -371,6 +385,6 @@ p {
     align-content: center;
     vertical-align: middle;
     padding: 25px;
-    padding-top: 65px;
+    padding-top: 35px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }

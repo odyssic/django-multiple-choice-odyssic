@@ -45,8 +45,8 @@ class LogoutView(View):
 @login_required
 def flashcards(request, pk):
     deck = Deck.objects.get(pk=pk)
-    cards = deck.cards.all().order_by('?')
-
+    cards = deck.cards.all()
+    
     return render(request, "core/flashcards.html", {'deck': deck, 'cards': cards, 'pk': pk})
 
 
@@ -66,26 +66,31 @@ def delete_card(request, pk):
 
 @login_required
 def add_deck(request):
+    
     if request.method == 'POST':
         form = DeckForm(request.POST)
+        
         if form.is_valid():
             deck = form.save()
-            return redirect("add-card")
+            # pk = form.cleaned_data['deck'].pk
+
+            return redirect("home")
     else:
         form = DeckForm()
     return render(request, 'core/add_deck.html', {'form': form})
 
 
 @login_required
-def add_card(request):
+def add_card(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
     if request.method == 'POST':
-        form = CardForm(request.POST)
+        form = CardForm(request.POST, instance=deck)
         if form.is_valid():
             card = form.save()
             return redirect("home")
     else:
         form = CardForm()
-    return render(request, 'core/add_card.html', {'form': form})
+    return render(request, 'core/add_card.html', {'form': form, 'pk':pk, 'deck': deck})
 
 
 @login_required
@@ -111,7 +116,7 @@ def edit_card(request, pk):
 #     random.shuffle(shuffled_cards)
 #     return shuffled_cards
 
-# def add_card()
+
 @login_required
 def login_request(request):
     if request.method == 'POST':

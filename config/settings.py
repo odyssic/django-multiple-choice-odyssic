@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'registration',
     # 'django-heroku',
     'django.contrib.admin',
+    'fontawesome_5',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',

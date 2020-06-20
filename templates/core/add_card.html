@@ -1,11 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 
-<form class="form" action="" method="post">
+<h3> Add Cards to the Deck '{{deck.name}}'</h3>
+
+<button class="form" action="" method="post">
     {% csrf_token %}
     <table class="form">
         {{ form.as_table}}
     </table>
-    <input type="submit" value="Add Card" />
+    <button type="submit">Add</button>
 </form>
 
 {% endblock %}

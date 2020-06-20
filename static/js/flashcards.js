@@ -31,6 +31,10 @@ function arrangeCards() {
 
 window.onload = arrangeCards();
 
+function revealDiv() {
+    x.classlist.remove("hidden");
+}
+
 function nextCard() {
     showLastCardButton();
     let cards = document.querySelectorAll(".card-container");

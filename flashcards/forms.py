@@ -16,7 +16,7 @@ class CardForm(forms.ModelForm):
 
     class Meta:
         model = Card
-        fields = ('card', 'question', 'answer')
+        fields = ('deck','question', 'answer')
 
 
 class NewUserForm(UserCreationForm):

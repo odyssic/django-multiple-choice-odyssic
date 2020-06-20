@@ -2,7 +2,7 @@
 <script defer src="{% static 'js/flashcards.js' %}"></script>
 {% endblock %} {% block content %}
 <h1>{{deck.subject}}</h1>
-<div class='fliplink-container'>
+<div class='flipl deck-container'>
     <div class='fliplink' id="last">Last</div>
     <div ID="next" class='fliplink'>Next</div>
 
@@ -44,5 +44,7 @@
     {% endfor %}
 
 </div>
+
+<script defer src="{% static 'js/flashcards.js' %}"></script>
 
 {% endblock %}
