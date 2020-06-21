@@ -35,21 +35,26 @@ function revealDiv() {
     x.classlist.remove("hidden");
 }
 
+const lastCardMenu = document.getElementById("last-card");
+
+function finalCard() {
+    lastCardMenu.classList.remove("hidden");
+}
+
 function nextCard() {
-    // showLastCardButton();
     let cards = document.querySelectorAll(".card-container");
-    console.log("cards type", typeof cards);
-    // topCard = cards.slice(-1).pop();
     let length = cards.length;
-    console.log(length);
     let topCard = cards[length - 1];
-    while (length > 0) {
+    if (length > 0) {
         topCard.classList.add("hidden");
         topCard.classList.remove("card-container");
         console.log("topCard", topCard);
-    }
-    console.log("no more cards");
+        console.log("length", length);
+    } else {
+        lastCard();
 
+        console.log("while loop ended");
+    }
     return cards;
 }
 
