@@ -10,6 +10,7 @@ import random
 from django import template
 from django.views.decorators.http import require_http_methods, require_POST
 from .forms import NewUserForm
+from django.contrib import messages
 
 
 @login_required
@@ -35,12 +36,10 @@ def index(request):
 
     return render(request, "core/index.html", {'users': users, 'decks': decks})
 
-# defines deck by subject, returns all cards in that deck
-
-class LogoutView(View):
-    def get(self, request):
-        logout(request)
-        return HttpResponseRedirect('/')
+def logout_request(request):
+    logout(request)
+    messages.info(request, "Logged out successfully!")
+    return redirect("/")
 
 @login_required
 def flashcards(request, pk):

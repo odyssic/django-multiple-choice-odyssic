@@ -15,7 +15,9 @@
         <div class='minilinks-container'>
             <a class='minilinks' href={% url 'add-card' pk=deck.pk %}>Add Cards</a>
 
-            <a href={% url 'delete-deck' pk=deck.pk %}><i class="far fa-times-circle"></i></a>
+            <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %} onclick="return confirm('Are you sure you want to delete this project? Deleting a project cannot be undone.')">Delete Deck</a>
+
+
             <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Practice</a>
         </div>
 
