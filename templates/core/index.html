@@ -10,12 +10,12 @@
     </div>
     {% for deck in decks %}
 
-    <div class="deck">
+    <div class="deck wiggle-me">
         <h2>{{deck.subject}}</h2>
-        <div class='minilinks-container'>
+        <div class='minilinks-container hidden'>
             <a class='minilinks' href={% url 'add-card' pk=deck.pk %}>Add Cards</a>
 
-            <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %} onclick="return confirm('Are you sure you want to delete this project? Deleting a project cannot be undone.')">Delete Deck</a>
+            <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %} onclick="return confirm('Are you sure you want to delete this deck? Deleting a deck cannot be undone.')">Delete Deck</a>
 
 
             <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Practice</a>

@@ -1,11 +1,10 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <h1>{{deck.subject}}</h1>
-<h2> {{deck.name}}</h2>
-
+{% if cards %}
 <div class='fliplink-container'>
-    <div class='fliplink' id="last">Last</div>
+    <div class='fliplink hidden' id="last">Last</div>
     <div ID="next" class='fliplink'>Next</div>
-
+    {% endif %}
 </div>
 <div class='full-deck'>
     <div id='last-card' class='last-card hidden'>
@@ -13,7 +12,7 @@
         <ul class='ul'>
             <li><a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Go Again.</a></li>
             <li><a class='minilinks' href={% url 'home' %}>Choose Another Deck</a></li>
-            <li><a class='minilinks' href={% url 'delete-deck' pk=deck.pk %}>Delete Deck</a></li>
+            <li><a class='minilinks' href={% url 'delete-deck' pk=deck.pk %} onclick="return confirm('Are you sure you want to delete this deck? Deleting a deck cannot be undone.')">Delete Deck</a></li>
         </ul>
     </div>
     {% if cards %} {% for card in cards %}
@@ -40,10 +39,10 @@
         </div>
     </div>
     {% endfor %} {% else %}
-    <p>You have no cards in this deck. Add some.
-    </p>
-
+    <p>You have no cards in this deck. </br>
+        <a class='minklinks' href={% url 'add-card' %}>Add Cards</a> | <a class='minilinks' href={% url 'home' pk=deck.pk %}>Back to Decks.</a> </p>
     {% endif %}
+
 </div>
 
 <script defer src="{% static 'js/flashcards.js' %}"></script>

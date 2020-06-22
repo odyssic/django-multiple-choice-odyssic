@@ -42,26 +42,31 @@ function finalCard() {
 }
 
 function nextCard() {
+    showLastCardButton();
     let cards = document.querySelectorAll(".card-container");
     let length = cards.length;
     let topCard = cards[length - 1];
-    if (length > 0) {
+    if (length > 1) {
         topCard.classList.add("hidden");
         topCard.classList.remove("card-container");
         console.log("topCard", topCard);
         console.log("length", length);
     } else {
+        topCard.classList.add("hidden");
+        topCard.classList.remove;
         lastCard();
+        nextCardButton.classList.add("hidden");
+        lastCardButton.classList.add("hidden");
 
         console.log("while loop ended");
     }
     return cards;
 }
 
-// function showLastCardButton() {
-//     lastCardButton.classList.remove("hidden");
-//     lastCardButton.classList.add("fliplink");
-// }
+function showLastCardButton() {
+    lastCardButton.classList.remove("hidden");
+    lastCardButton.classList.add("fliplink");
+}
 
 function lastCard() {
     topCard = document.querySelector(".hidden");

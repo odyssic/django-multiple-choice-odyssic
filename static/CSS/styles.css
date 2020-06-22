@@ -7,22 +7,39 @@
 }
 
 :root {
-    --white: #fff;
+    --link-color: #fff;
+    --link-hover: red;
+    --link-active: red;
+    --minilink: #fff;
+    --minilink-hover: red;
+    --card-text-color: #fff;
+    --text-color: #fff;
+    --box-shadow: rgba(0, 0, 0, 0.2);
+    --form-background: #fff;
+    --form-text: #484848;
+    --form-input-border: #e5e5e5;
     --accent: red;
+    --button-border: #ff5a5f;
+    --button-text-color: #fff;
+    --button-background: rgb(173, 55, 81);
+    --card-outline: rgb(138, 60, 60);
     --dark-red: rgb(173, 55, 81);
+    --card-front: rgb(173, 55, 81);
+    --link-color: rgb(120, 149, 222);
     --background-color: rgb(58, 66, 109);
     --default-text: gray;
-    --dark-gray: #595959;
-    --green-gray: #808f85;
+    --last-card: rgb(42, 59, 85);
+    /* Fonts  */
     --default-fonts: "Saira Condensed", sans-serif;
+    --navlinks: "Londrina Outline", cursive;
 }
 
 .last-card {
-    color: rgb(42, 59, 85);
+    color: var(--last-card);
     font-family: sans-serif;
     height: 300px;
     width: 300px;
-    border: dashed white 6px;
+    border: dashed var(--text-color) 6px;
     text-align: center;
     border-radius: 25px;
     padding: 25px;
@@ -59,7 +76,7 @@ button {
 
 a:link {
     text-decoration: none;
-    color: white;
+    color: var(--link-color);
 }
 
 a:visited {
@@ -68,12 +85,12 @@ a:visited {
 
 a:hover {
     text-decoration: none;
-    color: red;
+    color: var(--link-hover);
 }
 
 a:active {
     text-decoration: none;
-    color: red;
+    color: var(--link-active);
 }
 
 .banner {
@@ -90,26 +107,6 @@ a:active {
     margin-left: 60px;
 }
 
-::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: pink;
-}
-
-::-moz-placeholder {
-    /* Firefox 19+ */
-    color: pink;
-}
-
-:-ms-input-placeholder {
-    /* IE 10+ */
-    color: pink;
-}
-
-:-moz-placeholder {
-    /* Firefox 18- */
-    color: pink;
-}
-
 .button-container {
     display: flex;
     flex-flow: row nowrap;
@@ -122,9 +119,9 @@ a:active {
 }
 
 .navlinks {
-    font-family: "Londrina Outline", cursive;
+    font-family: var(--navlinks);
     font-size: 300%;
-    color: rgb(120, 149, 222);
+    color: var(--link-color);
 }
 
 .ul {
@@ -146,17 +143,17 @@ a:active {
 }
 
 .fliplink:hover {
-    color: red;
+    color: var(--accent);
     cursor: pointer;
 }
 
 form {
-    background: #fff;
+    background: var(--form-background);
     max-width: 441px;
     margin: 0 auto;
     padding: 2rem;
     border-radius: 0.25rem;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 16px 40px var(--box-shadow);
 }
 
 form input,
@@ -166,10 +163,10 @@ textarea {
     margin: 0.5rem 0;
     font-size: 16px;
     padding: 5px;
-    border: solid 1px #e5e5e5;
+    border: solid 1px var(--form-input-border);
     font-weight: 400;
     border-radius: 0.25rem;
-    color: #484848;
+    color: var(--form-text);
     font-family: "Oswald";
     letter-spacing: 1px;
 }
@@ -183,17 +180,16 @@ button {
     font-size: 16px;
     letter-spacing: 1px;
     margin-top: 1rem;
-    background: var(--dark-red);
+    background: var(--button-background);
     width: 100%;
-    color: #fff;
-    border: solid 1px #ff5a5f;
+    color: var(--button-text-color);
+    border: solid 1px var(--button-border);
     border-radius: 0.25rem;
     cursor: pointer;
 }
 
 body {
-    background-color: rgb(58, 66, 109);
-    /* margin-left: 50px; */
+    background-color: var(--background-color);
 }
 
 .minilinks-container {
@@ -207,13 +203,13 @@ body {
 
 .minilinks {
     font-family: "Amatic SC", cursive;
-    color: white;
+    color: var(--minilink);
     padding: 10px;
     font-size: 125%;
 }
 
 .minilinks:hover {
-    color: red;
+    color: var(--minilink-hover);
     cursor: pointer;
 }
 
@@ -227,7 +223,7 @@ body {
 
 .cardText {
     font-family: "Amatic SC", cursive;
-    color: white;
+    color: var(--card-text-color);
     font-size: 200%;
     text-align: center;
     /* padding-top: 45px; */
@@ -245,14 +241,14 @@ body {
 
 h1 {
     font-family: "Amatic SC", cursive;
-    color: white;
+    color: var(--text-color);
     text-align: center;
     padding: 1rem;
 }
 
 h2 {
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: var(--text-color);
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -262,12 +258,12 @@ h3,
 h4,
 h5 {
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: var(--text-color);
 }
 
 p {
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: var(--text-color);
 }
 
 .card-container {
@@ -299,7 +295,7 @@ p {
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 var(--box-shadow);
     border-radius: 25px;
 }
 
@@ -318,8 +314,8 @@ p {
 }
 
 .flip-card-front {
-    background-color: rgb(173, 55, 81);
-    border: solid rgb(173, 30, 30) 6px;
+    background-color: var(--card-front);
+    border: solid var(--card-outline) 6px;
     color: black;
     border-radius: 25px;
 }
@@ -332,14 +328,8 @@ p {
     border-radius: 25px;
 }
 
-.button {
-    background-color: blue;
-    -webkit-appearance: none;
-    width: 75px;
-    height: 22px;
-    padding: 1rem;
-    margin: 2rem;
-}
+
+/*   */
 
 .add-deck {
     color: rgb(42, 59, 85);
@@ -371,6 +361,61 @@ p {
     flex: 1;
 }
 
+@-ms-keyframes wiggle {
+    0% {
+        -ms-transform: rotate(3deg);
+    }
+    50% {
+        -ms-transform: rotate(-3deg);
+    }
+    100% {
+        -ms-transform: rotate(3deg);
+    }
+}
+
+@-moz-keyframes wiggle {
+    0% {
+        -moz-transform: rotate(3deg);
+    }
+    50% {
+        -moz-transform: rotate(-3deg);
+    }
+    100% {
+        -moz-transform: rotate(3deg);
+    }
+}
+
+@-webkit-keyframes wiggle {
+    0% {
+        -webkit-transform: rotate(3deg);
+    }
+    50% {
+        -webkit-transform: rotate(-3deg);
+    }
+    100% {
+        -webkit-transform: rotate(3deg);
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        transform: rotate(3deg);
+    }
+}
+
+.wiggle-me:hover {
+    -ms-animation: wiggle 0.3s 2;
+    -moz-animation: wiggle 0.3s 2;
+    -webkit-animation: wiggle 0.3s 2;
+    animation: wiggle 0.3s 2;
+}
+
 .deck {
     color: rgb(42, 59, 85);
     font-family: sans-serif;
@@ -386,5 +431,5 @@ p {
     vertical-align: middle;
     padding: 25px;
     padding-top: 35px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 var(--box-shadow);
 }

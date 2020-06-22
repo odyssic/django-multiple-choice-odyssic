@@ -82,7 +82,6 @@ def add_deck(request):
 
 @login_required
 def add_card(request, pk):
-    # deck = get_object_or_404(Deck, pk=pk)
     if request.method == 'POST':
         form = CardForm(request.POST)
 
@@ -93,6 +92,14 @@ def add_card(request, pk):
         form = CardForm()
     return render(request, 'core/add_card.html', {'form': form, 'pk':pk})
 
+def add_card_from_deck(request, pk):
+    if request.method == 'POST':
+        form = CardForm(request.POST)
+        
+        if form.is_valid():
+            card = form.save()
+            return HttpResponsePermanentRedirect(request.META.get('HTTP_REFERER', '/'))
+    
 
 @login_required
 def edit_card(request, pk):
@@ -109,14 +116,6 @@ def edit_card(request, pk):
             form = CardForm(instance=card)
 
         return render(request, 'core/edit_card.html', {'form': form})
-
-
-# @register.filter
-# def shuffle(cards):
-#     shuffled_cards = list(cards)[:]
-#     random.shuffle(shuffled_cards)
-#     return shuffled_cards
-
 
 @login_required
 def login_request(request):
