@@ -1,26 +1,24 @@
-console.log("index js working");
-
-const deck = document.querySelector(".deck");
-
-const deleteButton = document.getElementById("delete-deck");
-
-deleteButton.addEventListener("click", function(event) {
-    confirmDelete();
-});
-
-function confirmDelete() {
-    return confirm("Are you sure you want to delete this item?");
-}
+const deck = document.querySelectorAll(".deck");
+console.log(deck);
+console.log("type of ", typeof deck);
+console.log(deck.children);
 
 deck.addEventListener("mouseover", function(event) {
-    revealButtons();
+    showMenu();
 });
 
-function revealButtons() {
-    document.querySelector(".minilinks-container").classlist.remove("hidden");
+deck.addEventListener("mouseout", function(event) {
+    hideMenu();
+});
+
+const deckLinks = document.querySelector(".minilinks-container");
+
+function showMenu() {
+    deckLinks.classList.remove("hidden");
+    console.log("showmenu ran");
 }
 
-item.addEventListener("mouseover", func, false);
-item.addEventListener("mouseout", func1, false);
-
-console.log("deck", deck);
+function hideMenu() {
+    deckLinks.classList.add("hidden");
+    console.log("hideMenu ran");
+}

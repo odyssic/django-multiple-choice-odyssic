@@ -3,14 +3,14 @@
 <h2>Your Decks</h2>
 <div class="deck-container">
 
-    <div class='add-deck'>
+    <div class='add-deck wiggle-me'>
         <a href={% url 'add-deck' %}>
             <h2>Create Deck</h2>
         </a>
     </div>
     {% for deck in decks %}
 
-    <div class="deck wiggle-me">
+    <div pk='{{deck.pk}}' class="deck wiggle-me">
         <h2>{{deck.subject}}</h2>
         <div class='minilinks-container hidden'>
             <a class='minilinks' href={% url 'add-card' pk=deck.pk %}>Add Cards</a>
