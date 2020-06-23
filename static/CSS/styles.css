@@ -34,6 +34,10 @@
     --navlinks: "Londrina Outline", cursive;
 }
 
+.larger-icon {
+    font-size: 4em;
+}
+
 .last-card {
     color: var(--last-card);
     font-family: sans-serif;
@@ -42,11 +46,11 @@
     border: dashed var(--text-color) 6px;
     text-align: center;
     border-radius: 25px;
-    padding: 25px;
     padding-top: 25px;
     border-radius: 25px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 100px;
     z-index: -1;
 }
 
@@ -307,6 +311,9 @@ p {
     border-radius: 25px;
 }
 
+
+/* need to add to flip card and flip-card-inner */
+
 .flip-with-js {
     transform: rotateY(180deg);
 }
@@ -340,9 +347,6 @@ p {
     transform: rotateY(180deg);
     border-radius: 25px;
 }
-
-
-/*   */
 
 .add-deck {
     color: rgb(42, 59, 85);

@@ -1,12 +1,42 @@
 console.log("hi");
 
+const flipButton = document.getElementById("flip-button");
+
+flipButton.addEventListener("click", function(event) {
+    flipTopCard();
+});
+
+function flipTopCard() {
+    console.log("flip top card ran");
+    let cards = document.querySelectorAll(".card-container");
+    let length = cards.length;
+    let topCard = cards[length - 1];
+    if (length > 1) {
+        let topCardChild = topCard.firstElementChild;
+        console.log("topCardChild", topCardChild);
+        let innerCard = topCardChild.children[0].classList.add("flip-with-js");
+        console.log("innerCard", innerCard);
+        // topCard.classlist.add("flip-with-js");
+        // topCard.classList.add("hidden");
+        // topCard.classList.remove("card-container");
+        console.log("topCard", topCard);
+        console.log("length", length);
+    } else {
+        topCard.classList.add("hidden");
+        topCard.classList.remove;
+        lastCard();
+        nextCardButton.classList.add("hidden");
+        lastCardButton.classList.add("hidden");
+    }
+    return topCard, cards;
+}
+
 function $(selector) {
     return document.querySelector(selector);
 }
 
 const nextCardButton = document.querySelector("#next");
 const lastCardButton = $("#last");
-const flipButton = document.getElementById("flip-button");
 
 nextCardButton.addEventListener("click", function(event) {
     nextCard();
@@ -16,7 +46,7 @@ lastCardButton.addEventListener("click", function(event) {
     lastCard();
 });
 
-// sets z index for all loaded cards on page
+// sets z index for all loaded cards on page and get top card
 
 function arrangeCards() {
     console.log("arrangeCards ran");
@@ -62,14 +92,6 @@ function nextCard() {
         console.log("while loop ended");
     }
     return topCard, cards;
-}
-
-flipButton.addEventListener("click", function(event) {
-    flipCard(topCard);
-});
-
-function flipCard(topCard) {
-    topCard.classlist.add("flip-with-js");
 }
 
 function showLastCardButton() {
