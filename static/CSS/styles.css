@@ -56,10 +56,6 @@
     cursor: pointer;
 }
 
-button {
-    -webkit-appearance: none;
-}
-
 .full-deck {
     width: 300px;
     margin-right: auto;
@@ -167,12 +163,16 @@ textarea {
     font-weight: 400;
     border-radius: 0.25rem;
     color: var(--form-text);
-    font-family: "Oswald";
+    font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
 }
 
 textarea {
     height: 5rem;
+}
+
+::placeholder {
+    color: var(--form-text);
 }
 
 button {
@@ -186,6 +186,7 @@ button {
     border: solid 1px var(--button-border);
     border-radius: 0.25rem;
     cursor: pointer;
+    -webkit-appearance: none;
 }
 
 body {
@@ -259,6 +260,7 @@ h4,
 h5 {
     font-family: Arial, Helvetica, sans-serif;
     color: var(--text-color);
+    text-align: center;
 }
 
 p {

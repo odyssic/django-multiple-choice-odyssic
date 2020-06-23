@@ -12,7 +12,7 @@
 
     <div pk='{{deck.pk}}' class="deck wiggle-me">
         <h2>{{deck.subject}}</h2>
-        <div class='minilinks-container hidden'>
+        <div class='minilinks-container'>
             <a class='minilinks' href={% url 'add-card' pk=deck.pk %}>Add Cards</a>
 
             <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %} onclick="return confirm('Are you sure you want to delete this deck? Deleting a deck cannot be undone.')">Delete Deck</a>
@@ -27,7 +27,10 @@
 
 <script defer src="{% static 'js/index.js' %}"></script>
 
-<p>Hello World: {{ display }}</p>
+<h1>Vue Demo #1</h1>
+<div id="vapp">
+    <p>Hello World {{display}}.</p>
+</div>
 
 <script>
     const vueApp = new Vue({

@@ -12,6 +12,8 @@ from django.views.decorators.http import require_http_methods, require_POST
 from .forms import NewUserForm
 from django.contrib import messages
 
+# =======================AUTHENTICATION========================
+
 
 @login_required
 def my_view(request):
@@ -28,6 +30,34 @@ def my_view(request):
     else:
         return render('Nope. Invalid Login Credentials')
 
+@login_required
+def login_request(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request=request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"You are now logged in as {username}")
+                return redirect('/')
+            else:
+                messages.error(request, "Invalid username or password.")
+        else:
+            messages.error(request, "Invalid username or password.")
+    form = AuthenticationForm()
+    return render(request=request,
+                  template_name="flashcards/login.html",
+                  context={"form": form})
+
+def logout_request(request):
+    logout(request)
+    messages.info(request, "Logged out successfully!")
+    return redirect("/")
+
+
+# =======================CARDS FUNCTIONALITY========================
 
 @login_required
 def index(request):
@@ -36,33 +66,12 @@ def index(request):
 
     return render(request, "core/index.html", {'users': users, 'decks': decks})
 
-def logout_request(request):
-    logout(request)
-    messages.info(request, "Logged out successfully!")
-    return redirect("/")
-
 @login_required
 def flashcards(request, pk):
     deck = Deck.objects.get(pk=pk)
     cards = Card.objects.filter(deck=deck).order_by('?')
     
-    print('deck', deck)
-    print('cards', cards)
     return render(request, "core/flashcards.html", {'deck': deck, 'cards':cards, 'pk': pk})
-
-
-# @login_required
-def delete_deck(request, pk):
-    deck = get_object_or_404(Deck, pk=pk)
-    deck.delete()
-    return redirect('home')
-
-
-# @login_required
-def delete_card(request, pk):
-    card = get_object_or_404(Card, pk=pk)
-    card.delete()
-    return redirect('flashcards', pk)
 
 
 @login_required
@@ -72,13 +81,20 @@ def add_deck(request):
         form = DeckForm(request.POST)
         
         if form.is_valid():
+            # deckpk = form.cleaned_data['deck'].pk
             deck = form.save()
-
-            return redirect("home")
+            print('deck', deck)
+            print('deck.pk', deck.pk)
+            return redirect("flashcards", deck.pk)
     else:
         form = DeckForm()
     return render(request, 'core/add_deck.html', {'form': form})
 
+@login_required
+def delete_deck(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
+    deck.delete()
+    return redirect('home')
 
 @login_required
 def add_card(request, pk):
@@ -90,7 +106,14 @@ def add_card(request, pk):
             return redirect("home")
     else:
         form = CardForm()
-    return render(request, 'core/add_card.html', {'form': form, 'pk':pk})
+    return render(request, 'core/add_card.html', {'form': form, 'pk': pk})
+    
+@login_required
+def delete_card(request, pk):
+    card = get_object_or_404(Card, pk=pk)
+    card.delete()
+    return redirect('flashcards', pk)
+
 
 def add_card_from_deck(request, pk):
     if request.method == 'POST':
@@ -116,24 +139,3 @@ def edit_card(request, pk):
             form = CardForm(instance=card)
 
         return render(request, 'core/edit_card.html', {'form': form})
-
-@login_required
-def login_request(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request=request, data=request.POST)
-        if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            if user is not None:
-                login(request, user)
-                messages.info(request, f"You are now logged in as {username}")
-                return redirect('/')
-            else:
-                messages.error(request, "Invalid username or password.")
-        else:
-            messages.error(request, "Invalid username or password.")
-    form = AuthenticationForm()
-    return render(request=request,
-                  template_name="flashcards/login.html",
-                  context={"form": form})
