@@ -18,12 +18,6 @@ class DeckForm(forms.ModelForm):
             "rows":20, "cols":20})
             }
 
-# class MyForm(forms.ModelForm):
-#     class Meta:
-#         model = User
-       
-#              ..........
-#         }
 
 # class LoginForm(forms.Form):
 #     username = forms.CharField(label='username')

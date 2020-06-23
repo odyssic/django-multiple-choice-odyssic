@@ -15,7 +15,7 @@ class Deck(models.Model):
         User, null=True, related_name='decks', on_delete=models.CASCADE)
 
     def __str__(self):
-        return f'{self.name} {self.subject} {self.description}'
+        return f'{self.name} {self.subject}'
 
 
 class Card(models.Model):

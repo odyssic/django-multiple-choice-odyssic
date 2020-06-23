@@ -100,7 +100,7 @@ def delete_deck(request, pk):
 def add_card(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
     if request.method == 'POST':
-        form = CardForm(request.POST, instance=deck)
+        form = CardForm(request.POST)
 
         if form.is_valid():
             card = form.save()
