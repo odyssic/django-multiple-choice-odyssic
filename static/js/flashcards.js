@@ -6,6 +6,7 @@ function $(selector) {
 
 const nextCardButton = document.querySelector("#next");
 const lastCardButton = $("#last");
+const flipButton = document.getElementById("flip-button");
 
 nextCardButton.addEventListener("click", function(event) {
     nextCard();
@@ -60,7 +61,15 @@ function nextCard() {
 
         console.log("while loop ended");
     }
-    return cards;
+    return topCard, cards;
+}
+
+flipButton.addEventListener("click", function(event) {
+    flipCard(topCard);
+});
+
+function flipCard(topCard) {
+    topCard.classlist.add("flip-with-js");
 }
 
 function showLastCardButton() {
