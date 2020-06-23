@@ -6,8 +6,8 @@ from users.models import User
 
 
 class Deck(models.Model):
-    name = models.CharField(max_length=60)
-    subject = models.CharField(max_length=60)
+    name = models.CharField(max_length=40)
+    subject = models.CharField(max_length=40)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     description = models.TextField(max_length = 300, default = '')
