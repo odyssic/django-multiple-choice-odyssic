@@ -8,9 +8,9 @@ from users.models import User
 class Deck(models.Model):
     name = models.CharField(max_length=60)
     subject = models.CharField(max_length=60)
-    # created_at = models.DateTimeField(auto_now_add=True)
-    # updated_at = models.DateTimeField(auto_now=True)
-    description = models.TextField(max_length = 300, default = 'Add a Description')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    description = models.TextField(max_length = 300, default = '')
     user = models.ForeignKey(
         User, null=True, related_name='decks', on_delete=models.CASCADE)
 
@@ -24,6 +24,8 @@ class Card(models.Model):
         'Deck', on_delete=models.CASCADE, default='', related_name='cards')
     question = models.CharField(max_length=300)
     answer = models.CharField(max_length=300)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'{self.deck} {self.question} {self.answer}'

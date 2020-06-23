@@ -39,8 +39,10 @@
         </div>
     </div>
     {% endfor %} {% else %}
-    <p>You have no cards in this deck. </br>
-        <a class='minklinks' href={% url 'add-card' %}>Add Cards</a> | <a class='minilinks' href={% url 'home' pk=deck.pk %}>Back to Decks.</a> </p>
+    <p>You have no cards in this deck. </p>
+    <div>
+        <a class='minilinks' href={% url 'add-card' pk=deck.pk %}>Add Cards</a> | <a class='minilinks' href={% url 'home' %}>Back to Decks.</a>
+    </div>
     {% endif %}
 
 </div>

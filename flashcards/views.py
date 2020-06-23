@@ -98,15 +98,16 @@ def delete_deck(request, pk):
 
 @login_required
 def add_card(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
     if request.method == 'POST':
-        form = CardForm(request.POST)
+        form = CardForm(request.POST, instance=deck)
 
         if form.is_valid():
             card = form.save()
             return redirect("home")
     else:
         form = CardForm()
-    return render(request, 'core/add_card.html', {'form': form, 'pk': pk})
+    return render(request, 'core/add_card.html', {'form': form, 'deck': deck, 'pk': pk})
     
 @login_required
 def delete_card(request, pk):

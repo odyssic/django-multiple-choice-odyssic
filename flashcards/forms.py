@@ -34,31 +34,16 @@ class DeckForm(forms.ModelForm):
 #         super(LoginForm, self).__init__(*args, **kwargs)
 #         self.fields['username'].widget.attrs['placeholder'] = 'username'
 #         self.fields['password '].widget.attrs['placeholder'] = 'password'
-
-# class DeckForm(forms.ModelForm):
-#     name = forms.CharField(label='name', widget=forms.TextInput(attrs={'placeholder': 'Deck Name'}))
-    
-#     subject = forms.CharField(label='subject', widget=forms.TextInput(attrs={'placeholder': 'Deck Subject'}))
-
-#     description = forms.CharField(label='description', widget=forms.TextInput(attrs={'placeholder': 'Deck Description'}))
-
-#     class Meta:
-#         model = Deck
-#         fields = ('name', 'subject', 'description')
-
-#     def save(self, commit=True):
-#         deck = deckForm.save(commit=False)
-#         if commit:
-#             deck.save()
-#         return deck     
-
-
+   
 class CardForm(forms.ModelForm):
 
     class Meta:
         model = Card
         fields = ('deck','question', 'answer')
-
+        widgets = {
+            'question': forms.TextInput(attrs={'placeholder': 'Question | Front of Card', 'autofocus': 'autofocus'}),
+            'answer': forms.TextInput(attrs={'placeholder': 'Answer | Back of Card', 'autofocus': 'autofocus'})}
+               
 
 class NewUserForm(UserCreationForm):
     email = forms.EmailField(required=True)
