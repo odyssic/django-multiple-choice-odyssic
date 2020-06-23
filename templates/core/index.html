@@ -27,4 +27,15 @@
 
 <script defer src="{% static 'js/index.js' %}"></script>
 
+<p>Hello World: {{ display }}</p>
+
+<script>
+    const vueApp = new Vue({
+        el: '#vapp',
+        data: {
+            display: 'redbox'
+        }
+    })
+</script>
+
 {% endblock %}
