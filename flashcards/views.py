@@ -71,7 +71,16 @@ def flashcards(request, pk):
     deck = Deck.objects.get(pk=pk)
     cards = Card.objects.filter(deck=deck).order_by('?')
     
-    return render(request, "core/flashcards.html", {'deck': deck, 'cards':cards, 'pk': pk})
+    return render(request, "core/flashcards.html", {'deck': deck, 'cards': cards, 'pk': pk})
+    
+
+@login_required
+
+def details(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
+    cards = Card.objects.filter(deck=deck)
+
+    return render(request, 'core/details.html', {'deck':deck,'cards':cards, 'pk':pk})
 
 
 @login_required

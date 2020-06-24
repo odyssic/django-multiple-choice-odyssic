@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Decks</title>
 </head>
 <header>
@@ -29,12 +30,13 @@
 <body>
     {% if user.is_authenticated %}
     <div class='login-text '>
-        <p>Logged in as {{request.user}} | <a href={ {url 'logout'}}>logout</a></p>
-
-        {% else %}
-
-        <p> Please Log In </p>
+        <p>Logged in as {{request.user}} | <a href={% url 'logout' %}>logout</a></p>
     </div>
+
+    {% else %}
+
+    <p> Please Log In </p>
+
 
     {% endif %} {% block content %} {% endblock %}
 </body>

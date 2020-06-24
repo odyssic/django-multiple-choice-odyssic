@@ -1,0 +1,10 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+<h1>{{deck.subject}}</h1>
+<h2>{{deck.name}}</h2>
+<h3>{{deck.description}}</h3>
+<p></p>
+<p>Created By: {{Deck.user}} at: {{deck.created_at}}</p>
+<p>Number of Cards: {{cards.length}} {{deck.cards.length}}{{deck.length}}</p>
+{% endblock %}

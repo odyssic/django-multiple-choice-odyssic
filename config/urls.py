@@ -19,7 +19,8 @@ urlpatterns = [
     path('delete-card/<int:pk>', views.delete_card, name='delete-card'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('registration.backends.simple.urls')),
-    path('logout/', views.logout_request, name="logout")
+    path('logout/', views.logout_request, name="logout"),
+    path('deck/<int:pk>/details/', views.details, name='details')
 ]
 
 

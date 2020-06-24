@@ -20,6 +20,8 @@
 
 
             <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Practice</a>
+            <a href={% url 'details' pk=deck.pk %} id='details' class='minilinks'>Details</a>
+            <div class='details'>Description</div>
         </div>
 
     </div>
