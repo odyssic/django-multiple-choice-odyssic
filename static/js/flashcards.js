@@ -1,6 +1,7 @@
 console.log("hi");
 
 const flipButton = document.getElementById("flip-button");
+const flipLinkContainer = document.getElementById("fliplink-container");
 
 flipButton.addEventListener("click", function(event) {
     flipTopCard();
@@ -11,23 +12,14 @@ function flipTopCard() {
     let cards = document.querySelectorAll(".card-container");
     let length = cards.length;
     let topCard = cards[length - 1];
-    if (length > 1) {
-        let topCardChild = topCard.firstElementChild;
-        console.log("topCardChild", topCardChild);
-        let innerCard = topCardChild.children[0].classList.add("flip-with-js");
-        console.log("innerCard", innerCard);
-        // topCard.classlist.add("flip-with-js");
-        // topCard.classList.add("hidden");
-        // topCard.classList.remove("card-container");
-        console.log("topCard", topCard);
-        console.log("length", length);
-    } else {
-        topCard.classList.add("hidden");
-        topCard.classList.remove;
-        lastCard();
-        nextCardButton.classList.add("hidden");
-        lastCardButton.classList.add("hidden");
-    }
+
+    let topCardChild = topCard.firstElementChild;
+    console.log("topCardChild", topCardChild);
+    let innerCard = topCardChild.children[0].classList.add("flip-with-js");
+    console.log("innerCard", innerCard);
+    console.log("topCard", topCard);
+    console.log("length", length);
+
     return topCard, cards;
 }
 
@@ -62,14 +54,14 @@ function arrangeCards() {
 
 window.onload = arrangeCards();
 
-function revealDiv() {
-    x.classlist.remove("hidden");
-}
-
 const lastCardMenu = document.getElementById("last-card");
 
 function finalCard() {
     lastCardMenu.classList.remove("hidden");
+}
+
+function hideFlipMenu() {
+    flipLinkContainer.classList.add("hidden");
 }
 
 function nextCard() {
@@ -86,9 +78,7 @@ function nextCard() {
         topCard.classList.add("hidden");
         topCard.classList.remove;
         lastCard();
-        nextCardButton.classList.add("hidden");
-        lastCardButton.classList.add("hidden");
-
+        hideFlipMenu();
         console.log("while loop ended");
     }
     return topCard, cards;
