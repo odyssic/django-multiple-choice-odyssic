@@ -7,4 +7,16 @@
 <p></p>
 <p>Created By: {{Deck.user}} at: {{deck.created_at}}</p>
 <p>Number of Cards: {{cards.length}} {{deck.cards.length}}{{deck.length}}</p>
+
+
+<h1> Cards </h1>
+
+<div class='detail-container'>
+{% for card in cards %}
+<div class='detail-card'>
+{{card.name}}
+{{card.question}}
+</div> 
+{% endfor %}
+</div> 
 {% endblock %}

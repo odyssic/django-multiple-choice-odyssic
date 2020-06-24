@@ -2,17 +2,10 @@
 {% load static %} 
 {% block content %}
 <h1>{{deck.subject}}</h1>
-<div class='flip-button' id='flip-button'>Flip</div> 
-{% if cards %}
-<div class='fliplink-container'>
-    <i ID='last' class="fas fa-arrow-alt-circle-left larger-icon"></i>
-    <i ID='next' class="fas fa-arrow-alt-circle-right larger-icon"></i>
-    {% endif %}
-</div>
-
+<div class='flash-card-schema-container'>
 <div class='full-deck'>
     <div id='last-card' class='last-card hidden'>
-        <h1 class='fliplink'>The End.</h1>
+        <h1>The End.</h1>
         <ul class='ul'>
             <li><a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Go Again.</a></li>
             <li><a class='minilinks' href={% url 'home' %}>Choose Another Deck</a></li>
@@ -50,6 +43,16 @@
     {% endif %}
 
 </div>
+ 
+{% if cards %}
+<div class='fliplink-container'>
+    <i ID='last' class="fas fa-arrow-alt-circle-left larger-icon"></i>
+    <div class='flip-button' id='flip-button'>Flip</div>
+    <i ID='next' class="fas fa-arrow-alt-circle-right larger-icon"></i>
+    {% endif %}
+</div>
+</div>
+
 
 <script defer src="{% static 'js/flashcards.js' %}"></script>
 
