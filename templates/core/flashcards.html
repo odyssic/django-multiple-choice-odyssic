@@ -1,9 +1,12 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
 <h1>{{deck.subject}}</h1>
-<div class='flip-button' id='flip-button'>Flip</div> {% if cards %}
+<div class='flip-button' id='flip-button'>Flip</div> 
+{% if cards %}
 <div class='fliplink-container'>
-    <div class='fliplink hidden' id="last">Last</div>
-    <div ID="next" class='fliplink'>Next</div>
+    <i ID='last' class="fas fa-arrow-alt-circle-left larger-icon"></i>
+    <i ID='next' class="fas fa-arrow-alt-circle-right larger-icon"></i>
     {% endif %}
 </div>
 

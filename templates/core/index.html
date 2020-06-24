@@ -12,24 +12,26 @@
     {% for deck in decks %}
 
     <div pk='{{deck.pk}}' class="deck wiggle-me">
-        <h2>{{deck.subject}}</h2>
-        <div class='minilinks-container'>
-            <a class='minilinks' href={% url 'add-card' pk=deck.pk %}>Add Cards</a>
-
-            <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %} onclick="return confirm('Are you sure you want to delete this deck? Deleting a deck cannot be undone.')">Delete Deck</a>
-
-
-            <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Practice</a>
-            <a href={% url 'details' pk=deck.pk %} id='details' class='minilinks'>Details</a>
-            <div class='details'>Description</div>
+     <div class="dropdown">
+  <i class="fa fa-bars dropbtn menu-icon" aria-hidden="true"></i>
+  <div class="dropdown-content">
+     <a class='minilinks' href={% url 'add-card' pk=deck.pk %}>Add Cards</a>
+    <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %} onclick="return confirm('Are you sure you want to delete this deck? Deleting a deck cannot be undone.')">Delete Deck</a>
+    <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Practice</a>
+    <a href={% url 'details' pk=deck.pk %} id='details' class='minilinks'>Deck Details</a>
         </div>
+        </div>
+  
+  <h2>{{deck.subject}}</h2>
+  </div>
+  
 
-    </div>
+        
     {% empty %}
-    <h3>You have no decks yet. Create one.</h3>
+    <h3>You have no Decks yet. Create one.</h3>
 
     {% endfor %}
-</div>
+<div/>
 
 <script defer src="{% static 'js/index.js' %}"></script>
 
