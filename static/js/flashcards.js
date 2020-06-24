@@ -42,7 +42,7 @@ nextCardButton.addEventListener("click", function(event) {
 });
 
 lastCardButton.addEventListener("click", function(event) {
-    lastCard();
+    showPreviousCard();
 });
 
 // sets z index for all loaded cards on page and get top card
@@ -63,7 +63,7 @@ window.onload = arrangeCards();
 
 const lastCardMenu = document.getElementById("last-card");
 
-function finalCard() {
+function showFinalCardMenu() {
     lastCardMenu.classList.remove("hidden");
 }
 
@@ -72,7 +72,6 @@ function hideFlipMenu() {
 }
 
 function nextCard() {
-    showLastCardButton();
     let cards = document.querySelectorAll(".card-container");
     let length = cards.length;
     let topCard = cards[length - 1];
@@ -83,21 +82,27 @@ function nextCard() {
         console.log("length", length);
     } else {
         topCard.classList.add("hidden");
-        topCard.classList.remove;
-        lastCard();
+        showFinalCardMenu();
         hideFlipMenu();
         console.log("while loop ended");
     }
     return topCard, cards;
 }
 
-function showLastCardButton() {
-    lastCardButton.classList.remove("hidden");
-    lastCardButton.classList.add("fliplink");
-}
-
-function lastCard() {
-    topCard = document.querySelector(".hidden");
-    topCard.classList.add("flip-card");
-    topCard.classList.remove("hidden");
+function showPreviousCard() {
+    let cards = document.querySelectorAll(".card-container hidden");
+    let length = cards.length;
+    let topCard = cards[length - 1];
+    if (length > 1) {
+        topCard.classList.remove("hidden");
+        console.log("topCard", topCard);
+        console.log("length", length);
+    } else {
+        topCard.classList.add("hidden");
+        topCard.classList.remove;
+        showFinalCardMenu();
+        hideFlipMenu();
+        console.log("while loop ended");
+    }
+    return topCard, cards;
 }
