@@ -88,12 +88,13 @@
 }
 
 .full-deck {
-    width: 300px;
+    max-width: 300px;
     margin-right: auto;
     margin-left: auto;
-    padding-left: auto;
-    padding-right: auto;
     padding-bottom: 200px;
+    height: 100px;
+    z-index: 0;
+    opacity: 0.99;
 }
 
 .card-nav-button {

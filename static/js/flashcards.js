@@ -15,7 +15,14 @@ function flipTopCard() {
 
     let topCardChild = topCard.firstElementChild;
     console.log("topCardChild", topCardChild);
-    let innerCard = topCardChild.children[0].classList.add("flip-with-js");
+    let innerCard = topCardChild.children[0];
+
+    if (innerCard.classList.contains("flip-with-js")) {
+        innerCard.classList.remove("flip-with-js");
+    } else {
+        innerCard.classList.add("flip-with-js");
+    }
+
     console.log("innerCard", innerCard);
     console.log("topCard", topCard);
     console.log("length", length);
