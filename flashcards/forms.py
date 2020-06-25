@@ -11,12 +11,13 @@ class DeckForm(forms.ModelForm):
         model = Deck
         fields = ('name', 'subject', 'description')
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': 'Deck Name', 'autofocus': 'autofocus',
+            'name': forms.TextInput(attrs={'placeholder': 'Deck Name',
             'autocomplete': 'off'}),
             'subject': forms.TextInput(attrs={'placeholder': 'Deck Subject'}),
-            'description': forms.TextInput(attrs={'placeholder': 'Deck Description',
-            "rows":20, "cols":20})
+            'description': forms.Textarea(attrs={'placeholder': 'Deck Description',"style": "resize: none","rows":10, "cols":20})
             }
+
+            
 
 
 # class LoginForm(forms.Form):
@@ -35,7 +36,7 @@ class CardForm(forms.ModelForm):
         model = Card
         fields = ('deck','question', 'answer')
         widgets = {
-            'question': forms.TextInput(attrs={'placeholder': 'Question | Front of Card', 'autofocus': 'autofocus'}),
+            'question': forms.TextInput(attrs={'label': 'Question','placeholder': 'Question | Front of Card', 'autofocus': 'autofocus'}),
             'answer': forms.TextInput(attrs={'placeholder': 'Answer | Back of Card', 'autofocus': 'autofocus'})}
                
 

@@ -197,37 +197,88 @@ ul {
 }
 
 form {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    height: 70%;
+    justify-content: flex-start;
     background: var(--form-background);
     width: 60%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 0.25rem;
     box-shadow: 0 16px 40px var(--box-shadow);
+}
+
+#id_name,
+#id_subject,
+#id_description,
+#id_question,
+#id_answer,
+#id_deck {
+    padding: 0.5rem;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    width: 100%;
+    color: darkslategray;
+    border: solid 1px darkslategray;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+#id_name:focus,
+#id_subject:focus,
+#id_description:focus,
+#id_question:focus,
+#id_answer:focus,
+#id_deck:focus {
+    border: solid 3px lightskyblue;
 }
 
 form input,
 textarea {
     display: inline-block;
-    position: relative;
+    flex-basis: inherit;
+    flex-grow: inherit;
     margin: 0.5rem 0;
     font-size: 16px;
     padding: 5px 5px 5px 0px;
-    width: 50%;
-    border: solid 1px var(--form-input-border);
+    border: solid 3px var(--form-input-border);
     font-weight: 400;
     border-radius: 0.25rem;
-    color: var(--form-text);
+    font-weight: bold;
+    color: gray;
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 1px;
 }
 
 form input:focus textarea {
     height: 5rem;
-    color: lightskyblue;
+    border: solid lightskyblue 5px;
+}
+
+button {
+    padding: 0.5rem;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    background: var(--button-background);
+    width: 100%;
+    color: var(--button-text-color);
+    border: solid 3px var(--button-border);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+button:hover {
+    background-color: #ff5a5f;
 }
 
 ::placeholder {
-    color: var(--form-text);
+    color: gray;
 }
 
 .flip-button {
@@ -257,24 +308,6 @@ form input:focus textarea {
     background-image: linear-gradient(22, 22, 22, 22);
     position: absolute;
     z-index: 100;
-}
-
-button {
-    padding: 0.5rem;
-    font-size: 16px;
-    letter-spacing: 1px;
-    margin-top: 1rem;
-    background: var(--button-background);
-    width: 100%;
-    color: var(--button-text-color);
-    border: solid 1px var(--button-border);
-    border-radius: 0.25rem;
-    cursor: pointer;
-    -webkit-appearance: none;
-}
-
-button:hover {
-    background-color: #ff5a5f;
 }
 
 body {
@@ -367,7 +400,7 @@ h5 {
 
 p {
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--text-color);
+    color: white;
 }
 
 .card-container {
