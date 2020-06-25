@@ -4,10 +4,14 @@
 
 <form class="form" action="" method="post">
     {% csrf_token %}
-    <div>
-        {{ form.as_p }}
-    </div>
-    <button type="submit">Add <i class="fas fa-save"></i></button>
+
+    <table>
+    {{form.deck}}
+        {{ form.question }} 
+        {{ form.answer}}
+    </table>
+
+    <button type="submit">Add</button>
 </form>
 
 {% endblock %}

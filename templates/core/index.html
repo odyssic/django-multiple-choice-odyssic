@@ -22,31 +22,17 @@
         </div>
         </div>
   
-  <h2>{{deck.subject}}</h2>
+ 
+  <h3>{{deck.name}}</h3>
+
+  <h4>Subject: {{deck.subject}}</h4> 
   </div>
   
-
-        
     {% empty %}
     <h3>You have no Decks yet. Create one.</h3>
-
     {% endfor %}
 <div/>
 
 <script defer src="{% static 'js/index.js' %}"></script>
-
-<h1>Vue Demo #1</h1>
-<div id="vapp">
-    <p>Hello World {{display}}.</p>
-</div>
-
-<script>
-    const vueApp = new Vue({
-        el: '#vapp',
-        data: {
-            display: 'redbox'
-        }
-    })
-</script>
 
 {% endblock %}

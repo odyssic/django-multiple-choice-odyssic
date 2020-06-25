@@ -1,6 +1,3 @@
-var ProgressBar = require("progressbar.js");
-var line = new ProgressBar.Line(".container");
-
 const flipButton = document.getElementById("flip-button");
 const flipLinkContainer = document.getElementById("fliplink-container");
 

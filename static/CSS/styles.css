@@ -3,13 +3,14 @@
     padding: 0;
     margin-left: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: gray;
 }
 
 
 /* for mobile responsiveness */
 
-@media screen and (max-width: 600px) {}
+
+/* @media screen and (max-width: 600px) {} */
 
 :root {
     --link-color: #fff;
@@ -96,9 +97,18 @@
     margin: 100x;
 }
 
+.deck-text {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    size: 200%;
+}
+
 a:link {
     text-decoration: none;
-    color: var(--link-color);
+    color: white;
 }
 
 a:visited {
@@ -188,7 +198,7 @@ ul {
 
 form {
     background: var(--form-background);
-    max-width: 441px;
+    width: 60%;
     margin: 0 auto;
     padding: 2rem;
     border-radius: 0.25rem;
@@ -197,11 +207,12 @@ form {
 
 form input,
 textarea {
-    display: block;
-    width: 100%;
+    display: inline-block;
+    position: relative;
     margin: 0.5rem 0;
     font-size: 16px;
-    padding: 5px;
+    padding: 5px 5px 5px 0px;
+    width: 50%;
     border: solid 1px var(--form-input-border);
     font-weight: 400;
     border-radius: 0.25rem;
@@ -210,8 +221,9 @@ textarea {
     letter-spacing: 1px;
 }
 
-textarea {
+form input:focus textarea {
     height: 5rem;
+    color: lightskyblue;
 }
 
 ::placeholder {
@@ -259,6 +271,10 @@ button {
     border-radius: 0.25rem;
     cursor: pointer;
     -webkit-appearance: none;
+}
+
+button:hover {
+    background-color: #ff5a5f;
 }
 
 body {
@@ -556,7 +572,7 @@ p {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.85);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 20;
@@ -567,7 +583,7 @@ p {
 /* Links inside the dropdown */
 
 .dropdown-content a {
-    color: var(--link-color);
+    color: var(--background-color);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
