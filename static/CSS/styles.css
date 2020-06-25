@@ -9,13 +9,7 @@
 
 /* for mobile responsiveness */
 
-@media screen and (max-width: 600px) {
-    .topcorner {
-        position: relative;
-        top: 0;
-        right: 0;
-    }
-}
+@media screen and (max-width: 600px) {}
 
 :root {
     --link-color: #fff;
@@ -226,6 +220,7 @@ textarea {
 
 .flip-button {
     width: 100px;
+    min-width: 90px;
     height: 64px;
     font-family: "Amatic SC", cursive;
     color: var(--background-color);
@@ -236,7 +231,7 @@ textarea {
     border-radius: 10px;
     text-align: center;
     font-size: 200%;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 6px;
     vertical-align: middle;
 }
@@ -301,17 +296,20 @@ body {
     padding-bottom: 25px;
 }
 
-.cardText {
+.card-text {
     font-family: "Amatic SC", cursive;
     color: var(--card-text-color);
     font-size: 200%;
     text-align: center;
-    /* padding-top: 45px; */
-    padding-bottom: 25px;
+    padding: 20px 10px 25px 10px;
     padding-top: 95px;
 }
 
 .hidden {
+    display: none;
+}
+
+.hidden-last-card-menu {
     display: none;
 }
 
@@ -449,12 +447,14 @@ p {
 
 .deck-container {
     max-width: 100%;
+    min-width: 240px;
     display: flex;
     flex-flow: row wrap;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
     flex: 1;
+    align-content: center;
+    justify-content: center;
 }
 
 @-ms-keyframes wiggle {
@@ -587,9 +587,8 @@ p {
     display: block;
 }
 
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-
-.dropdown:hover .dropbtn {
-    background-color: ;
+.container {
+    margin: 20px;
+    width: 400px;
+    height: 8px;
 }

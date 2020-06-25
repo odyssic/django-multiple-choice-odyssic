@@ -1,4 +1,5 @@
-console.log("hi");
+var ProgressBar = require("progressbar.js");
+var line = new ProgressBar.Line(".container");
 
 const flipButton = document.getElementById("flip-button");
 const flipLinkContainer = document.getElementById("fliplink-container");
@@ -64,7 +65,7 @@ window.onload = arrangeCards();
 const lastCardMenu = document.getElementById("last-card");
 
 function showFinalCardMenu() {
-    lastCardMenu.classList.remove("hidden");
+    lastCardMenu.classList.remove("hidden-last-card-menu");
 }
 
 function hideFlipMenu() {
@@ -106,3 +107,21 @@ function showPreviousCard() {
     }
     return topCard, cards;
 }
+
+// progress bar
+var bar = new ProgressBar.Line(container, {
+    strokeWidth: 4,
+    easing: "easeInOut",
+    duration: 1400,
+    color: "#FFEA82",
+    trailColor: "#eee",
+    trailWidth: 1,
+    svgStyle: { width: "100%", height: "100%" },
+    from: { color: "#FFEA82" },
+    to: { color: "#ED6A5A" },
+    step: (state, bar) => {
+        bar.path.setAttribute("stroke", state.color);
+    },
+});
+
+bar.animate(1.0);
