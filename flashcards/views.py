@@ -114,7 +114,7 @@ def add_card(request, pk):
         if form.is_valid():
             card = form.save()
             print('card')
-            return redirect("flashcards", deck.pk)
+            return redirect("flashcards", pk)
     else:
         form = CardForm()
     return render(request, 'core/add_card.html', {'form': form, 'deck': deck, 'pk': pk})
@@ -139,15 +139,18 @@ def add_card_from_deck(request, pk):
 @login_required
 def edit_card(request, pk):
     card = get_object_or_404(Card, pk=pk)
-
-    if request.method == 'POST':
-        form = CardForm(request.POST, instance=card)
-        if form.is_valid():
+    print('card', card)
+    
+    form = CardForm(request.POST, instance=card)
+        
+    if form.is_valid():
+            deckpk = form.cleaned_data['deck'].pk
+            print('deckpk', deckpk)
             form.save()
+            
+            return redirect('flashcards', deckpk)
 
-            return HttpResponsePermanentRedirect(request.META.get('HTTP_REFERER', '/'))
-
-        else:
+    else:
             form = CardForm(instance=card)
 
-        return render(request, 'core/edit_card.html', {'form': form})
+            return render(request, 'core/edit_card.html', {'form': form})
