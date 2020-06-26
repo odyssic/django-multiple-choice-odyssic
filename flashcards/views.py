@@ -110,10 +110,14 @@ def add_card(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
 
     if request.method == 'POST':
-        form = CardForm(request.POST) 
+        form = CardForm(request.POST)
+        print (CardForm.visible_fields)
+    
         if form.is_valid():
-            card = form.save()
-            print('card')
+            card = form.save(commit=False)
+            card.deck = deck
+            form.save()
+            
             return redirect("flashcards", pk)
     else:
         form = CardForm()

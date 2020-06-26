@@ -6,7 +6,7 @@
 <form action="" method="post">
     {% csrf_token %}
 
-    <span>{{form.deck}}</span>
+    <span class='hidden'>{{form.deck }}</span>
     <span>{{form.question}}</span>
     <span>{{form.answer}}</span>
 
