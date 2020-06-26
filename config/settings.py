@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from pathlib import Path
+import django_heroku
 
 
 import environ
@@ -38,22 +39,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'registration',
     'django-heroku',
     'django.contrib.admin',
-    'fontawesome_5',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'flashcards',
+    'registration'
 
 
 
     # Third-party
     'debug_toolbar',
     'django_extensions',
+    'fontawesome_5',
 
     # Project-specific
     'users',
@@ -167,5 +168,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Configure Django App for Heroku.
 
-import django_heroku
 django_heroku.settings(locals())
+
+del DATABASES['default']['OPTIONS']['sslmode']
