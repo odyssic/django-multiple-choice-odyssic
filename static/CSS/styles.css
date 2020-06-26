@@ -318,6 +318,7 @@ body {
 
 .minilinks-container {
     display: flex;
+    padding: 5px;
     flex-flow: row;
     align-items: space-around;
     align-content: center;
@@ -453,6 +454,7 @@ p {
 .flip-card-front,
 .flip-card-back {
     display: flex;
+    padding: 10px;
     justify-content: center;
     flex-flow: column;
     position: absolute;
@@ -567,6 +569,9 @@ p {
 }
 
 .deck {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column;
     color: rgb(42, 59, 85);
     font-family: sans-serif;
     height: 200px;

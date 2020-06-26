@@ -22,8 +22,8 @@ class Card(models.Model):
 
     deck = models.ForeignKey(
         'Deck', on_delete=models.CASCADE, default='', related_name='cards')
-    question = models.CharField(max_length=300)
-    answer = models.CharField(max_length=300)
+    question = models.CharField(max_length=80)
+    answer = models.CharField(max_length=80)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
