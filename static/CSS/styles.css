@@ -215,7 +215,9 @@ form {
 #id_description,
 #id_question,
 #id_answer,
-#id_deck {
+#id_deck,
+#id_username,
+#id_password {
     padding: 0.5rem;
     font-size: 16px;
     letter-spacing: 1px;
@@ -233,7 +235,9 @@ form {
 #id_description:focus,
 #id_question:focus,
 #id_answer:focus,
-#id_deck:focus {
+#id_deck:focus,
+#id_username:focus,
+#id_password:focus {
     border: solid 3px lightskyblue;
 }
 

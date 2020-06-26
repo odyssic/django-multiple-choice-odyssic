@@ -127,13 +127,13 @@ def delete_card(request, pk):
     return redirect('flashcards', pk)
 
 
-def add_card_from_deck(request, pk):
-    if request.method == 'POST':
-        form = CardForm(request.POST)
+# def add_card_from_deck(request, pk):
+#     if request.method == 'POST':
+#         form = CardForm(request.POST)
         
-        if form.is_valid():
-            card = form.save()
-            return HttpResponsePermanentRedirect(request.META.get('HTTP_REFERER', '/'))
+#         if form.is_valid():
+#             card = form.save()
+#             return HttpResponsePermanentRedirect(request.META.get('HTTP_REFERER', '/'))
     
 
 @login_required
@@ -145,7 +145,6 @@ def edit_card(request, pk):
         
     if form.is_valid():
             deckpk = form.cleaned_data['deck'].pk
-            print('deckpk', deckpk)
             form.save()
             
             return redirect('flashcards', deckpk)
