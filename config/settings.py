@@ -12,8 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from pathlib import Path
-import django_heroku
-
+# import django_heroku
 
 import environ
 
@@ -29,7 +28,8 @@ BASE_DIR = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', '<old-secret-key>')
+SECRET_KEY = env('SECRET_KEY')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -38,22 +38,22 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django-heroku',
+    'registration',
+    # 'django-heroku',
     'django.contrib.admin',
+    'fontawesome_5',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'flashcards',
-    'registration'
 
 
 
     # Third-party
     'debug_toolbar',
     'django_extensions',
-    'fontawesome_5',
 
     # Project-specific
     'users',
@@ -130,11 +130,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-
 STATIC_ROOT = ''
+
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join('static'), )
 
@@ -180,6 +178,4 @@ DATABASES = {
 
 # Configure Django App for Heroku.
 
-django_heroku.settings(locals())
-
-del DATABASES['default']['OPTIONS']['sslmode']
+# django_heroku.settings(locals())
