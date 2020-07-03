@@ -125,12 +125,13 @@ def add_card(request, pk):
         form = CardForm()
     return render(request, 'core/add_card.html', {'form': form, 'deck': deck, 'pk': pk})
 
-    
+
 @login_required
 def delete_card(request, pk):
     card = get_object_or_404(Card, pk=pk)
+    referer = request.META.get('HTTP_REFERER')
     card.delete()
-    return redirect('flashcards', pk)
+    return redirect(referer)
 
 
 @login_required
