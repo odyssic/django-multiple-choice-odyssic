@@ -5,29 +5,6 @@ flipButton.addEventListener("click", function(event) {
     flipTopCard();
 });
 
-function flipTopCard() {
-    console.log("flip top card ran");
-    let cards = document.querySelectorAll(".card-container");
-    let length = cards.length;
-    let topCard = cards[length - 1];
-
-    let topCardChild = topCard.firstElementChild;
-    console.log("topCardChild", topCardChild);
-    let innerCard = topCardChild.children[0];
-
-    if (innerCard.classList.contains("flip-with-js")) {
-        innerCard.classList.remove("flip-with-js");
-    } else {
-        innerCard.classList.add("flip-with-js");
-    }
-
-    console.log("innerCard", innerCard);
-    console.log("topCard", topCard);
-    console.log("length", length);
-
-    return topCard, cards;
-}
-
 function $(selector) {
     return document.querySelector(selector);
 }
@@ -76,8 +53,8 @@ function nextCard() {
     if (length > 1) {
         topCard.classList.add("hidden");
         topCard.classList.remove("card-container");
-        console.log("topCard", topCard);
-        console.log("length", length);
+        console.log("next Card's topCard", topCard);
+        console.log("next Card length", length);
     } else {
         topCard.classList.add("hidden");
         showFinalCardMenu();
@@ -88,19 +65,36 @@ function nextCard() {
 }
 
 function showPreviousCard() {
-    let cards = document.querySelectorAll(".card-container hidden");
+    let cards = document.querySelectorAll(".hidden");
+    let topCard = cards[0];
+    console.log("card at index 0", cards[0]);
+    console.log("'last' topCard", topCard);
+    topCard.classList.remove("hidden");
+
+    console.log(cards.length);
+
+    return topCard, cards;
+}
+
+function flipTopCard() {
+    console.log("flip top card ran");
+    let cards = document.querySelectorAll(".card-container");
     let length = cards.length;
     let topCard = cards[length - 1];
-    if (length > 1) {
-        topCard.classList.remove("hidden");
-        console.log("topCard", topCard);
-        console.log("length", length);
+
+    let topCardChild = topCard.firstElementChild;
+    console.log("topCardChild", topCardChild);
+    let innerCard = topCardChild.children[0];
+
+    if (innerCard.classList.contains("flip-with-js")) {
+        innerCard.classList.remove("flip-with-js");
     } else {
-        topCard.classList.add("hidden");
-        topCard.classList.remove;
-        showFinalCardMenu();
-        hideFlipMenu();
-        console.log("while loop ended");
+        innerCard.classList.add("flip-with-js");
     }
+
+    console.log("innerCard", innerCard);
+    console.log("topCard", topCard);
+    console.log("length", length);
+
     return topCard, cards;
 }
