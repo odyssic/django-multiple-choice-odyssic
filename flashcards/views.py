@@ -78,9 +78,11 @@ def flashcards(request, pk):
 
 def details(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
-    cards = Card.objects.filter(deck=deck)
+    cards = Card.objects.filter(deck=deck).order_by('question')
+    count = len(cards)
+    print(count)
 
-    return render(request, 'core/details.html', {'deck':deck,'cards':cards, 'pk':pk})
+    return render(request, 'core/details.html', {'deck':deck,'cards':cards, 'count': count, 'pk':pk})
 
 
 @login_required
@@ -131,15 +133,6 @@ def delete_card(request, pk):
     return redirect('flashcards', pk)
 
 
-# def add_card_from_deck(request, pk):
-#     if request.method == 'POST':
-#         form = CardForm(request.POST)
-        
-#         if form.is_valid():
-#             card = form.save()
-#             return HttpResponsePermanentRedirect(request.META.get('HTTP_REFERER', '/'))
-    
-
 @login_required
 def edit_card(request, pk):
     card = get_object_or_404(Card, pk=pk)
@@ -157,3 +150,19 @@ def edit_card(request, pk):
             form = CardForm(instance=card)
 
             return render(request, 'core/edit_card.html', {'form': form})
+
+@login_required
+def edit_deck(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
+    
+    form = DeckForm(request.POST, instance=deck)
+        
+    if form.is_valid():
+            form.save()
+            
+            return redirect('details', pk)
+
+    else:
+            form = DeckForm(instance=deck)
+
+            return render(request, 'core/edit_deck.html', {'form': form})
