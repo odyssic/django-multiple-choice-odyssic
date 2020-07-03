@@ -1,11 +1,14 @@
 {% extends 'base.html' %} {% block content %}
+<h3>Add a Deck</h3>
 
 <form class="form" action="" method="post">
     {% csrf_token %}
-    <table class="form">
-        {{ form.as_table}}
-    </table>
-    <input type="submit" value="Submit" />
+
+    <span>{{form.name}}</span>
+    <span>{{form.subject}}</span>
+    <span>{{form.description}}</span>
+
+    <button type="submit">Add</button>
 </form>
 
 {% endblock %}

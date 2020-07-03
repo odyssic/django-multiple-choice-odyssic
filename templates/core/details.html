@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+<h1>{{deck.name}}</h1>
+<h2>Subject: {{deck.subject}}</h2>
+<h3 class = 'left left-margin'>{{deck.description}}</h3>
+
+<p>Deck Created: {{deck.created_at}}</p>
+<p>Number of Cards: {{count}}</p>
+<div class = 'minilinks-container'>
+<a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Practice</a>
+<a class='minilinks' href={% url 'edit-deck' pk=deck.pk %}>Edit Deck Info</a>
+<a class='minilinks' href={% url 'home' %}>Choose Another Deck</a>
+</div>
+
+<h1> Cards </h1>
+<div class='detail-card-container'>
+{% for card in cards %}
+<div class='detail-card'> 
+<span class='left'><p class='left'><strong>Question: </strong> {{card.question}}</p></b> 
+<p class='left'><strong>Answer:</strong> {{card.answer}} </p></b> 
+<p class='left'><strong>Created:</strong> {{card.created_at}}</p>
+</span>
+</div> 
+{% endfor %}
+</div>
+{% endblock %}

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'registration',
     # 'django-heroku',
     'django.contrib.admin',
+    'fontawesome_5',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -163,6 +164,17 @@ ACCOUNT_ACTIVATION_DAYS = 1
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your-flashcards',
+        'USER': 'odyssic',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
 
 # Configure Django App for Heroku.
 

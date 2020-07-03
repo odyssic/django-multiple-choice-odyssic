@@ -9,15 +9,37 @@ class DeckForm(forms.ModelForm):
 
     class Meta:
         model = Deck
-        fields = ('name', 'subject')
+        fields = ('name', 'subject', 'description')
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Deck Name',
+            'autocomplete': 'off'}),
+            'subject': forms.TextInput(attrs={'placeholder': 'Deck Subject'}),
+            'description': forms.Textarea(attrs={'placeholder': 'Deck Description',"style": "resize: none","rows":10, "cols":20})
+            }
+
+            
 
 
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField()
+
+    def __init__(self, *args, **kwargs):
+        super(LoginForm, self).__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs['placeholder'] = 'username'
+        self.fields['password '].widget.attrs['placeholder'] = 'password'
+   
 class CardForm(forms.ModelForm):
 
     class Meta:
         model = Card
-        fields = ('card', 'question', 'answer')
-
+        fields = ('deck','question', 'answer')
+        widgets = {
+            
+            'question': forms.TextInput(attrs={'label': 'Question', 'placeholder': 'Question | Front of Card', 'autofocus': 'autofocus'}),
+            
+            'answer': forms.TextInput(attrs={'placeholder': 'Answer | Back of Card', 'autofocus': 'autofocus'})}
+               
 
 class NewUserForm(UserCreationForm):
     email = forms.EmailField(required=True)

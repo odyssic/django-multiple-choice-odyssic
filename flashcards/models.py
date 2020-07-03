@@ -6,10 +6,11 @@ from users.models import User
 
 
 class Deck(models.Model):
-    name = models.CharField(max_length=60)
-    subject = models.CharField(max_length=60)
-    # created_at = models.DateTimeField(auto_now_add=True)
-    # updated_at = models.DateTimeField(auto_now=True)
+    name = models.CharField(max_length=40)
+    subject = models.CharField(max_length=40)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    description = models.TextField(max_length = 300, default = '')
     user = models.ForeignKey(
         User, null=True, related_name='decks', on_delete=models.CASCADE)
 
@@ -19,13 +20,15 @@ class Deck(models.Model):
 
 class Card(models.Model):
 
-    card = models.ForeignKey(
-        'Deck', on_delete=models.CASCADE, related_name='cards', default='cards')
-    question = models.CharField(max_length=300)
-    answer = models.CharField(max_length=300)
+    deck = models.ForeignKey(
+        'Deck', on_delete=models.CASCADE, default='', related_name='cards')
+    question = models.CharField(max_length=80)
+    answer = models.CharField(max_length=80)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.cards}'
+        return f'{self.deck} {self.question} {self.answer}'
 
 
 class Interval(models.Model):
