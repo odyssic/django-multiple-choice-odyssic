@@ -3,6 +3,7 @@ let length = cards.length;
 let topCard = cards[length - 1];
 
 function getTopCardInitial() {
+    console.log("topcard initial ran");
     cards = document.querySelectorAll(".card-container");
     length = cards.length;
     topCard = cards[length - 1];
@@ -82,13 +83,12 @@ function showPreviousCard() {
         console.log("'last' topCard", topCard);
         topCard.classList.remove("hidden");
         topCard.classList.add("card-container");
-        hiddenCards = document.querySelectorAll(".hidden");
-        topCard = hiddenCards[0];
+
         console.log("topCard leaving equation", topCard);
         return topCard;
     } else {
         alert("There are no prior cards!");
-        getTopCardInitial();
+        topCard = getTopCardInitial();
         return TopCard;
     }
 }

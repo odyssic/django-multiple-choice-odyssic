@@ -21,8 +21,14 @@ class DeckForm(forms.ModelForm):
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField()
-    password = forms.CharField()
+    form = UserCreationForm
+
+    fields = ('username', 'password')
+    widgets = {
+            
+            'username': forms.TextInput(attrs={'placeholder': 'Username', 'autofocus': 'autofocus'}),
+            
+            'password': forms.TextInput(attrs={'placeholder': 'Password', 'autofocus': 'autofocus'})}
 
     def __init__(self, *args, **kwargs):
         super(LoginForm, self).__init__(*args, **kwargs)
@@ -35,8 +41,8 @@ class CardForm(forms.ModelForm):
         model = Card
         fields = ('deck','question', 'answer')
         widgets = {
-            
-            'question': forms.TextInput(attrs={'label': 'Question', 'placeholder': 'Question | Front of Card', 'autofocus': 'autofocus'}),
+
+            'question': forms.TextInput(attrs={'placeholder': 'Question | Front of Card', 'autofocus': 'autofocus'}),
             
             'answer': forms.TextInput(attrs={'placeholder': 'Answer | Back of Card', 'autofocus': 'autofocus'})}
                
