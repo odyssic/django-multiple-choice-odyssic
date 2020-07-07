@@ -11,10 +11,10 @@ django-environ = "*"
 django-debug-toolbar = "*"
 django-fontawesome = "*"
 django-fontawesome-5 = "*"
-gunicorn = "*"
 django-registration-redux = "*"
 psycopg2 = "*"
 django-heroku = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
