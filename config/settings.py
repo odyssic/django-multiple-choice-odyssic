@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from pathlib import Path
-# import django_heroku
+import django_heroku
 
 import environ
 
@@ -39,7 +39,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'registration',
-    # 'django-heroku',
+    'django-heroku',
     'django.contrib.admin',
     'fontawesome_5',
     'django.contrib.auth',
@@ -169,7 +169,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'your-flashcards',
+        'NAME': 'remember-fash-cards',
         'USER': 'odyssic',
         'HOST': '127.0.0.1',
         'PORT': '5432',
@@ -178,4 +178,4 @@ DATABASES = {
 
 # Configure Django App for Heroku.
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
