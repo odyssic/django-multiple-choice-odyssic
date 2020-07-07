@@ -169,8 +169,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'remember-fash-cards',
-        'USER': 'odyssic',
+        'NAME': '<dbname>',
+        'USER': '<username>',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
