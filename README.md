@@ -5,7 +5,8 @@ An application where you can create your own flashcards with a question and answ
 <h2>Directions to Run</h2>
 
 Clone the repository
-Create a virtual environment. For example, 'pipenv --three'.
+Navigate into the directory. 
+Create a virtual environment. For instance 'Pipenv Install'
 
 Run the virtual environment. For example, 'pipenv shell'.
 
