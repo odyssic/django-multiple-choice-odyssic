@@ -9,11 +9,11 @@ django-extensions = "*"
 werkzeug = "*"
 django-environ = "*"
 django-debug-toolbar = "*"
-gunicorn = "*"
 django-fontawesome = "*"
 django-fontawesome-5 = "*"
 psycopg2 = "*"
 django-heroku = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"
