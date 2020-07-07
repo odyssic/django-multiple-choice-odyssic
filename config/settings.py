@@ -30,7 +30,7 @@ BASE_DIR = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # SECURITY WARNING: keep the secret key used in production secret!
 
 
-SECRET_KEY = os.getenv('SECRET_KEY', '<old-secret-key>')
+SECRET_KEY = env('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -177,17 +177,6 @@ ACCOUNT_ACTIVATION_DAYS = 1
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'remember-flash-cards',
-        'USER': 'remember-flash-cards',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
 
 # Configure Django App for Heroku.
 
