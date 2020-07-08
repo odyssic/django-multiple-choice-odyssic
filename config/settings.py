@@ -164,6 +164,6 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-Configure Django App for Heroku.
+# Configure Django App for Heroku.
 
 django_heroku.settings(locals())
