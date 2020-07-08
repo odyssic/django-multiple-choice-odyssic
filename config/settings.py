@@ -13,12 +13,12 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
-
 import environ
 
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False),)
+
 environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / ...
