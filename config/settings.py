@@ -18,13 +18,13 @@ BASE_DIR = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 # SECURITY WARNING: keep the secret key used in production secret!
 
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=[env('RENDER_EXTERNAL_HOSTNAME', default='')])
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=[env('RENDER_EXTERNAL_HOSTNAME', default=''), '127.0.0.1'])
 
 # Application definition
 
@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'flashcards',
 
     # Third-party
-    # 'debug_toolbar',
     'django_extensions',
 
     # Project-specific
