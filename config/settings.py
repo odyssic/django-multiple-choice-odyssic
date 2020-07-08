@@ -1,4 +1,4 @@
-import django_heroku
+# import django_heroku
 import os
 from pathlib import Path
 import environ
@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'registration',
-    'django-heroku',
+    # 'django-heroku',
     'django.contrib.admin',
     'fontawesome_5',
     'django.contrib.auth',
@@ -168,4 +168,4 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Configure Django App for Heroku.
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

@@ -13,8 +13,8 @@ django-fontawesome = "*"
 django-fontawesome-5 = "*"
 django-registration-redux = "*"
 psycopg2 = "*"
-django-heroku = "*"
 gunicorn = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"
