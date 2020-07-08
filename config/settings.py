@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'flashcards',
 
     # Third-party
-    'debug_toolbar',
+    # 'debug_toolbar',
     'django_extensions',
 
     # Project-specific
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -149,11 +149,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 # Debug toolbar config
 
-INTERNAL_IPS = [
-    # ...
-    '127.0.0.1',
-    # ...
-]
+# INTERNAL_IPS = [
+#     # ...
+#     '127.0.0.1',
+#     # ...
+# ]
 
 
 REGISTRATION_AUTO_LOGIN = True
