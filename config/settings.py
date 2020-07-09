@@ -169,3 +169,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # Configure Django App for Heroku.
 
 
+import django_heroku
+django_heroku.settings(locals())
+
+
