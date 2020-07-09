@@ -3,7 +3,6 @@ let length = cards.length;
 let topCard = cards[length - 1];
 
 function getTopCardInitial() {
-    console.log("topcard initial ran");
     cards = document.querySelectorAll(".card-container");
     length = cards.length;
     topCard = cards[length - 1];
@@ -41,12 +40,9 @@ function hideFlipMenu() {
 }
 
 function arrangeCards() {
-    console.log("arrangeCards ran");
-    console.log("cards", cards);
     for (let i = 0; i < cards.length; i++) {
         console.log("cards.length", cards.length);
         cardsZIndex = cards[i].style.zIndex = +i;
-        console.log("i", +i);
     }
     return cards, topCard, length;
 }
@@ -58,8 +54,6 @@ function nextCard() {
     if (length > 1) {
         topCard.classList.add("hidden");
         topCard.classList.remove("card-container");
-        console.log("next Card's topCard", topCard);
-        console.log("next Card length", length);
     } else {
         topCard.classList.add("hidden");
         showFinalCardMenu();
@@ -75,16 +69,12 @@ function nextCard() {
 function showPreviousCard() {
     hiddenCards = document.querySelectorAll(".hidden");
     hiddenCardsLength = hiddenCards.length;
-    console.log("prior card legnth", length);
-    console.log("hidden cards", hiddenCards);
 
     if (hiddenCardsLength > 0) {
         topCard = hiddenCards[0];
-        console.log("'last' topCard", topCard);
         topCard.classList.remove("hidden");
         topCard.classList.add("card-container");
 
-        console.log("topCard leaving equation", topCard);
         return topCard;
     } else {
         alert("There are no prior cards!");
@@ -95,17 +85,13 @@ function showPreviousCard() {
 
 function flipTopCard(topCard) {
     let topCardChild = topCard.firstElementChild;
-    console.log("topCardChild", topCardChild);
     let innerCard = topCardChild.children[0];
-    console.log("innerCard", innerCard);
 
     if (innerCard.classList.contains("flip-with-js")) {
         innerCard.classList.remove("flip-with-js");
     } else {
         innerCard.classList.add("flip-with-js");
     }
-    console.log("topCard flipping", topCard);
-    console.log("topCard flipping class applied to innerCard", innerCard);
 }
 
 flipButton.addEventListener("click", function(event) {

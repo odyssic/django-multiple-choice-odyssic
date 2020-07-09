@@ -80,7 +80,6 @@ def details(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
     cards = Card.objects.filter(deck=deck).order_by('question')
     count = len(cards)
-    print(count)
 
     return render(request, 'core/details.html', {'deck':deck,'cards':cards, 'count': count, 'pk':pk})
 
@@ -92,10 +91,8 @@ def add_deck(request):
         form = DeckForm(request.POST)
         
         if form.is_valid():
-            # deckpk = form.cleaned_data['deck'].pk
             deck = form.save()
-            print('deck', deck)
-            print('deck.pk', deck.pk)
+            
             return redirect("flashcards", deck.pk)
     else:
         form = DeckForm()
@@ -113,7 +110,6 @@ def add_card(request, pk):
 
     if request.method == 'POST':
         form = CardForm(request.POST)
-        print (CardForm.visible_fields)
     
         if form.is_valid():
             card = form.save(commit=False)
@@ -137,7 +133,6 @@ def delete_card(request, pk):
 @login_required
 def edit_card(request, pk):
     card = get_object_or_404(Card, pk=pk)
-    print('card', card)
     
     form = CardForm(request.POST, instance=card)
         
