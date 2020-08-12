@@ -41,7 +41,6 @@ function hideFlipMenu() {
 
 function arrangeCards() {
     for (let i = 0; i < cards.length; i++) {
-        console.log("cards.length", cards.length);
         cardsZIndex = cards[i].style.zIndex = +i;
     }
     return cards, topCard, length;

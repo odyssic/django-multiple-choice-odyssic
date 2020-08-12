@@ -376,6 +376,8 @@ body {
     color: var(--minilink);
     padding: 10px;
     font-size: 125%;
+    width: 33%;
+    text-align: center;
 }
 
 .minilinks:hover {
