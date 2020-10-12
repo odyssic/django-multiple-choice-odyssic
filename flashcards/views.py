@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
-
+from django.core.paginator import Paginator
 from django.contrib.auth.decorators import login_required
 from django.views.generic.base import View
 from .models import Deck, Card
@@ -11,9 +11,24 @@ from django import template
 from django.views.decorators.http import require_http_methods, require_POST
 from .forms import NewUserForm
 from django.contrib import messages
+from django.db.models import Q
 
 # =======================AUTHENTICATION========================
 
+def search(request):
+    template = 'index.html'
+
+    query = result.GET.get('q')
+
+    results = Post.objects.filter(Q(title__icontains=query) | Q(subject__icontains=query))
+    
+    pages = Paginator(request, results, num=1)
+
+    context = {'items': pages[0],
+    'page_range': pages[1],
+    }
+
+    return render (request, context, template)
 
 @login_required
 def my_view(request):

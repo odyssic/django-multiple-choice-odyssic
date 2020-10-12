@@ -5,11 +5,12 @@ from django.conf import settings
 from django.urls import include, path,re_path
 from flashcards import views
 from django.conf.urls.static import static
-# from flashcards.views import LogoutView
+# from flashcards.views import LogoutView 
 
 
 urlpatterns = [
     path('', views.index, name='home'),
+    path('results/$', views.search, name='search'),
     path('admin/', admin.site.urls),
     path('deck/<int:pk>/flashcards/', views.flashcards, name='flashcards'),
     path('delete-deck/<int:pk>', views.delete_deck, name='delete-deck'),

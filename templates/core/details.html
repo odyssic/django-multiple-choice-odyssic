@@ -8,9 +8,9 @@
 <p>Deck Created: {{deck.created_at}}</p>
 <p>Number of Cards: {{count}}</p>
 <div class = 'minilinks-container'>
-<a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Practice</a>
-<a class='minilinks' href={% url 'edit-deck' pk=deck.pk %}>Edit Deck Info</a>
-<a class='minilinks' href={% url 'home' %}>Choose Another Deck</a>
+<a class='deck-details-link' href={% url 'flashcards' pk=deck.pk %}>Practice</a>
+<a class='deck-details-link' href={% url 'edit-deck' pk=deck.pk %}>Edit Deck Info</a>
+<a class='deck-details-link' href={% url 'home' %}>Choose Another Deck</a>
 </div>
 
 <h1> Cards </h1>

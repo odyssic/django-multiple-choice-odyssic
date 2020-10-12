@@ -2,6 +2,12 @@
 
 <h2>Your Decks</h2>
 
+{% comment %} <form method = 'GET' action='{% url 'search' %}'>
+<input name ='q' value = '{{request.GET.q}}'placeholder='search...'>
+<button type='submit'>Search</button>
+
+</form> {% endcomment %}
+
 {% if not decks %}
     
     <h3>You have no Decks yet. Create one.</h3>

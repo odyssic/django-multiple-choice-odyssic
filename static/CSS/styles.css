@@ -2,9 +2,43 @@
     box-sizing: border-box;
     padding: 0;
     margin-left: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: gray;
+    font-family: var(--defaultFont);
+    color: var(--defaultText);
+    text-align: center;
 }
+
+
+/* Acumin Pro Bold
+
+font-family: acumin-pro, sans-serif;
+
+font-weight: 700;
+
+font-style: normal;
+
+Acumin Pro Bold Italic
+
+font-family: acumin-pro, sans-serif;
+
+font-weight: 700;
+
+font-style: italic;
+
+Acumin Pro Italic
+
+font-family: acumin-pro, sans-serif;
+
+font-weight: 400;
+
+font-style: italic;
+
+Acumin Pro Regular
+
+font-family: acumin-pro, sans-serif;
+
+font-weight: 400;
+
+font-style: normal; */
 
 
 /* for mobile responsiveness */
@@ -25,21 +59,27 @@
     --form-text: #484848;
     --form-input-border: #e5e5e5;
     --accent: red;
-    --hover: #ff5a5f;
+    /* --hover: #ff5a5f; */
     --button-border: #ff5a5f;
     --button-hover: #ff5a5f;
     --button-text-color: #fff;
     --button-background: rgb(173, 55, 81);
     --card-outline: rgb(138, 60, 60);
     --dark-red: rgb(173, 55, 81);
-    --card-front: rgb(173, 55, 81);
     --link-color: rgb(120, 149, 222);
-    --background-color: rgb(58, 66, 109);
-    --default-text: gray;
+    --background-color: rgb(#fff);
     --last-card: rgb(42, 59, 85);
     /* Fonts  */
-    --default-fonts: "Saira Condensed", sans-serif;
-    --navlinks: "Londrina Outline", cursive;
+    /* --defaultFont: "Helvetica", sans-serif; */
+    --navLinks: "Helvetica", cursive;
+    --defaultText: rgb(153, 170, 223);
+    --defaultBlue: rgb(153, 170, 223);
+    --defaultFont: {
+        font-family: acumin-pro, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    ,
 }
 
 .menu-icon {
@@ -55,7 +95,7 @@
 
 .larger-icon {
     font-size: 4em;
-    color: white;
+    color: var(--defaultText);
 }
 
 .larger-icon:hover {
@@ -105,12 +145,12 @@
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    size: 200%;
+    size: 140%;
 }
 
 a:link {
     text-decoration: none;
-    color: white;
+    color: var(--defaultText);
 }
 
 a:visited {
@@ -139,7 +179,7 @@ a:active {
 .banner-heading {
     font-family: "Raleway", sans-serif;
     font-size: 300%;
-    color: white;
+    color: var(--defaultText);
     text-align: center;
 }
 
@@ -187,7 +227,7 @@ ul {
     display: flex;
     flex-basis: 1;
     font-size: 300%;
-    color: white;
+    color: var(--defaultText);
     text-align: center;
     -webkit-appearance: none;
     padding-bottom: 25px;
@@ -309,18 +349,19 @@ button:hover {
     width: 100px;
     min-width: 90px;
     height: 64px;
-    font-family: "Amatic SC", cursive;
-    color: var(--background-color);
-    background-color: white;
+    font-family: var(--defaultFont);
+    color: white;
+    background-color: var(--defaultText);
     margin-right: auto;
     margin-left: auto;
     cursor: pointer;
     border-radius: 10px;
-    text-align: center;
-    font-size: 200%;
+    font-size: 100%;
     padding-top: 10px;
     padding-bottom: 6px;
-    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
 }
 
 .flip-button:hover {
@@ -332,7 +373,7 @@ button:hover {
 }
 
 strong {
-    color: white;
+    color: var(--defaultText);
 }
 
 .detail-card {
@@ -347,9 +388,10 @@ strong {
     margin: 10px auto 10px auto;
 }
 
-.left {
+
+/* .left {
     text-align: left !important;
-}
+} */
 
 .left-margin {
     margin-left: 30px;
@@ -371,12 +413,21 @@ body {
     justify-content: space-evenly;
 }
 
-.minilinks {
-    font-family: "Amatic SC", cursive;
+.deck-details-link {
+    font-family: var(--defaultFont);
     color: var(--minilink);
     padding: 10px;
     font-size: 125%;
     width: 33%;
+    text-align: center;
+    padding: 10px, 50px, 10px, 50px;
+}
+
+.minilinks {
+    font-family: var(--defaultFont);
+    color: var(--minilink);
+    padding: 10px;
+    font-size: 125%;
     text-align: center;
 }
 
@@ -386,7 +437,7 @@ body {
 }
 
 .cardTitle {
-    font-family: "Amatic SC", cursive;
+    font-family: var(--defaultFont);
     color: white;
     text-align: center;
     padding-top: 45px;
@@ -394,7 +445,7 @@ body {
 }
 
 .card-text {
-    font-family: "Amatic SC", cursive;
+    font-family: var(--defaultFont);
     color: var(--card-text-color);
     font-size: 200%;
     text-align: center;
@@ -509,7 +560,7 @@ p {
 }
 
 .flip-card-front {
-    background-color: var(--card-front);
+    background-color: var(--defaultText);
     border: solid var(--card-outline) 6px;
     color: black;
     border-radius: 25px;
@@ -517,7 +568,7 @@ p {
 
 .flip-card-back {
     background-color: rgba(113, 137, 255, 1);
-    border: solid rgb(177, 30, 30) 6px;
+    border: var(--defaultBlue);
     color: white;
     transform: rotateY(180deg);
     border-radius: 25px;
