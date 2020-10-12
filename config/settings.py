@@ -38,13 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'flashcards',
+    'app',
     # 'django_heroku'
 
 
 
     # Third-party
-    'debug_toolbar',
+    # 'debug_toolbar',
     'django_extensions',
 
     # Project-specific
@@ -52,7 +52,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -143,7 +142,12 @@ STATICFILES_DIRS = (os.path.join('static'), )
 AUTH_USER_MODEL = 'users.User'
 
 PROJECT_PATH = os.path.dirname(__file__)
-MEDIA_ROOT = os.path.join(PROJECT_PATH, 'media')
+
+
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
+# base url to serve media files
 MEDIA_URL = '/media/'
 
 TEMPLATE_CONTEXT_PROCESSORS = (

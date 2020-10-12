@@ -1,49 +1,25 @@
-{% extends 'base.html' %}{% load static %} {% block content %}
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %}
 
-<h2>Your Decks</h2>
 
-{% comment %} <form method = 'GET' action='{% url 'search' %}'>
-<input name ='q' value = '{{request.GET.q}}'placeholder='search...'>
-<button type='submit'>Search</button>
 
-</form> {% endcomment %}
+    <p>"Browse for a file to upload the image and save a tiny link:</p>
 
-{% if not decks %}
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+
+    <span>{{form.title}}</span>
+    <span>{{form.image}}</span>
     
-    <h3>You have no Decks yet. Create one.</h3>
-    
+  <button type="submit">Upload</button>
+</form>
+
+{% if img_obj %}
+  <h3>Succesfully uploaded : {{img_obj.title}}</h3>
+  <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
 {% endif %}
 
-<div class="deck-container">
 
-    <div class='add-deck wiggle-me'>
-        <a href={% url 'add-deck' %}>
-            <h2>Create Deck</h2>
-        </a>
-    </div>
-
-    {% for deck in decks %}
-
-    <div pk={{deck.pk}} class="deck wiggle-me">
-     <div class="dropdown">
-  <i class="fa fa-bars dropbtn menu-icon" aria-hidden="true"></i>
-  <div class="dropdown-content">
-    <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Practice</a>
-    <a class='minilinks' href={% url 'add-card' pk=deck.pk %}>Add Cards</a>
-    <a href={% url 'details' pk=deck.pk %} id='details' class='minilinks'>Deck Details</a>
-    <a class='minilinks' href={% url 'delete-deck' pk=deck.pk %} onclick="return confirm('Are you sure you want to delete this deck? Deleting a deck cannot be undone.')">Delete Deck</a>
-        </div>
-        </div>
-  
- 
-  <h3>{{deck.name}}</h3>
-
-  <h4>Subject: {{deck.subject}}</h4> 
-  </div>
-  
-{% endfor %}    
-</div>
-
-<script defer src="{% static 'js/index.js' %}"></script>
 
 {% endblock %}

@@ -4,49 +4,23 @@
 {% load static %}
 
 <head>
-    <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.1.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="{% static 'CSS/styles.css' %}" />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://use.typekit.net/dzg5nwf.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-
-     <meta name="viewport" 
-     content="width=device-width, initial-scale=1.0">
-
-    <title>Decks</title>
+    <title>Title</title>
     
 </head>
 <header>
-    <div class="banner">
-        <a class='banner-heading ' href={% url 'home' %}>Flash Cards</a>
-    </div>
-
+<img src="static/images/cards-logo.png"></img>
 </header>
-
 <body>
-    {% if user.is_authenticated %}
-    <div class='login-text '>
-        <p>Logged in as {{request.user}} | <a href={% url 'logout' %}>logout</a></p>
-    </div>
-
-    {% else %}
-
-    <p> Please Log In </p>
-
-
-    {% endif %} {% block content %} {% endblock %}
-   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
-    </script>
-    <script src="https://unpkg.com/vuex"></script> 
-
-    <script src="https://kit.fontawesome.com/5101f599d9.js" crossorigin="anonymous"></script>
+{% block content%}
+{% endblock %}
+   <script defer src="{% static 'js/main.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </body>
 
 </html>
