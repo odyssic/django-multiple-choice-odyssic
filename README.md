@@ -1,24 +1,30 @@
-<h1>Flash Card App</h1>
 
-An application where you can create your own flashcards with a question and answer, and practice learning a new skill or language. You can create multiple decks to separate cards by subject. 
+SMG Code Test #1 - Tiny URL
+Develop a web application that creates a tiny url for an uploaded image.
 
-<h2>Directions to Run</h2>
+Performance:
 
-Clone the repository
-Navigate into the directory. 
-Create a virtual environment. For instance 'Pipenv Install'
+    Limit upload size to 10MB
+    Accept multiple MIME types including HEIC/HEIF, WEBP, PNG, JPEG, SVG, PDF & GIF (BONUS - Accept a proprietary format like AI, FIG, SKETCH)
+    Run a server side binary or use a Cloud Service API to optimize the image with minimal reduction in quality, maximal reduction in size
+    Store the image as a data blob or a path to a file
+    Host the image path on a CDN like S3 or store its data in local database like MySQL or Mongo, or in a remote database / service like Firebase
+    Use unreserved alphanumeric characters for the shortened URI (e.g., app.io/A18fhsH)
+    The endpoint for the generated URI should serve HTML that web scrapers can easily digest, e.g. write tags for the Open Graph Protocol (http://ogp.me/) and Search Engines like Google, DuckDuckGo
+    Host on a free service like Netlify, Serverless.com, Heroku, or AWS
 
-Run the virtual environment. For example, 'pipenv shell'.
+Appearance:
 
-Run the server 'python manage.py runserver'. 
+    Use a simple, attractive design and logo: https://logomaster.ai
+    Use a Google Font: https://fonts.google.com
+    Use a popular CSS framework: BlueprintJS, Bootstrap, Material, Evergreen, Bulma
 
-It can also be found at: https://remember-flash-cards.herokuapp.com/
+Code:
 
-<h2>Directions to Play</h2>
+    Code should be commented and easy to read
+    Store on Github or Gitlab
+    Be prepared to explain your logic
+    Avoid copy / paste solutions but use yarn or npm libraries if needed
 
-Log in and create your first deck. 
-Navigate to the deck to add cards. The cards are shuffled. 
-Click 'flip' to see the answer. 
-Click next card or last card to go forward or backward in the deck. 
-
-Enjoy!
+Time Limit: 8 hrs
+# SMGTestFinal
