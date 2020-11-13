@@ -28,14 +28,18 @@
   <i class="minilinks far fa-star"></i>
   </div>
  
-  <h3>{{deck.name}}</h3>
+  <h3 class='white'>{{deck.name}}</h3>
 
+<<<<<<< HEAD
   <h4>Subject: {{deck.subject}}</h4> 
 
   <a class='minilinks' href={% url 'flashcards' pk=deck.pk %}><i class="fas fa-play"></i></a>
     <a class='minilinks' href={% url 'add-card' pk=deck.pk %}><i class="fas fa-plus"></i></a>
     <a href={% url 'details' pk=deck.pk %} id='details' class='minilinks'>Deck Details</a>
 
+=======
+  <h4 class='white'>Subject: {{deck.subject}}</h4> 
+>>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
   </div>
   
 {% endfor %}    

@@ -2,52 +2,22 @@
     box-sizing: border-box;
     padding: 0;
     margin-left: 0;
+<<<<<<< HEAD
     font-family: var(--defalult-font-family);
     color: var(--default-text-color);
+=======
+    font-family: var(--default-font);
+    color: var(--default-text);
+>>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
     text-align: center;
 }
 
-
-/* Acumin Pro Bold
-
-font-family: acumin-pro, sans-serif;
-
-font-weight: 700;
-
-font-style: normal;
-
-Acumin Pro Bold Italic
-
-font-family: acumin-pro, sans-serif;
-
-font-weight: 700;
-
-font-style: italic;
-
-Acumin Pro Italic
-
-font-family: acumin-pro, sans-serif;
-
-font-weight: 400;
-
-font-style: italic;
-
-Acumin Pro Regular
-
-font-family: acumin-pro, sans-serif;
-
-font-weight: 400;
-
-font-style: normal; */
-
-
-/* for mobile responsiveness */
-
-
-/* @media screen and (max-width: 600px) {} */
+.white {
+    color: white;
+}
 
 :root {
-    --link-color: #fff;
+    --link-color: rgb(153, 170, 223);
     --link-hover: red;
     --link-active: red;
     --minilink: rgb(153, 170, 223);
@@ -58,23 +28,43 @@ font-style: normal; */
     --form-background: #fff;
     --form-text: #484848;
     --form-input-border: #e5e5e5;
-    --accent: red;
+    --accent: rgb(153, 170, 223);
     /* --hover: #ff5a5f; */
+<<<<<<< HEAD
     --border-color: rgb(153, 170, 223);
     --button-hover: #ff5a5f;
     --button-text-color: #fff;
     --button-background: rgb(173, 55, 81);
     --card-outline: rgb(153, 170, 223);
     --dark-red: rgb(173, 55, 81);
+=======
+    --button-border: rgb(153, 170, 223);
+    --button-hover: gold;
+    --button-text-color: #fff;
+    --button-background: rgb(153, 170, 223);
+    --card-outline: rgb(153, 170, 223);
+    --dark-red: rgb(153, 170, 223);
+>>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
     --link-color: rgb(120, 149, 222);
     --background-color: rgb(#fff);
     --last-card: rgb(42, 59, 85);
     /* Fonts  */
     --defalult-font-family: "Helvetica", sans-serif;
     --navLinks: "Helvetica", cursive;
+<<<<<<< HEAD
     --default-text-color: rgb(153, 170, 223);
     --default-blue: rgb(153, 170, 223);
     --default-font-weight: font-weight: 400;
+=======
+    --default-text: rgb(153, 170, 223);
+    --default-blue: rgb(153, 170, 223);
+    --default-font: {
+        font-family: acumin-pro, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    ,
+>>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
 }
 
 .menu-icon {
@@ -90,7 +80,7 @@ font-style: normal; */
 
 .larger-icon {
     font-size: 4em;
-    color: var(--defaultText);
+    color: var(default-text);
 }
 
 .larger-icon:hover {
@@ -145,7 +135,11 @@ font-style: normal; */
 
 a:link {
     text-decoration: none;
+<<<<<<< HEAD
     color: var(--default-text-color);
+=======
+    color: var(default-text);
+>>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
 }
 
 a:visited {
@@ -174,7 +168,11 @@ a:active {
 .banner-heading {
     font-family: "Raleway", sans-serif;
     font-size: 300%;
+<<<<<<< HEAD
     color: var(--default-text-color);
+=======
+    color: var(default-text);
+>>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
     text-align: center;
 }
 
@@ -222,7 +220,7 @@ ul {
     display: flex;
     flex-basis: 1;
     font-size: 300%;
-    color: var(--defaultText);
+    color: var(default-text);
     text-align: center;
     -webkit-appearance: none;
     padding-bottom: 25px;
@@ -315,7 +313,7 @@ button {
 }
 
 button:hover {
-    background-color: #ff5a5f;
+    background-color: var(--button-hover);
 }
 
 .login-button {
@@ -333,7 +331,8 @@ button:hover {
 }
 
 .login-button:hover {
-    background-color: #ff5a5f;
+    background-color: var(--button-hover);
+    ;
 }
 
 ::placeholder {
@@ -344,9 +343,13 @@ button:hover {
     width: 100px;
     min-width: 90px;
     height: 64px;
+<<<<<<< HEAD
     font-family: var(--defalult-font-family);
+=======
+    font-family: var(--default-font);
+>>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
     color: white;
-    background-color: var(--defaultText);
+    background-color: var(--default-blue);
     margin-right: auto;
     margin-left: auto;
     cursor: pointer;
@@ -368,7 +371,7 @@ button:hover {
 }
 
 strong {
-    color: var(--defaultText);
+    color: var(default-text);
 }
 
 .detail-card {
@@ -474,14 +477,14 @@ card-top {
 }
 
 h1 {
-    font-family: "Amatic SC", cursive;
+    font-family: var(--default-font);
     color: var(--text-color);
     text-align: center;
     padding: 0rem;
 }
 
 h2 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--default-font);
     color: var(--text-color);
     text-align: center;
     margin-left: auto;
@@ -491,7 +494,7 @@ h2 {
 h3,
 h4,
 h5 {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--default-font);
     color: var(--text-color);
     text-align: center;
     margin-left: auto;
@@ -508,7 +511,7 @@ h5 {
 
 p {
     font-family: Arial, Helvetica, sans-serif;
-    color: white;
+    color: var(--defaultBlue);
     text-align: center;
 }
 
@@ -565,7 +568,11 @@ p {
 }
 
 .flip-card-front {
+<<<<<<< HEAD
     background-color: white;
+=======
+    background-color: var(--light-blue);
+>>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
     border: solid var(--card-outline) 6px;
     color: black;
     border-radius: 25px;
@@ -596,8 +603,8 @@ p {
 }
 
 .add-deck:hover {
-    color: rgb(177, 30, 30) 6px;
-    border: dashed rgb(177, 30, 30) 6px;
+    color: var(--defaultBlue);
+    border: dashed var(--defaultBlue) 6px;
 }
 
 .deck-container {
@@ -673,10 +680,17 @@ p {
     flex-flow: column;
     color: rgb(42, 59, 85);
     font-family: sans-serif;
+<<<<<<< HEAD
     height: 350px;
     width: 300px;
     background-color: white;
     border: solid var(--default-blue) 3px;
+=======
+    height: 200px;
+    width: 200px;
+    background-color: var(--defaultBlue);
+    border: solid var(--defaultBlue);
+>>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
     text-align: center;
     border-radius: 10px;
     justify-content: center;
