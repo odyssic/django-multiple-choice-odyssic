@@ -2,8 +2,8 @@
     box-sizing: border-box;
     padding: 0;
     margin-left: 0;
-    font-family: var(--defaultFont);
-    color: var(--defaultText);
+    font-family: var(--defalult-font-family);
+    color: var(--default-text-color);
     text-align: center;
 }
 
@@ -50,41 +50,36 @@ font-style: normal; */
     --link-color: #fff;
     --link-hover: red;
     --link-active: red;
-    --minilink: #fff;
+    --minilink: rgb(153, 170, 223);
     --minilink-hover: red;
     --card-text-color: #fff;
-    --text-color: #fff;
+    --text-color: rgb(153, 170, 223);
     --box-shadow: rgba(0, 0, 0, 0.2);
     --form-background: #fff;
     --form-text: #484848;
     --form-input-border: #e5e5e5;
     --accent: red;
     /* --hover: #ff5a5f; */
-    --button-border: #ff5a5f;
+    --border-color: rgb(153, 170, 223);
     --button-hover: #ff5a5f;
     --button-text-color: #fff;
     --button-background: rgb(173, 55, 81);
-    --card-outline: rgb(138, 60, 60);
+    --card-outline: rgb(153, 170, 223);
     --dark-red: rgb(173, 55, 81);
     --link-color: rgb(120, 149, 222);
     --background-color: rgb(#fff);
     --last-card: rgb(42, 59, 85);
     /* Fonts  */
-    /* --defaultFont: "Helvetica", sans-serif; */
+    --defalult-font-family: "Helvetica", sans-serif;
     --navLinks: "Helvetica", cursive;
-    --defaultText: rgb(153, 170, 223);
-    --defaultBlue: rgb(153, 170, 223);
-    --defaultFont: {
-        font-family: acumin-pro, sans-serif;
-        font-weight: 400;
-        font-style: normal;
-    }
-    ,
+    --default-text-color: rgb(153, 170, 223);
+    --default-blue: rgb(153, 170, 223);
+    --default-font-weight: font-weight: 400;
 }
 
 .menu-icon {
     font-size: 2rem;
-    color: var(--button-border);
+    color: var(--border-color);
     padding-bottom: 60px;
 }
 
@@ -119,8 +114,8 @@ font-style: normal; */
 }
 
 .last-card:hover {
-    color: var(--dark-red) 6px;
-    border: dashed var(--dark-red) 6px;
+    color: var(--default-blue) 6px;
+    border: dashed var(--default-blue) 6px;
     cursor: pointer;
 }
 
@@ -150,7 +145,7 @@ font-style: normal; */
 
 a:link {
     text-decoration: none;
-    color: var(--defaultText);
+    color: var(--default-text-color);
 }
 
 a:visited {
@@ -179,7 +174,7 @@ a:active {
 .banner-heading {
     font-family: "Raleway", sans-serif;
     font-size: 300%;
-    color: var(--defaultText);
+    color: var(--default-text-color);
     text-align: center;
 }
 
@@ -313,7 +308,7 @@ button {
     background: var(--button-background);
     width: 100%;
     color: var(--button-text-color);
-    border: solid 3px var(--button-border);
+    border: solid 3px var(--border-color);
     border-radius: 0.25rem;
     cursor: pointer;
     -webkit-appearance: none;
@@ -331,7 +326,7 @@ button:hover {
     background: var(--button-background);
     width: 100%;
     color: var(--button-text-color);
-    border: solid 3px var(--button-border);
+    border: solid 3px var(--border-color);
     border-radius: 0.25rem;
     cursor: pointer;
     -webkit-appearance: none;
@@ -349,7 +344,7 @@ button:hover {
     width: 100px;
     min-width: 90px;
     height: 64px;
-    font-family: var(--defaultFont);
+    font-family: var(--defalult-font-family);
     color: white;
     background-color: var(--defaultText);
     margin-right: auto;
@@ -414,7 +409,7 @@ body {
 }
 
 .deck-details-link {
-    font-family: var(--defaultFont);
+    font-family: var(--defalult-font-family);
     color: var(--minilink);
     padding: 10px;
     font-size: 125%;
@@ -424,7 +419,7 @@ body {
 }
 
 .minilinks {
-    font-family: var(--defaultFont);
+    font-family: var(--defalult-font-family);
     color: var(--minilink);
     padding: 10px;
     font-size: 125%;
@@ -436,8 +431,8 @@ body {
     cursor: pointer;
 }
 
-.cardTitle {
-    font-family: var(--defaultFont);
+.card-title {
+    font-family: var(--defalult-font-family);
     color: white;
     text-align: center;
     padding-top: 45px;
@@ -445,13 +440,25 @@ body {
 }
 
 .card-text {
-    font-family: var(--defaultFont);
+    font-family: var(--default-font-family);
     color: var(--card-text-color);
-    font-size: 200%;
+    font-size: 100%;
     text-align: center;
     padding: 10px 10px 25px 10px;
     display: flex;
     justify-content: center;
+}
+
+card-text-front {
+    color: var(--default-blue)
+}
+
+card-top {
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .hidden {
@@ -515,13 +522,11 @@ p {
 }
 
 .flip-card {
-    background-color: transparent;
+    background-color: white;
     width: 300px;
-    height: 300px;
-    perspective: 500px;
-    /* padding: 0.5rem; */
+    height: 350px;
+    perspective: 700px;
     border-radius: 25px;
-    /* z-index: 0; */
     position: absolute;
     margin-left: auto;
     margin-right: auto;
@@ -560,15 +565,15 @@ p {
 }
 
 .flip-card-front {
-    background-color: var(--defaultText);
+    background-color: white;
     border: solid var(--card-outline) 6px;
     color: black;
     border-radius: 25px;
 }
 
 .flip-card-back {
-    background-color: rgba(113, 137, 255, 1);
-    border: var(--defaultBlue);
+    background-color: var(--default-blue);
+    border: var(--default-blue);
     color: white;
     transform: rotateY(180deg);
     border-radius: 25px;
@@ -668,12 +673,12 @@ p {
     flex-flow: column;
     color: rgb(42, 59, 85);
     font-family: sans-serif;
-    height: 200px;
-    width: 200px;
-    background-color: rgb(173, 55, 81);
-    border: solid rgb(177, 30, 30) 3px;
+    height: 350px;
+    width: 300px;
+    background-color: white;
+    border: solid var(--default-blue) 3px;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 10px;
     justify-content: center;
     margin: 25px;
     align-content: center;
@@ -689,7 +694,7 @@ p {
 /* Dropdown Button */
 
 .dropbtn {
-    color: white;
+    color: gray;
     padding: 0px;
     font-size: 25px;
     border: none;
