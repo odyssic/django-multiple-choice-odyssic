@@ -79,6 +79,8 @@ def index(request):
     users = User.objects.all()
     decks = Deck.objects.all()
     cards = Card.objects.all()
+    
+    print(cards)
 
     return render(request, "core/index.html", {'users': users, 'decks': decks, 'cards':cards})
 
