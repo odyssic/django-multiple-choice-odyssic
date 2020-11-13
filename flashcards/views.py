@@ -78,8 +78,9 @@ def logout_request(request):
 def index(request):
     users = User.objects.all()
     decks = Deck.objects.all()
+    cards = Card.objects.all()
 
-    return render(request, "core/index.html", {'users': users, 'decks': decks})
+    return render(request, "core/index.html", {'users': users, 'decks': decks, 'cards':cards})
 
 @login_required
 def flashcards(request, pk):
@@ -89,14 +90,14 @@ def flashcards(request, pk):
     return render(request, "core/flashcards.html", {'deck': deck, 'cards': cards, 'pk': pk})
     
 
-@login_required
+# @login_required
 
-def details(request, pk):
-    deck = get_object_or_404(Deck, pk=pk)
-    cards = Card.objects.filter(deck=deck).order_by('question')
-    count = len(cards)
+# def details(request, pk):
+#     deck = get_object_or_404(Deck, pk=pk)
+#     cards = Card.objects.filter(deck=deck).order_by('question')
+#     count = len(cards)
 
-    return render(request, 'core/details.html', {'deck':deck,'cards':cards, 'count': count, 'pk':pk})
+#     return render(request, 'core/details.html', {'deck':deck,'cards':cards, 'count': count, 'pk':pk})
 
 
 @login_required

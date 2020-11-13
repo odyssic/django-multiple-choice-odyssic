@@ -2,13 +2,8 @@
     box-sizing: border-box;
     padding: 0;
     margin-left: 0;
-<<<<<<< HEAD
     font-family: var(--defalult-font-family);
     color: var(--default-text-color);
-=======
-    font-family: var(--default-font);
-    color: var(--default-text);
->>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
     text-align: center;
 }
 
@@ -30,41 +25,21 @@
     --form-input-border: #e5e5e5;
     --accent: rgb(153, 170, 223);
     /* --hover: #ff5a5f; */
-<<<<<<< HEAD
     --border-color: rgb(153, 170, 223);
     --button-hover: #ff5a5f;
     --button-text-color: #fff;
     --button-background: rgb(173, 55, 81);
     --card-outline: rgb(153, 170, 223);
     --dark-red: rgb(173, 55, 81);
-=======
-    --button-border: rgb(153, 170, 223);
-    --button-hover: gold;
-    --button-text-color: #fff;
-    --button-background: rgb(153, 170, 223);
-    --card-outline: rgb(153, 170, 223);
-    --dark-red: rgb(153, 170, 223);
->>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
     --link-color: rgb(120, 149, 222);
     --background-color: rgb(#fff);
     --last-card: rgb(42, 59, 85);
     /* Fonts  */
     --defalult-font-family: "Helvetica", sans-serif;
     --navLinks: "Helvetica", cursive;
-<<<<<<< HEAD
     --default-text-color: rgb(153, 170, 223);
     --default-blue: rgb(153, 170, 223);
     --default-font-weight: font-weight: 400;
-=======
-    --default-text: rgb(153, 170, 223);
-    --default-blue: rgb(153, 170, 223);
-    --default-font: {
-        font-family: acumin-pro, sans-serif;
-        font-weight: 400;
-        font-style: normal;
-    }
-    ,
->>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
 }
 
 .menu-icon {
@@ -135,11 +110,7 @@
 
 a:link {
     text-decoration: none;
-<<<<<<< HEAD
     color: var(--default-text-color);
-=======
-    color: var(default-text);
->>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
 }
 
 a:visited {
@@ -168,11 +139,7 @@ a:active {
 .banner-heading {
     font-family: "Raleway", sans-serif;
     font-size: 300%;
-<<<<<<< HEAD
     color: var(--default-text-color);
-=======
-    color: var(default-text);
->>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
     text-align: center;
 }
 
@@ -343,11 +310,7 @@ button:hover {
     width: 100px;
     min-width: 90px;
     height: 64px;
-<<<<<<< HEAD
     font-family: var(--defalult-font-family);
-=======
-    font-family: var(--default-font);
->>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
     color: white;
     background-color: var(--default-blue);
     margin-right: auto;
@@ -412,7 +375,7 @@ body {
 }
 
 .deck-details-link {
-    font-family: var(--defalult-font-family);
+    font-family: var(--default-font-family);
     color: var(--minilink);
     padding: 10px;
     font-size: 125%;
@@ -422,7 +385,7 @@ body {
 }
 
 .minilinks {
-    font-family: var(--defalult-font-family);
+    font-family: var(--default-font-family);
     color: var(--minilink);
     padding: 10px;
     font-size: 125%;
@@ -435,7 +398,7 @@ body {
 }
 
 .card-title {
-    font-family: var(--defalult-font-family);
+    font-family: var(--default-font-family);
     color: white;
     text-align: center;
     padding-top: 45px;
@@ -462,6 +425,32 @@ card-top {
     flex-flow: row;
     justify-content: space-between;
     width: 100%;
+}
+
+.deck-details {
+    background-color: var(--default-blue);
+    color: white;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.deck-details-title {
+    background-color: var(--default-blue);
+    color: white;
+    text-transform: uppercase;
+    font-size: 80%;
+}
+
+.deck-details-body {
+    color: white;
+    font-size: 80%;
+}
+
+.deck-title {
+    text-transform: uppercase;
+    size: 150%;
+    color: var(--default-blue);
 }
 
 .hidden {
@@ -511,7 +500,7 @@ h5 {
 
 p {
     font-family: Arial, Helvetica, sans-serif;
-    color: var(--defaultBlue);
+    color: var(--default-blue);
     text-align: center;
 }
 
@@ -568,13 +557,9 @@ p {
 }
 
 .flip-card-front {
-<<<<<<< HEAD
     background-color: white;
-=======
-    background-color: var(--light-blue);
->>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
-    border: solid var(--card-outline) 6px;
-    color: black;
+    border: solid var(--default-blue) 3px;
+    color: var(--default-blue);
     border-radius: 25px;
 }
 
@@ -603,8 +588,8 @@ p {
 }
 
 .add-deck:hover {
-    color: var(--defaultBlue);
-    border: dashed var(--defaultBlue) 6px;
+    color: var(--default-blue);
+    border: dashed var(--default-blue) 6px;
 }
 
 .deck-container {
@@ -680,17 +665,10 @@ p {
     flex-flow: column;
     color: rgb(42, 59, 85);
     font-family: sans-serif;
-<<<<<<< HEAD
     height: 350px;
     width: 300px;
     background-color: white;
     border: solid var(--default-blue) 3px;
-=======
-    height: 200px;
-    width: 200px;
-    background-color: var(--defaultBlue);
-    border: solid var(--defaultBlue);
->>>>>>> 437ae99363bc1b5428b65aaf3220f1e46a56e980
     text-align: center;
     border-radius: 10px;
     justify-content: center;
