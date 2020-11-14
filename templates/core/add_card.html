@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
-<h3> Add Cards to the Deck '{{deck.name}}' </h3>
-<h4> Subject: {{deck.subject}}</h4>
+<h3>Add Cards</h3>
+<p class='deck-title'>{{deck.subject}}</p>
 
 <form action="" method="post">
     {% csrf_token %}

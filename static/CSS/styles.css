@@ -13,10 +13,10 @@
     
      :root {
         --link-color: rgb(153, 170, 223);
-        --link-hover: red;
-        --link-active: red;
+        --link-hover: #e7b615;
+        --link-active: #e7b615;
         --minilink: rgb(153, 170, 223);
-        --minilink-hover: red;
+        --minilink-hover: rgb(179, 195, 241);
         --card-text-color: #fff;
         --text-color: rgb(153, 170, 223);
         --box-shadow: rgba(0, 0, 0, 0.2);
@@ -26,9 +26,9 @@
         --accent: rgb(153, 170, 223);
         /* --hover: #ff5a5f; */
         --border-color: rgb(153, 170, 223);
-        --button-hover: #ff5a5f;
+        --button-hover: #e7b615;
         --button-text-color: #fff;
-        --button-background: rgb(173, 55, 81);
+        --button-background: rgb(120, 149, 222);
         --card-outline: rgb(153, 170, 223);
         --dark-red: rgb(173, 55, 81);
         --link-color: rgb(120, 149, 222);
@@ -64,24 +64,24 @@
     }
     
     .last-card {
-        color: var(--last-card);
-        font-family: sans-serif;
-        height: 300px;
-        width: 300px;
-        border: dashed var(--text-color) 6px;
-        text-align: center;
+        background-color: white;
         border-radius: 25px;
-        border-radius: 25px;
+        height: 350px;
+        position: absolute;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 0;
+        width: 300px;
         z-index: -1;
     }
     
     .last-card:hover {
         color: var(--default-blue) 6px;
-        border: dashed var(--default-blue) 6px;
-        cursor: pointer;
+        /* border: dashed var(--default-blue) 6px; */
+        /* cursor: pointer; */
+    }
+    
+    .logo {
+        width: 40%;
     }
     
     .full-deck {
@@ -240,42 +240,43 @@
     #id_deck:focus,
     #id_username:focus,
     #id_password:focus {
-        border: solid 3px lightskyblue;
+        border: solid 3px var(--default-blue);
+        text-align: left;
     }
     
     form input,
     textarea {
+        border: solid 3px var(--form-input-border);
+        color: lightgray;
         display: inline-block;
         flex-basis: inherit;
         flex-grow: inherit;
-        margin: 0.5rem 0;
         font-size: 16px;
-        padding: 5px 5px 5px 0px;
-        border: solid 3px var(--form-input-border);
-        font-weight: 400;
-        border-radius: 0.25rem;
         font-weight: bold;
-        color: gray;
+        /* margin: 2rem 0; */
+        /* padding: 5px 5px 5px 0px; */
+        border-radius: 0.25rem;
         font-family: Arial, Helvetica, sans-serif;
         letter-spacing: 1px;
+        text-align: left;
     }
     
     form input:focus textarea {
+        border: solid var(--default-blue) 3px;
         height: 5rem;
-        border: solid lightskyblue 5px;
     }
     
     button {
-        padding: 0.5rem;
+        border: solid 3px var(--border-color);
+        border-radius: 0.25rem;
+        color: var(--button-text-color);
+        cursor: pointer;
+        background: var(--button-background);
         font-size: 16px;
         letter-spacing: 1px;
         margin-top: 1rem;
-        background: var(--button-background);
+        padding: 0.5rem;
         width: 100%;
-        color: var(--button-text-color);
-        border: solid 3px var(--border-color);
-        border-radius: 0.25rem;
-        cursor: pointer;
         -webkit-appearance: none;
     }
     
@@ -437,14 +438,36 @@
         bottom: 10px;
     }
     
+    .relative {
+        position: relative;
+    }
+    
+    .fixed {
+        position: fixed;
+    }
+    
+    .absolute {
+        position: absolute;
+    }
+    
+    .rounded-corner {
+        border-radius: 10px;
+    }
+    
     .deck-details {
         background-color: var(--default-blue);
         color: white;
-        border-radius: 10px;
         margin: 10px;
-        padding: 0px 25px 0px 25px;
+        padding: 6px 25px 0px 25px;
         max-height: 50%;
         height: 50%;
+        bottom: 1%;
+    }
+    
+    .deck-details-body {
+        color: white;
+        font-size: 60%;
+        text-align: left;
     }
     
     .deck-details-title {
@@ -452,12 +475,6 @@
         color: white;
         text-transform: uppercase;
         font-size: 80%;
-    }
-    
-    .deck-details-body {
-        color: white;
-        font-size: 80%;
-        text-align: left;
     }
     
     .deck-title {
@@ -675,16 +692,14 @@
     .deck {
         align-content: center;
         background-color: white;
+        color: rgb(42, 59, 85);
         border: solid var(--default-blue) 1px;
         border-radius: 10px;
         box-shadow: 0 4px 8px 0 var(--box-shadow);
-        color: rgb(42, 59, 85);
-        display: flex;
-        flex-flow: column;
         font-family: sans-serif;
         height: 350px;
         margin: 25px;
-        padding: 5px;
+        padding: 10px 5px 12px 5px;
         width: 300px;
         text-align: center;
         vertical-align: middle;

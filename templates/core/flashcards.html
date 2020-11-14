@@ -1,18 +1,16 @@
 {% extends 'base.html' %} 
 {% load static %} 
 {% block content %}
-<h1>{{deck.name}}</h1>
-<h2>Subject: {{deck.subject}}</h2>
+{% comment %} <h1>{{deck.name}}</h1> {% endcomment %}
+<p class="deck-title">{{deck.subject}}</p>
 <div class='flash-card-schema-container'>
 <div class='full-deck'>
     <div id='last-card' class='last-card hidden-last-card-menu'>
-        <h1>The End.</h1>
+        <h3>The End.</h3>
         
         <ul>
             <li><a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Go Again.</a></li>
-
             <li><a class='minilinks' href={% url 'home' %}>Choose Another Deck</a></li>
-
             <li><a class='minilinks' href={% url 'delete-deck' pk=deck.pk %} onclick="return confirm('Are you sure you want to delete this deck? Deleting a deck cannot be undone.')">Delete Deck</a></li>
         </ul>
     </div>
@@ -36,10 +34,7 @@
     <a class='minilinks' href={% url 'edit-card' pk=card.pk %}>Edit</a>
     <a class='minilinks' href={% url 'delete-card' pk=card.pk %} onclick="return confirm('Are you sure you want to delete this card? Deleting a card cannot be undone.')">Delete</a>
         </div>
-        </div>
-                        
-
-                        
+        </div> 
                     <p class='card-text'>
                         {{card.answer}}</p>
                     
@@ -59,9 +54,9 @@
  
 {% if cards %}
 <div id='fliplink-container' class='fliplink-container'>
-    <i ID='last' class="fas fa-arrow-alt-circle-left larger-icon"></i>
+    <i ID='last' class="fas fa-chevron-left larger-icon"></i>
     <div class='flip-button' id='flip-button'>Flip</div>
-    <i ID='next' class="fas fa-arrow-alt-circle-right larger-icon"></i>
+    <i ID='next' class="fas fa-chevron-right larger-icon"></i>
 {% endif %}
 </div>
 </div>

@@ -33,10 +33,10 @@
 
   <p class="deck-title">{{deck.subject}}</p> 
 
-  <div class="deck-details">
+  <div class="deck-details rounded-corner relative">
     <p class="deck-details-title">Deck Details</p>
     <p class="deck-details-body">Created: {{deck.created_at}}</p>
-    <p class="deck-details-body">{{deck | length }}</p>
+    <p class="deck-details-body">{{deck.cards | length }}</p>
     <p class="deck-details-body">{{deck.description}}</p>
     <p class="deck-details-body">{{deck.user}}</p>
 
