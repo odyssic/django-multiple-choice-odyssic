@@ -11,7 +11,7 @@ class Deck(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     description = models.TextField(max_length = 300, default = '')
-    is_favorite = models.BooleanField(default='no')
+    is_favorite = models.BooleanField(default = False)
     user = models.ForeignKey(
         User, null=True, related_name='decks', on_delete=models.CASCADE)
 
