@@ -1,6 +1,10 @@
 {% extends 'base.html' %}{% load static %} {% block content %}
 
+{% if decks %}
+
 <p class="deck-title">Your Decks</p>
+
+{% endif %}
 
 {% comment %} <form method = 'GET' action='{% url 'search' %}'>
 <input name ='q' value = '{{request.GET.q}}'placeholder='search...'>
@@ -9,17 +13,22 @@
 </form> {% endcomment %}
 
 {% if not decks %}
+
+<p class="deck-title">You don't have any decks yet.</p>
+
+<div class="deck-container">
+    <div class="deck">
     
-    <p class="deck-title">You have no Decks yet...</p>
-    <div>
-    <a href={% url 'add-deck' %}>
+      <a href={% url 'add-deck' %}>
+      <i class="fas fa-plus largest-icon"></i>
+      </a>
+      <p class="deck-title">Create a Deck.</p>
     </div>
-    
+</div> 
+
 {% endif %}
 
-<a href={% url 'add-deck' %}>
-            <h2>Create Deck</h2>
-        </a>
+{% if decks %}
 
 <div class="deck-container">
 
@@ -39,7 +48,6 @@
     <p class="deck-details-body">{{deck.cards | length }}</p>
     <p class="deck-details-body">{{deck.description}}</p>
     <p class="deck-details-body">{{deck.user}}</p>
-
   </div>
 
 <div class="deck-bottom">
@@ -50,8 +58,13 @@
 </div>
   </div>
   
-{% endfor %}    
+{% endfor %} 
+  
 </div>
+
+</div>
+
+{% endif %}
 
 <script defer src="{% static 'js/index.js' %}"></script>
 

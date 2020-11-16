@@ -58,6 +58,16 @@
         color: var(default-text);
     }
     
+    .largest-icon {
+        padding: 25px 0 25px 0;
+        font-size: 12em;
+        color: var(default-text);
+    }
+    /* .largest-icon:hover {
+        font-size: 12em;
+        color: var(default-text);
+    } */
+    
     .larger-icon:hover {
         color: var(--hover);
         cursor: pointer;
@@ -174,21 +184,21 @@
     .fliplink-container {
         display: flex;
         flex-flow: row nowrap;
-        justify-content: center;
-        min-width: 100px;
-        max-width: 300px;
-        margin-top: 90px;
-        padding: 25px;
-        margin-left: auto;
-        margin-right: auto;
+        justify-content: space-around;
+        width: 300px;
+        /* max-width: 300px; */
+        /* margin-top: 90px; */
+        padding: 50px 0 50px 0;
+        /* margin-left: auto;
+        margin-right: auto; */
     }
     
     .fliplink {
-        display: flex;
+        /* display: flex; */
         flex-basis: 1;
-        font-size: 300%;
+        /* font-size: 300%; */
         color: var(default-text);
-        text-align: center;
+        /* text-align: center; */
         -webkit-appearance: none;
         padding-bottom: 25px;
     }
@@ -308,12 +318,12 @@
     }
     
     .flip-button {
-        width: 100px;
+        /* width: 100px;
         min-width: 90px;
-        height: 64px;
-        font-family: var(--defalult-font-family);
-        color: white;
-        background-color: var(--default-blue);
+        height: 64px; */
+        /* font-family: var(--defalult-font-family); */
+        color: var(--default-blue);
+        /* background-color: var(--default-blue); */
         margin-right: auto;
         margin-left: auto;
         cursor: pointer;
@@ -482,7 +492,7 @@
         size: 150%;
         color: var(--default-blue);
         height: 50px;
-        padding: 6px;
+        padding: 4px;
     }
     
     .hidden {
@@ -546,14 +556,15 @@
     }
     
     .flip-card {
-        background-color: white;
-        width: 300px;
-        height: 350px;
-        perspective: 700px;
+        /* background-color: white; */
         border-radius: 25px;
-        position: absolute;
+        height: 350px;
         margin-left: auto;
         margin-right: auto;
+        padding: 0px 0px 25px 0px;
+        perspective: 700px;
+        position: absolute;
+        width: 300px;
     }
     
     .flip-card-inner {
@@ -623,15 +634,25 @@
     }
     
     .deck-container {
-        max-width: 100%;
-        min-width: 240px;
+        align-content: center;
         display: flex;
         flex-flow: row wrap;
+        justify-content: center;
         margin-left: auto;
         margin-right: auto;
-        /* flex: 1; */
+        max-width: 100%;
+        min-width: 240px;
+    }
+    
+    .empty-deck-container {
         align-content: center;
+        display: flex;
+        flex-flow: row wrap;
         justify-content: center;
+        max-width: 100%;
+        min-width: 240px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     @-ms-keyframes wiggle {
@@ -692,10 +713,10 @@
     .deck {
         align-content: center;
         background-color: white;
-        color: rgb(42, 59, 85);
         border: solid var(--default-blue) 1px;
         border-radius: 10px;
         box-shadow: 0 4px 8px 0 var(--box-shadow);
+        color: rgb(42, 59, 85);
         font-family: sans-serif;
         height: 350px;
         margin: 25px;
@@ -703,6 +724,9 @@
         width: 300px;
         text-align: center;
         vertical-align: middle;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
     }
     /* dropdown  */
     /* Dropdown Button */

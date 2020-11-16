@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% load static %} 
 {% block content %}
-{% comment %} <h1>{{deck.name}}</h1> {% endcomment %}
+
 <p class="deck-title">{{deck.subject}}</p>
 <div class='flash-card-schema-container'>
 <div class='full-deck'>
@@ -55,11 +55,12 @@
 {% if cards %}
 <div id='fliplink-container' class='fliplink-container'>
     <i ID='last' class="fas fa-chevron-left larger-icon"></i>
-    <div class='flip-button' id='flip-button'>Flip</div>
+    <i id='flip-button' class="fas fa-sync-alt larger-icon"></i></div>
     <i ID='next' class="fas fa-chevron-right larger-icon"></i>
+</div>
 {% endif %}
-</div>
-</div>
+
+
 
 <script defer src="{% static 'js/flashcards.js' %}"></script>
 
