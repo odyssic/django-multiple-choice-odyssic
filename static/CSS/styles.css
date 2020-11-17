@@ -2,8 +2,7 @@
         box-sizing: border-box;
         padding: 0;
         margin-left: 0;
-        font-family: var(--defalult-font-family);
-        color: var(--default-text-color);
+        font-family: var(--default-font-family);
         text-align: center;
     }
     
@@ -18,24 +17,24 @@
         --minilink: rgb(153, 170, 223);
         --minilink-hover: #e7b615;
         --card-text-color: #fff;
-        --text-color: rgb(153, 170, 223);
+        --text-color: #DF99DF;
         --box-shadow: rgba(0, 0, 0, 0.2);
         --form-background: #fff;
         --form-text: #484848;
         --form-input-border: #e5e5e5;
         --accent: rgb(153, 170, 223);
-        /* --hover: #ff5a5f; */
+        --hover: #e7b615;
         --border-color: rgb(153, 170, 223);
         --button-hover: #e7b615;
         --button-text-color: #fff;
         --button-background: rgb(120, 149, 222);
         --card-outline: rgb(153, 170, 223);
         --dark-red: rgb(173, 55, 81);
-        --link-color: rgb(120, 149, 222);
+        --link-color: #7895DE;
         --background-color: rgb(#fff);
         --last-card: rgb(42, 59, 85);
         /* Fonts  */
-        --defalult-font-family: "Helvetica", sans-serif;
+        --default-font-family: "Helvetica", sans-serif;
         --navLinks: "Helvetica", cursive;
         --default-text-color: rgb(153, 170, 223);
         --default-blue: rgb(153, 170, 223);
@@ -44,7 +43,7 @@
     
     .menu-icon {
         font-size: 2rem;
-        color: var(--border-color);
+        color: var(--default-blue);
         padding-bottom: 60px;
     }
     
@@ -95,7 +94,7 @@
         opacity: 0.99;
     }
     
-    .card-nav-button {
+    .side-nav .card-nav-button {
         padding: 60px;
         margin: 100x;
     }
@@ -182,6 +181,35 @@
         padding: 50px 0 50px 0;
         /* margin-left: auto;
         margin-right: auto; */
+    }
+    
+    .side-menu-container {
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .side-menu {
+        background-color: var(--default-blue);
+        color: white;
+        display: flex;
+        justify-content: flex-end;
+        left: -22px;
+        top: 25px;
+        width: 100px;
+        height: 60px;
+        align-items: center;
+        position: absolute;
+    }
+    
+    .side-icon {
+        color: var(--white);
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 20px;
+    }
+    
+    .side-icon:hover {
+        color: var(--hover);
     }
     
     .fliplink {
@@ -386,7 +414,7 @@
     
     .minilinks {
         font-family: var(--default-font-family);
-        color: var(--minilink);
+        color: var(--default-blue);
         padding: 10px;
         font-size: 125%;
         text-align: center;
@@ -796,10 +824,9 @@
         display: block;
         transition: 0.3s;
     }
-    
-    .sidenav a:hover {
+    /* .sidenav a:hover {
         color: var(--link-hover);
-    }
+    } */
     
     .sidenav .closebtn {
         position: absolute;
