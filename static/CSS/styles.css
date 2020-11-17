@@ -16,7 +16,7 @@
         --link-hover: #e7b615;
         --link-active: #e7b615;
         --minilink: rgb(153, 170, 223);
-        --minilink-hover: rgb(179, 195, 241);
+        --minilink-hover: #e7b615;
         --card-text-color: #fff;
         --text-color: rgb(153, 170, 223);
         --box-shadow: rgba(0, 0, 0, 0.2);
@@ -62,15 +62,6 @@
         padding: 25px 0 25px 0;
         font-size: 12em;
         color: var(default-text);
-    }
-    /* .largest-icon:hover {
-        font-size: 12em;
-        color: var(default-text);
-    } */
-    
-    .larger-icon:hover {
-        color: var(--hover);
-        cursor: pointer;
     }
     
     .last-card {
@@ -129,7 +120,7 @@
     
     a:hover {
         text-decoration: none;
-        color: var(--hover);
+        color: var(--link-hover);
     }
     
     a:active {
@@ -777,4 +768,52 @@
         margin: 20px;
         width: 400px;
         height: 8px;
+    }
+    /*  side menu */
+    
+    body {
+        font-family: "Lato", sans-serif;
+    }
+    
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: var(--default-blue);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+    
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
+        transition: 0.3s;
+    }
+    
+    .sidenav a:hover {
+        color: var(--link-hover);
+    }
+    
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+    
+    @media screen and (max-height: 450px) {
+        .sidenav {
+            padding-top: 15px;
+        }
+        .sidenav a {
+            font-size: 18px;
+        }
     }

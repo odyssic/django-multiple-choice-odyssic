@@ -22,7 +22,8 @@ urlpatterns = [
     path('accounts/', include('registration.backends.simple.urls')),
     path('logout/', views.logout_request, name="logout"),
     # path('deck/<int:pk>/details/', views.details, name='details'),
-    path('deck/<int:pk>/edit-deck/', views.edit_deck, name='edit-deck')
+    path('deck/<int:pk>/edit-deck/', views.edit_deck, name='edit-deck'),
+    path('deck_is_favorite/<int:pk>', views.deck_is_favorite, name='deck_is_favorite')
 ]
 
 

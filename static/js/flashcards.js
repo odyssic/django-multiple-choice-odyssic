@@ -96,3 +96,16 @@ function flipTopCard(topCard) {
 flipButton.addEventListener("click", function(event) {
     flipTopCard(topCard);
 });
+
+// mark deck as favorite
+
+function deck_is_favorite(id) {
+    console.log(id);
+    return fetch(`/deck_is_favorite/${id}/`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+        }
+    }).then(response => response.json());
+}

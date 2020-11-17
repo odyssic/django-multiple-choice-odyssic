@@ -12,6 +12,7 @@ from django.views.decorators.http import require_http_methods, require_POST
 from .forms import NewUserForm
 from django.contrib import messages
 from django.db.models import Q
+from django.http import JsonResponse
 
 # =======================AUTHENTICATION========================
 
@@ -79,10 +80,13 @@ def index(request):
     users = User.objects.all()
     decks = Deck.objects.all()
     cards = Card.objects.all()
+    deckid= Deck.id
     
-    print(cards)
+    # count = len(Deck.objects.filter(deckid))
+    # print(count)
+    # # count = len(cards)
 
-    return render(request, "core/index.html", {'users': users, 'decks': decks, 'cards':cards})
+    return render(request, "core/index.html", {'users': users, 'decks': decks })
 
 @login_required
 def flashcards(request, pk):
@@ -91,6 +95,17 @@ def flashcards(request, pk):
     
     return render(request, "core/flashcards.html", {'deck': deck, 'cards': cards, 'pk': pk})
     
+@login_required
+def deck_is_favorite(request, pk):
+    jsonStr = ''
+    deck = get_object_or_404(Deck, pk=pk)
+    if request.method == "POST":
+        deck.is_favorite = True
+        deck= deck.save()
+        jsonStr = json.dumps(deck)
+        print(jsonStr)
+        print(deck)
+    return JsonResponse({"status": "ok", "data": jsonStr})
 
 # @login_required
 
