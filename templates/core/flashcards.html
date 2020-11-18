@@ -1,6 +1,7 @@
 {% extends 'base.html' %} 
-{% load static %} 
+
 {% block content %}
+{% load static %} 
 
 <p class="deck-title">{{deck.subject}}</p>
 <div class='flash-card-schema-container'>
@@ -48,18 +49,20 @@
     <div class='minilinks-container'>
         <a class='minilinks' href={% url 'add-card' pk=deck.pk %}>Add Cards</a><a class='minilinks' href={% url 'home' %}>Back to Decks</a>
     </div>
+
     {% endif %}
 
 </div>
+
  
 {% if cards %}
 <div id='fliplink-container' class='fliplink-container'>
-    <i ID='last' class="fas fa-chevron-left larger-icon"></i>
-    <i id='flip-button' class="fas fa-sync-alt larger-icon"></i></div>
-    <i ID='next' class="fas fa-chevron-right larger-icon"></i>
+    <i ID='last' class="fas fa-chevron-left minilinks larger-icon"></i>
+    <i ID='flip-button' class="fas fa-sync-alt minilinks larger-icon"></i>
+    <i ID='next' class="fas fa-chevron-right minilinks larger-icon"></i>
 </div>
 {% endif %}
-
+</div>
 
 
 <script defer src="{% static 'js/flashcards.js' %}"></script>

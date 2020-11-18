@@ -26,13 +26,14 @@
 <header>
     <div class="banner">
         <a class='banner-heading ' href={% url 'home' %}>
-        <img class="logo" src="static/images/flashcard-logo.png"/>
+        <img class="logo" src="{% static "images/flashcard-logo.png" %}"/>
         </a>
     </div>
 
 </header>
 
 <body>
+
     {% if user.is_authenticated %}
     <div class='login-text '>
         <p>Logged in as {{request.user}} | <a href={% url 'logout' %}>logout</a></p>
@@ -44,6 +45,15 @@
 
 
     {% endif %} {% block content %} {% endblock %}
+
+    <div class="footer">
+        <div class="deck-title">Made by Steven Budden</div>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <a href="http://www.stevenbudden.com"><i class="fas fa-globe"></i></a>
+    
+</div>
+
    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js">
     </script>
     <script src="https://unpkg.com/vuex"></script> 

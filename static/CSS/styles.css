@@ -1,846 +1,903 @@
-    * {
-        box-sizing: border-box;
-        padding: 0;
-        margin-left: 0;
-        font-family: var(--default-font-family);
-        text-align: center;
-    }
-    
-    .white {
-        color: white;
-    }
-    
-     :root {
-        --link-color: rgb(153, 170, 223);
-        --link-hover: #e7b615;
-        --link-active: #e7b615;
-        --minilink: rgb(153, 170, 223);
-        --minilink-hover: #e7b615;
-        --card-text-color: #fff;
-        --text-color: #DF99DF;
-        --box-shadow: rgba(0, 0, 0, 0.2);
-        --form-background: #fff;
-        --form-text: #484848;
-        --form-input-border: #e5e5e5;
-        --accent: rgb(153, 170, 223);
-        --hover: #e7b615;
-        --border-color: rgb(153, 170, 223);
-        --button-hover: #e7b615;
-        --button-text-color: #fff;
-        --button-background: rgb(120, 149, 222);
-        --card-outline: rgb(153, 170, 223);
-        --dark-red: rgb(173, 55, 81);
-        --link-color: #7895DE;
-        --background-color: rgb(#fff);
-        --last-card: rgb(42, 59, 85);
-        /* Fonts  */
-        --default-font-family: "Helvetica", sans-serif;
-        --navLinks: "Helvetica", cursive;
-        --default-text-color: rgb(153, 170, 223);
-        --default-blue: rgb(153, 170, 223);
-        --default-font-weight: font-weight: 400;
-    }
-    
-    .menu-icon {
-        font-size: 2rem;
-        color: var(--default-blue);
-        padding-bottom: 60px;
-    }
-    
-    .menu-icon:hover {
-        cursor: pointer;
-        color: white;
-    }
-    
-    .larger-icon {
-        font-size: 4em;
-        color: var(default-text);
-    }
-    
-    .largest-icon {
-        padding: 25px 0 25px 0;
-        font-size: 12em;
-        color: var(default-text);
-    }
-    
-    .last-card {
-        background-color: white;
-        border-radius: 25px;
-        height: 350px;
-        position: absolute;
-        margin-left: auto;
-        margin-right: auto;
-        width: 300px;
-        z-index: -1;
-    }
-    
-    .last-card:hover {
-        color: var(--default-blue) 6px;
-        /* border: dashed var(--default-blue) 6px; */
-        /* cursor: pointer; */
-    }
-    
-    .logo {
-        width: 40%;
-    }
-    
-    .full-deck {
-        max-width: 300px;
-        margin-right: auto;
-        margin-left: auto;
-        padding-bottom: 200px;
-        height: 100px;
-        z-index: 0;
-        opacity: 0.99;
-    }
-    
-    .side-nav .card-nav-button {
-        padding: 60px;
-        margin: 100x;
-    }
-    
-    .deck-text {
-        font-family: Arial, Helvetica, sans-serif;
-        color: var(--text-color);
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        size: 140%;
-    }
-    
-    a:link {
-        text-decoration: none;
-        color: var(--default-text-color);
-    }
-    
-    a:visited {
-        text-decoration: none;
-    }
-    
-    a:hover {
-        text-decoration: none;
-        color: var(--link-hover);
-    }
-    
-    a:active {
-        text-decoration: none;
-        color: var(--link-active);
-    }
-    
-    .banner {
-        width: 300px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 300px;
-        align-content: center;
-        text-align: center;
-    }
-    
-    .banner-heading {
-        font-family: "Raleway", sans-serif;
-        font-size: 300%;
-        color: var(--default-text-color);
-        text-align: center;
-    }
-    
-    .button-container {
-        display: flex;
-        flex-flow: row nowrap;
-        align-content: center;
-        width: auto;
-        justify-content: space-evenly;
-        padding-bottom: 10px;
-        padding-top: 25px;
-        /* border: solid red 6px; */
-    }
-    
-    .navlinks {
-        font-family: var(--navlinks);
-        font-size: 300%;
-        color: var(--link-color);
-    }
-    
-    ul {
-        list-style-type: none;
-        padding-top: 50px;
-    }
-    
-    .flash-card-schema-container {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .fliplink-container {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        width: 300px;
-        /* max-width: 300px; */
-        /* margin-top: 90px; */
-        padding: 50px 0 50px 0;
-        /* margin-left: auto;
-        margin-right: auto; */
-    }
-    
-    .side-menu-container {
-        overflow: hidden;
-        position: relative;
-    }
-    
-    .side-menu {
-        background-color: var(--default-blue);
-        color: white;
-        display: flex;
-        justify-content: flex-end;
-        left: -22px;
-        top: 25px;
-        width: 100px;
-        height: 60px;
-        align-items: center;
-        position: absolute;
-    }
-    
-    .side-icon {
-        color: var(--white);
-        font-size: 2rem;
-        cursor: pointer;
-        padding: 20px;
-    }
-    
-    .side-icon:hover {
-        color: var(--hover);
-    }
-    
-    .fliplink {
-        /* display: flex; */
-        flex-basis: 1;
-        /* font-size: 300%; */
-        color: var(default-text);
-        /* text-align: center; */
-        -webkit-appearance: none;
-        padding-bottom: 25px;
-    }
-    
-    .fliplink:hover {
-        color: var(--hover);
-        cursor: pointer;
-    }
-    
-    form {
-        display: flex;
-        flex-flow: column;
-        align-content: center;
-        height: 70%;
-        justify-content: flex-start;
-        background: var(--form-background);
-        width: 60%;
-        margin: 0 auto;
-        padding: 1rem;
-        border-radius: 0.25rem;
-        box-shadow: 0 16px 40px var(--box-shadow);
-    }
-    
-    #id_name,
-    #id_subject,
-    #id_description,
-    #id_question,
-    #id_answer,
-    #id_deck,
-    #id_username,
-    #id_password {
-        padding: 0.5rem;
-        font-size: 16px;
-        letter-spacing: 1px;
-        margin-top: 1rem;
-        width: 100%;
-        color: darkslategray;
-        border: solid 1px darkslategray;
-        border-radius: 0.25rem;
-        cursor: pointer;
-        -webkit-appearance: none;
-    }
-    
-    #id_name:focus,
-    #id_subject:focus,
-    #id_description:focus,
-    #id_question:focus,
-    #id_answer:focus,
-    #id_deck:focus,
-    #id_username:focus,
-    #id_password:focus {
-        border: solid 3px var(--default-blue);
-        text-align: left;
-    }
-    
-    form input,
-    textarea {
-        border: solid 3px var(--form-input-border);
-        color: lightgray;
-        display: inline-block;
-        flex-basis: inherit;
-        flex-grow: inherit;
-        font-size: 16px;
-        font-weight: bold;
-        /* margin: 2rem 0; */
-        /* padding: 5px 5px 5px 0px; */
-        border-radius: 0.25rem;
-        font-family: Arial, Helvetica, sans-serif;
-        letter-spacing: 1px;
-        text-align: left;
-    }
-    
-    form input:focus textarea {
-        border: solid var(--default-blue) 3px;
-        height: 5rem;
-    }
-    
-    button {
-        border: solid 3px var(--border-color);
-        border-radius: 0.25rem;
-        color: var(--button-text-color);
-        cursor: pointer;
-        background: var(--button-background);
-        font-size: 16px;
-        letter-spacing: 1px;
-        margin-top: 1rem;
-        padding: 0.5rem;
-        width: 100%;
-        -webkit-appearance: none;
-    }
-    
-    button:hover {
-        background-color: var(--button-hover);
-    }
-    
-    .login-button {
-        padding: 0.5rem;
-        font-size: 16px;
-        letter-spacing: 1px;
-        margin-top: 1rem;
-        background: var(--button-background);
-        width: 100%;
-        color: var(--button-text-color);
-        border: solid 3px var(--border-color);
-        border-radius: 0.25rem;
-        cursor: pointer;
-        -webkit-appearance: none;
-    }
-    
-    .login-button:hover {
-        background-color: var(--button-hover);
-        ;
-    }
-    
-     ::placeholder {
-        color: gray;
-    }
-    
-    .flip-button {
-        /* width: 100px;
+* {
+    box-sizing: border-box;
+    font-family: var(--default-font-family);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--default-blue);
+    margin: 12px;
+}
+
+.white {
+    color: white;
+}
+
+ :root {
+    --link-color: #99b2f2;
+    --link-hover: #e7b615;
+    --link-active: #e7b615;
+    --minilink: #99b2f2;
+    --minilink-hover: #e7b615;
+    --card-text-color: #fff;
+    --text-color: #DF99DF;
+    --box-shadow: rgba(0, 0, 0, 0.2);
+    --form-background: #fff;
+    --form-text: #484848;
+    --form-input-border: #e5e5e5;
+    --accent: #99b2f2;
+    --hover: #e7b615;
+    --border-color: #99b2f2;
+    --button-hover: #e7b615;
+    --button-text-color: #fff;
+    --button-background: rgb(120, 149, 222);
+    --card-outline: #99b2f2;
+    --link-color: #99b2f2;
+    --background-color: rgb(#fff);
+    /* Fonts  */
+    --default-font-family: "Helvetica", sans-serif;
+    --navLinks: "Helvetica", cursive;
+    --default-text-color: #99b2f2;
+    --default-blue: #99b2f2;
+    --default-font-weight: font-weight: 400;
+}
+
+.menu-icon {
+    font-size: 2rem;
+    color: var(--default-blue);
+    padding-bottom: 60px;
+}
+
+.menu-icon:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.larger-icon {
+    font-size: 2rem;
+}
+
+.largest-icon {
+    padding: 25px 0 25px 0;
+    font-size: 12em;
+    color: var(default-text);
+}
+
+.last-card {
+    background-color: white;
+    border-radius: 25px;
+    height: 350px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    z-index: -1;
+}
+
+.last-card:hover {
+    color: var(--default-blue) 6px;
+    /* border: dashed var(--default-blue) 6px; */
+    /* cursor: pointer; */
+}
+
+.logo {
+    width: 30%;
+}
+
+.full-deck {
+    max-width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 200px;
+    height: 100px;
+    z-index: 0;
+    opacity: 0.99;
+}
+
+.side-nav .card-nav-button {
+    padding: 60px;
+    margin: 100x;
+}
+
+.deck-text {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    size: 140%;
+}
+
+a:link {
+    text-decoration: none;
+    color: var(--default-text-color);
+}
+
+a:visited {
+    text-decoration: none;
+    color: var(--default-text-color);
+}
+
+a:hover {
+    text-decoration: none;
+    color: var(--link-hover);
+}
+
+a:active {
+    text-decoration: none;
+    color: var(--link-active);
+}
+
+.banner {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    max-width: 300px;
+    align-content: center;
+    text-align: center;
+}
+
+.banner-heading {
+    font-family: "Raleway", sans-serif;
+    font-size: 300%;
+    color: var(--default-text-color);
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-content: center;
+    width: auto;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+    padding-top: 25px;
+    /* border: solid red 6px; */
+}
+
+.navlinks {
+    font-family: var(--navlinks);
+    font-size: 300%;
+    color: var(--link-color);
+}
+
+ul {
+    list-style-type: none;
+    padding-top: 50px;
+}
+
+.flash-card-schema-container {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+.fliplink-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    width: 300px;
+    height: 40px;
+    /* padding: 50px 0 50px 0; */
+    position: relative;
+    /* z-index: 0; */
+    /* bottom: 20px; */
+}
+
+.side-menu {
+    /* background-color: var(--default-blue); */
+    color: var(--default-blue);
+    display: flex;
+    justify-content: flex-end;
+    left: -22px;
+    top: 25px;
+    width: 100px;
+    height: 60px;
+    align-items: center;
+    position: fixed;
+}
+
+.side-icon {
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+
+.side-icon:hover {
+    color: var(--hover);
+}
+
+.fliplink {
+    /* display: flex; */
+    flex-basis: 1;
+    /* font-size: 300%; */
+    color: var(default-text);
+    /* text-align: center; */
+    -webkit-appearance: none;
+    padding-bottom: 25px;
+}
+
+.fliplink:hover {
+    color: var(--hover);
+    cursor: pointer;
+}
+
+.footer {
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    height: 70%;
+    justify-content: flex-start;
+    background: var(--form-background);
+    width: 60%;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 16px 40px var(--box-shadow);
+}
+
+#id_name,
+#id_subject,
+#id_description,
+#id_question,
+#id_answer,
+#id_deck,
+#id_username,
+#id_password {
+    padding: 0.5rem;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    width: 100%;
+    color: darkslategray;
+    border: solid 1px darkslategray;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+#id_name:focus,
+#id_subject:focus,
+#id_description:focus,
+#id_question:focus,
+#id_answer:focus,
+#id_deck:focus,
+#id_username:focus,
+#id_password:focus {
+    border: solid 3px var(--default-blue);
+    text-align: left;
+}
+
+form input,
+textarea {
+    border: solid 3px var(--form-input-border);
+    color: lightgray;
+    display: inline-block;
+    flex-basis: inherit;
+    flex-grow: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    /* margin: 2rem 0; */
+    /* padding: 5px 5px 5px 0px; */
+    border-radius: 0.25rem;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    text-align: left;
+}
+
+form input:focus textarea {
+    border: solid var(--default-blue) 3px;
+    height: 5rem;
+}
+
+button {
+    border: solid 3px var(--border-color);
+    border-radius: 0.25rem;
+    color: var(--button-text-color);
+    cursor: pointer;
+    background: var(--button-background);
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+    -webkit-appearance: none;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+.login-button {
+    padding: 0.5rem;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    background: var(--button-background);
+    width: 100%;
+    color: var(--button-text-color);
+    border: solid 3px var(--border-color);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.login-button:hover {
+    background-color: var(--button-hover);
+    ;
+}
+
+ ::placeholder {
+    color: gray;
+}
+
+.flip-button {
+    /* width: 100px;
         min-width: 90px;
         height: 64px; */
-        /* font-family: var(--defalult-font-family); */
-        color: var(--default-blue);
-        /* background-color: var(--default-blue); */
-        margin-right: auto;
-        margin-left: auto;
-        cursor: pointer;
-        border-radius: 10px;
-        font-size: 100%;
-        padding-top: 10px;
-        padding-bottom: 6px;
-        align-items: center;
-        justify-content: center;
-        text-transform: uppercase;
+    /* font-family: var(--defalult-font-family); */
+    color: var(--default-blue);
+    /* background-color: var(--default-blue); */
+    margin-right: auto;
+    margin-left: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 100%;
+    padding-top: 10px;
+    padding-bottom: 6px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.flip-button:hover {
+    color: var(--link-color);
+}
+
+.detail-card-container {
+    margin: 0px 50px 0px 50px;
+}
+
+strong {
+    color: var(default-text);
+}
+
+.detail-card {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: large;
+    padding: 20px;
+    text-align: left;
+    border: solid var(--card-outline) 2px;
+    border-radius: 25px;
+    width: 80%;
+    margin: 10px auto 10px auto;
+}
+
+.left-margin {
+    margin-left: 30px;
+}
+
+.minilinks-container {
+    display: flex;
+    padding: 5px;
+    flex-flow: row;
+    align-items: space-around;
+    align-content: center;
+    width: auto;
+    justify-content: space-evenly;
+}
+
+.deck-details-link {
+    font-family: var(--default-font-family);
+    color: var(--minilink);
+    padding: 10px;
+    font-size: 125%;
+    width: 33%;
+    text-align: center;
+    padding: 10px, 50px, 10px, 50px;
+}
+
+.minilinks {
+    font-family: var(--default-font-family);
+    color: var(--default-blue);
+    padding: 10px;
+    /* font-size: 125%; */
+    text-align: center;
+}
+
+.minilinks:hover {
+    color: var(--hover);
+    cursor: pointer;
+}
+
+.card-title {
+    font-family: var(--default-font-family);
+    color: white;
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 25px;
+}
+
+.card-text {
+    font-family: var(--default-font-family);
+    color: var(--card-text-color);
+    font-size: 100%;
+    text-align: center;
+    padding: 10px 10px 25px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+card-text-front {
+    color: var(--default-blue)
+}
+
+.deck-bottom {
+    /* align-items: center; */
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    width: 290;
+    position: relative;
+    bottom: 0%;
+}
+
+.deck-top {
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 290px;
+    position: relative;
+    bottom: 10px;
+}
+
+.relative {
+    position: relative;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.rounded-corner {
+    border-radius: 10px;
+}
+
+.deck-details {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: column;
+    background-color: var(--default-blue);
+    color: white;
+    margin: 10px;
+    padding: 6px 25px 0px 25px;
+    max-height: 50%;
+    height: 50%;
+    bottom: 1%;
+}
+
+.deck-details-body {
+    color: white;
+    font-size: 60%;
+    text-align: left;
+}
+
+.deck-details-title {
+    background-color: var(--default-blue);
+    color: white;
+    text-transform: uppercase;
+    font-size: 80%;
+}
+
+.deck-title {
+    text-transform: uppercase;
+    size: 150%;
+    color: var(--default-blue);
+    height: 50px;
+    padding: 4px;
+    margin: 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+.hidden-last-card-menu {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+h1 {
+    font-family: var(--default-font);
+    color: var(--text-color);
+    text-align: center;
+    padding: 0rem;
+}
+
+h2 {
+    font-family: var(--default-font);
+    color: var(--text-color);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3,
+h4,
+h5 {
+    font-family: var(--default-font);
+    color: var(--default-blue);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+
+.login-text {
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    text-align: center;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--default-blue);
+    text-align: center;
+}
+
+.card-container {
+    /* position: absolute; */
+    height: 300px;
+    width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+.flip-card {
+    /* background-color: white; */
+    border-radius: 25px;
+    height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    /* padding: 0px 0px 25px 0px; */
+    perspective: 700px;
+    /* position: absolute; */
+    width: 300px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 var(--box-shadow);
+    border-radius: 25px;
+}
+
+
+/* need to add to flip card and flip-card-inner */
+
+.flip-with-js {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    flex-flow: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 25px;
+}
+
+.flip-card-front {
+    background-color: white;
+    border: solid var(--default-blue) 3px;
+    color: var(--default-blue);
+    border-radius: 25px;
+}
+
+.flip-card-back {
+    background-color: var(--default-blue);
+    border: var(--default-blue);
+    color: white;
+    transform: rotateY(180deg);
+    border-radius: 25px;
+}
+
+.add-deck {
+    color: rgb(42, 59, 85);
+    font-family: sans-serif;
+    height: 200px;
+    width: 200px;
+    border: dashed white 6px;
+    text-align: center;
+    border-radius: 25px;
+    justify-content: center;
+    padding: 25px;
+    padding-top: 35px;
+    padding-bottom: 65px;
+    margin: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.add-deck:hover {
+    color: var(--default-blue);
+    border: dashed var(--default-blue) 6px;
+}
+
+.deck-container {
+    align-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    min-width: 240px;
+}
+
+.empty-deck-container {
+    align-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 100%;
+    min-width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@-ms-keyframes wiggle {
+    0% {
+        -ms-transform: rotate(3deg);
     }
-    
-    .flip-button:hover {
-        color: var(--link-color);
+    50% {
+        -ms-transform: rotate(-3deg);
     }
-    
-    .detail-card-container {
-        margin: 0px 50px 0px 50px;
+    100% {
+        -ms-transform: rotate(3deg);
     }
-    
-    strong {
-        color: var(default-text);
+}
+
+@-moz-keyframes wiggle {
+    0% {
+        -moz-transform: rotate(3deg);
     }
-    
-    .detail-card {
-        font-family: Arial, Helvetica, sans-serif;
-        color: white;
-        font-size: large;
-        padding: 20px;
-        text-align: left;
-        border: solid var(--card-outline) 2px;
-        border-radius: 25px;
-        width: 80%;
-        margin: 10px auto 10px auto;
+    50% {
+        -moz-transform: rotate(-3deg);
     }
-    /* .left {
-    text-align: left !important;
-} */
-    
-    .left-margin {
-        margin-left: 30px;
+    100% {
+        -moz-transform: rotate(3deg);
     }
-    
-    body {
-        background-color: var(--background-color);
-        margin: 25px;
-        color: gray;
+}
+
+@-webkit-keyframes wiggle {
+    0% {
+        -webkit-transform: rotate(3deg);
     }
-    
-    .minilinks-container {
-        display: flex;
-        padding: 5px;
-        flex-flow: row;
-        align-items: space-around;
-        align-content: center;
-        width: auto;
-        justify-content: space-evenly;
+    50% {
+        -webkit-transform: rotate(-3deg);
     }
-    
-    .deck-details-link {
-        font-family: var(--default-font-family);
-        color: var(--minilink);
-        padding: 10px;
-        font-size: 125%;
-        width: 33%;
-        text-align: center;
-        padding: 10px, 50px, 10px, 50px;
+    100% {
+        -webkit-transform: rotate(3deg);
     }
-    
-    .minilinks {
-        font-family: var(--default-font-family);
-        color: var(--default-blue);
-        padding: 10px;
-        font-size: 125%;
-        text-align: center;
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(3deg);
     }
-    
-    .minilinks:hover {
-        color: var(--hover);
-        cursor: pointer;
+    50% {
+        transform: rotate(-3deg);
     }
-    
-    .card-title {
-        font-family: var(--default-font-family);
-        color: white;
-        text-align: center;
-        padding-top: 45px;
-        padding-bottom: 25px;
+    100% {
+        transform: rotate(3deg);
     }
-    
-    .card-text {
-        font-family: var(--default-font-family);
-        color: var(--card-text-color);
-        font-size: 100%;
-        text-align: center;
-        padding: 10px 10px 25px 10px;
-        display: flex;
-        justify-content: center;
-    }
-    
-    card-text-front {
-        color: var(--default-blue)
-    }
-    
-    .deck-bottom {
-        /* align-items: center; */
-        display: flex;
-        flex-flow: row;
-        justify-content: space-evenly;
-        width: 290;
-        position: relative;
-        bottom: 0%;
-    }
-    
-    .deck-top {
-        align-items: center;
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
-        width: 290px;
-        position: relative;
-        bottom: 10px;
-    }
-    
-    .relative {
-        position: relative;
-    }
-    
-    .fixed {
-        position: fixed;
-    }
-    
-    .absolute {
-        position: absolute;
-    }
-    
-    .rounded-corner {
-        border-radius: 10px;
-    }
-    
-    .deck-details {
-        background-color: var(--default-blue);
-        color: white;
-        margin: 10px;
-        padding: 6px 25px 0px 25px;
-        max-height: 50%;
-        height: 50%;
-        bottom: 1%;
-    }
-    
-    .deck-details-body {
-        color: white;
-        font-size: 60%;
-        text-align: left;
-    }
-    
-    .deck-details-title {
-        background-color: var(--default-blue);
-        color: white;
-        text-transform: uppercase;
-        font-size: 80%;
-    }
-    
-    .deck-title {
-        text-transform: uppercase;
-        size: 150%;
-        color: var(--default-blue);
-        height: 50px;
-        padding: 4px;
-    }
-    
-    .hidden {
-        display: none;
-    }
-    
-    .hidden-last-card-menu {
-        display: none;
-    }
-    
-    .visible {
-        display: block;
-    }
-    
-    h1 {
-        font-family: var(--default-font);
-        color: var(--text-color);
-        text-align: center;
-        padding: 0rem;
-    }
-    
-    h2 {
-        font-family: var(--default-font);
-        color: var(--text-color);
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    h3,
-    h4,
-    h5 {
-        font-family: var(--default-font);
-        color: var(--text-color);
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 5px;
-    }
-    
-    .login-text {
-        margin-left: auto;
-        margin-right: auto;
-        width: 300px;
-        text-align: center;
-    }
-    
-    p {
-        font-family: Arial, Helvetica, sans-serif;
-        color: var(--default-blue);
-        text-align: center;
-    }
-    
-    .card-container {
-        position: absolute;
-        height: 300px;
-        width: 300px;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%;
-    }
-    
-    .flip-card {
-        /* background-color: white; */
-        border-radius: 25px;
-        height: 350px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0px 0px 25px 0px;
-        perspective: 700px;
-        position: absolute;
-        width: 300px;
-    }
-    
-    .flip-card-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        box-shadow: 0 4px 8px 0 var(--box-shadow);
-        border-radius: 25px;
-    }
-    /* need to add to flip card and flip-card-inner */
-    
-    .flip-with-js {
-        transform: rotateY(180deg);
-    }
-    
-    .flip-card-front,
-    .flip-card-back {
-        display: flex;
-        padding: 10px;
-        justify-content: center;
-        flex-flow: column;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        border-radius: 25px;
-    }
-    
-    .flip-card-front {
-        background-color: white;
-        border: solid var(--default-blue) 3px;
-        color: var(--default-blue);
-        border-radius: 25px;
-    }
-    
-    .flip-card-back {
-        background-color: var(--default-blue);
-        border: var(--default-blue);
-        color: white;
-        transform: rotateY(180deg);
-        border-radius: 25px;
-    }
-    
-    .add-deck {
-        color: rgb(42, 59, 85);
-        font-family: sans-serif;
-        height: 200px;
-        width: 200px;
-        border: dashed white 6px;
-        text-align: center;
-        border-radius: 25px;
-        justify-content: center;
-        padding: 25px;
-        padding-top: 35px;
-        padding-bottom: 65px;
-        margin: 25px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    }
-    
-    .add-deck:hover {
-        color: var(--default-blue);
-        border: dashed var(--default-blue) 6px;
-    }
-    
-    .deck-container {
-        align-content: center;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%;
-        min-width: 240px;
-    }
-    
-    .empty-deck-container {
-        align-content: center;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        max-width: 100%;
-        min-width: 240px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    @-ms-keyframes wiggle {
-        0% {
-            -ms-transform: rotate(3deg);
-        }
-        50% {
-            -ms-transform: rotate(-3deg);
-        }
-        100% {
-            -ms-transform: rotate(3deg);
-        }
-    }
-    
-    @-moz-keyframes wiggle {
-        0% {
-            -moz-transform: rotate(3deg);
-        }
-        50% {
-            -moz-transform: rotate(-3deg);
-        }
-        100% {
-            -moz-transform: rotate(3deg);
-        }
-    }
-    
-    @-webkit-keyframes wiggle {
-        0% {
-            -webkit-transform: rotate(3deg);
-        }
-        50% {
-            -webkit-transform: rotate(-3deg);
-        }
-        100% {
-            -webkit-transform: rotate(3deg);
-        }
-    }
-    
-    @keyframes wiggle {
-        0% {
-            transform: rotate(3deg);
-        }
-        50% {
-            transform: rotate(-3deg);
-        }
-        100% {
-            transform: rotate(3deg);
-        }
-    }
-    
-    .wiggle-me:hover {
-        -ms-animation: wiggle 0.3s 2;
-        -moz-animation: wiggle 0.3s 2;
-        -webkit-animation: wiggle 0.3s 2;
-        animation: wiggle 0.3s 2;
-    }
-    
-    .deck {
-        align-content: center;
-        background-color: white;
-        border: solid var(--default-blue) 1px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px 0 var(--box-shadow);
-        color: rgb(42, 59, 85);
-        font-family: sans-serif;
-        height: 350px;
-        margin: 25px;
-        padding: 10px 5px 12px 5px;
-        width: 300px;
-        text-align: center;
-        vertical-align: middle;
-        display: flex;
-        flex-flow: column;
-        justify-content: space-between;
-    }
-    /* dropdown  */
-    /* Dropdown Button */
-    
-    .dropbtn {
-        color: gray;
-        padding: 0px;
-        font-size: 25px;
-        border: none;
-    }
-    /* The container <div> - needed to position the dropdown content */
-    
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-    /* Dropdown Content (Hidden by Default) */
-    
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: rgba(255, 255, 255, 0.85);
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 20;
-        border-radius: 25px;
-    }
-    /* Links inside the dropdown */
-    
-    .dropdown-content a {
-        color: var(--background-color);
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-    /* Change color of dropdown links on hover */
-    
-    .dropdown-content a:hover {
-        background-color: white;
-    }
-    /* Show the dropdown menu on hover */
-    
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-    
-    .container {
-        margin: 20px;
-        width: 400px;
-        height: 8px;
-    }
-    /*  side menu */
-    
-    body {
-        font-family: "Lato", sans-serif;
-    }
-    
+}
+
+.wiggle-me:hover {
+    -ms-animation: wiggle 0.3s 2;
+    -moz-animation: wiggle 0.3s 2;
+    -webkit-animation: wiggle 0.3s 2;
+    animation: wiggle 0.3s 2;
+}
+
+.deck {
+    align-content: center;
+    background-color: white;
+    border: solid var(--default-blue) 1px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 var(--box-shadow);
+    color: rgb(42, 59, 85);
+    font-family: sans-serif;
+    height: 350px;
+    margin: 25px;
+    padding: 10px 5px 12px 5px;
+    width: 300px;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+
+/* dropdown  */
+
+
+/* Dropdown Button */
+
+.dropbtn {
+    color: gray;
+    padding: 0px;
+    font-size: 25px;
+    border: none;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.85);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    border-radius: 25px;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: var(--background-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: white;
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.container {
+    margin: 20px;
+    width: 400px;
+    height: 8px;
+}
+
+
+/*  side menu */
+
+
+/* The side navigation menu */
+
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: var(--default-blue);
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+
+/* The navigation menu links */
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav-text {
+    font-size: 80%;
+    color: white;
+    text-transform: capitalize;
+}
+
+
+/* When you mouse over the navigation links, change their color */
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+
+/* Position and style the close button (top right corner) */
+
+.sidenav .closebtn {
+    position: relative;
+    top: 0;
+    right: 5px;
+    /* font-size: 36px; */
+    margin-left: 0px;
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
     .sidenav {
-        height: 100%;
-        width: 0;
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: var(--default-blue);
-        overflow-x: hidden;
-        transition: 0.5s;
-        padding-top: 60px;
+        padding-top: 15px;
     }
-    
     .sidenav a {
-        padding: 8px 8px 8px 32px;
-        text-decoration: none;
-        font-size: 25px;
-        color: white;
-        display: block;
-        transition: 0.3s;
+        font-size: 18px;
     }
-    /* .sidenav a:hover {
-        color: var(--link-hover);
-    } */
-    
-    .sidenav .closebtn {
-        position: absolute;
-        top: 0;
-        right: 25px;
-        font-size: 36px;
-        margin-left: 50px;
-    }
-    
-    @media screen and (max-height: 450px) {
-        .sidenav {
-            padding-top: 15px;
-        }
-        .sidenav a {
-            font-size: 18px;
-        }
-    }
+}
