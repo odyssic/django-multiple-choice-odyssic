@@ -6,10 +6,15 @@
     text-align: center;
 }
 
+p {
+    font-family: var(--default-font-family);
+    color: var(--default-blue);
+}
+
 body {
     background-color: var(--background-color);
     color: var(--default-blue);
-    margin: 12px;
+    /* margin: 12px; */
 }
 
 .white {
@@ -31,7 +36,7 @@ body {
     --accent: #99b2f2;
     --hover: #e7b615;
     --border-color: #99b2f2;
-    --button-hover: #e7b615;
+    --button-hover: #b1c2ee;
     --button-text-color: #fff;
     --button-background: rgb(120, 149, 222);
     --card-outline: #99b2f2;
@@ -66,25 +71,34 @@ body {
     color: var(default-text);
 }
 
+.largest-icon:hover {
+    color: var(--button-hover)
+}
+
 .last-card {
     background-color: white;
     border-radius: 25px;
     height: 350px;
-    position: relative;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
     width: 300px;
     z-index: -1;
 }
 
 .last-card:hover {
     color: var(--default-blue) 6px;
-    /* border: dashed var(--default-blue) 6px; */
-    /* cursor: pointer; */
 }
 
 .logo {
+    padding-top: 10px;
     width: 30%;
+}
+
+.footer-icon {
+    padding: 10px;
+    font-size: 2rem;
+    color: white;
 }
 
 .full-deck {
@@ -233,7 +247,13 @@ ul {
 }
 
 .footer {
-    padding: 1rem;
+    background-color: var(--default-blue);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-top: 100px;
+    padding: 25px;
+    width: 100%;
 }
 
 form {
@@ -418,6 +438,7 @@ strong {
     padding: 10px;
     /* font-size: 125%; */
     text-align: center;
+    border-radius: 10px;
 }
 
 .minilinks:hover {
@@ -513,9 +534,15 @@ card-text-front {
     text-transform: uppercase;
     size: 150%;
     color: var(--default-blue);
-    height: 50px;
     padding: 4px;
     margin: 25px;
+}
+
+.signature {
+    text-transform: uppercase;
+    size: 110%;
+    color: white;
+    padding: 50px 0 25px 0;
 }
 
 .hidden {
@@ -548,24 +575,19 @@ h2 {
 h3,
 h4,
 h5 {
-    font-family: var(--default-font);
     color: var(--default-blue);
-    text-align: center;
+    font-family: var(--default-font);
+    margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
+    text-align: center;
 }
 
 .login-text {
     margin-left: auto;
     margin-right: auto;
     width: 300px;
-    text-align: center;
-}
-
-p {
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--default-blue);
     text-align: center;
 }
 
@@ -580,7 +602,7 @@ p {
 
 .flip-card {
     /* background-color: white; */
-    border-radius: 25px;
+    border-radius: 10px;
     height: 350px;
     margin-left: auto;
     margin-right: auto;
@@ -598,11 +620,8 @@ p {
     transition: transform 0.6s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 var(--box-shadow);
-    border-radius: 25px;
+    border-radius: 10px;
 }
-
-
-/* need to add to flip card and flip-card-inner */
 
 .flip-with-js {
     transform: rotateY(180deg);
@@ -619,14 +638,14 @@ p {
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 .flip-card-front {
     background-color: white;
     border: solid var(--default-blue) 3px;
     color: var(--default-blue);
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 .flip-card-back {
@@ -634,7 +653,7 @@ p {
     border: var(--default-blue);
     color: white;
     transform: rotateY(180deg);
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 .add-deck {
@@ -739,7 +758,6 @@ p {
     align-content: center;
     background-color: white;
     border: solid var(--default-blue) 1px;
-    border-radius: 10px;
     box-shadow: 0 4px 8px 0 var(--box-shadow);
     color: rgb(42, 59, 85);
     font-family: sans-serif;
@@ -761,14 +779,14 @@ p {
 /* Dropdown Button */
 
 .dropbtn {
-    color: gray;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: white;
     padding: 0px;
     font-size: 25px;
     border: none;
 }
-
-
-/* The container <div> - needed to position the dropdown content */
 
 .dropdown {
     position: relative;
@@ -779,13 +797,16 @@ p {
 /* Dropdown Content (Hidden by Default) */
 
 .dropdown-content {
+    color: var(--default-blue);
     display: none;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.85);
+    position: fixed;
+    background-color: white;
+    bottom: 10px;
+    left: 10px;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 20;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 
@@ -835,9 +856,8 @@ p {
     /* Stay on top */
     top: 0;
     /* Stay at the top */
-    left: 0;
+    left: -10px;
     background-color: var(--default-blue);
-    /* Black*/
     overflow-x: hidden;
     /* Disable horizontal scroll */
     padding-top: 60px;

@@ -12,7 +12,7 @@ from django.views.decorators.http import require_http_methods, require_POST
 from .forms import NewUserForm
 from django.contrib import messages
 from django.db.models import Q
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseNotAllowed
 
 # =======================AUTHENTICATION========================
 
@@ -97,24 +97,38 @@ def flashcards(request, pk):
     
 @login_required
 def deck_is_favorite(request, pk):
-    jsonStr = ''
     deck = get_object_or_404(Deck, pk=pk)
-    if request.method == "POST":
-        deck.is_favorite = True
-        deck= deck.save()
-        jsonStr = json.dumps(deck)
-        print(jsonStr)
-        print(deck)
-    return JsonResponse({"status": "ok", "data": jsonStr})
+    if deck.is_favorite:
+        deck.is_favorite == False;
+    # else deck.is_favorite == false
+    print('deck is fave', deck.is_favorite)
+    deck.save()
+    print(deck)
+    print(request)
+    # deck.save()
+    return redirect("home"
+    )
 
-# @login_required
+    # return redirect("home") 
+        
+        # # Here you have to get the data and update the object
+        # return HttpResponse({"success": True})
+        
+    #     if request.method == 'POST':
+    #     form = DeckForm(request.POST)
+        
+    #     if form.is_valid():
+    #         deck = form.save()
+            
+    #         return redirect("flashcards", deck.pk)
+    # else:
+    #     form = DeckForm()
+    # return render(request, 'core/add_deck.html', {'form': form})
 
-# def details(request, pk):
-#     deck = get_object_or_404(Deck, pk=pk)
-#     cards = Card.objects.filter(deck=deck).order_by('question')
-#     count = len(cards)
-
-#     return render(request, 'core/details.html', {'deck':deck,'cards':cards, 'count': count, 'pk':pk})
+def delete_deck(request, pk):
+    deck = get_object_or_404(Deck, pk=pk)
+    deck.delete()
+    return redirect('home')
 
 
 @login_required

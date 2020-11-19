@@ -3,6 +3,19 @@
 {% block content %}
 {% load static %} 
 
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+  <i class="fas fa-chevron-left side-icon" aria-hidden="true"></i>
+</a>
+  <a href={% url 'add-card' pk=deck.pk %}><i class="fas fa-plus side-icon"></i></a>
+  <a href="#"><i class="fas fa-sort side-icon"></i></a>
+  <a href="#"><i class="fa fa-search side-icon" aria-hidden="true" alt="Search coming soon"></i></a>
+</div>
+
+<div class="side-menu">
+<i class="fa fa-chevron-right side-icon" onclick="openNav()"></i>
+</div>
+
 <p class="deck-title">{{deck.subject}}</p>
 <div class='flash-card-schema-container'>
 <div class='full-deck'>
@@ -11,7 +24,7 @@
         
         <ul>
             <li><a class='minilinks' href={% url 'flashcards' pk=deck.pk %}>Go Again.</a></li>
-            <li><a class='minilinks' href={% url 'home' %}>Choose Another Deck</a></li>
+            <li><a class='minilinks' href={% url 'home' %}>Back to Decks</a></li>
             <li><a class='minilinks' href={% url 'delete-deck' pk=deck.pk %} onclick="return confirm('Are you sure you want to delete this deck? Deleting a deck cannot be undone.')">Delete Deck</a></li>
         </ul>
     </div>
@@ -20,6 +33,7 @@
         <div class="flip-card">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
+                
                 <div class='minilinks-container'></div>
 
                     <p class='card-text-front'>
@@ -66,5 +80,6 @@
 
 
 <script defer src="{% static 'js/flashcards.js' %}"></script>
+<script defer src="{% static 'js/index.js' %}"></script>
 
 {% endblock %}
