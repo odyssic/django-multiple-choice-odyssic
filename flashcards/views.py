@@ -12,7 +12,7 @@ from django.views.decorators.http import require_http_methods, require_POST
 from .forms import NewUserForm
 from django.contrib import messages
 from django.db.models import Q
-from django.http import JsonResponse, HttpResponseNotAllowed
+from django.http import JsonResponse, HttpResponseNotAllowed, HttpResponse
 
 # =======================AUTHENTICATION========================
 
@@ -78,7 +78,7 @@ def logout_request(request):
 @login_required
 def index(request):
     users = User.objects.all()
-    decks = Deck.objects.all()
+    decks = Deck.objects.all().order_by("name")
     cards = Card.objects.all()
     deckid= Deck.id
     
@@ -98,21 +98,26 @@ def flashcards(request, pk):
 @login_required
 def deck_is_favorite(request, pk):
     deck = get_object_or_404(Deck, pk=pk)
-    if deck.is_favorite:
-        deck.is_favorite == False;
-    # else deck.is_favorite == false
-    print('deck is fave', deck.is_favorite)
-    deck.save()
-    print(deck)
-    print(request)
-    # deck.save()
-    return redirect("home"
-    )
 
-    # return redirect("home") 
+    if deck.is_favorite == True:
+        deck.is_favorite = False;
+    
+    else:
+         deck.is_favorite = True;
+         
+    print('deck is fave', deck.is_favorite)
+    print('deck', deck)
+    print('request', request)
+    deck = deck.save()
+    
+    # deck.save()
+    
+    return redirect("home")
+    
+    # return render(request, "home", {'deck': deck })
         
         # # Here you have to get the data and update the object
-        # return HttpResponse({"success": True})
+        # 
         
     #     if request.method == 'POST':
     #     form = DeckForm(request.POST)
@@ -203,7 +208,7 @@ def edit_deck(request, pk):
     if form.is_valid():
             form.save()
             
-            return redirect('details', pk)
+            return redirect('home')
 
     else:
             form = DeckForm(instance=deck)

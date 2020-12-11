@@ -54,7 +54,7 @@
   
   {% elif deck.is_favorite %}
   <a href={% url "deck_is_favorite" pk=deck.pk %}>
-  <i onclick="$.ajax()" id='{deck.pk}}' class="minilinks fas fa-star"></i>
+  <i id='{deck.pk}}' class="minilinks fas fa-star"></i>
   </a>
   
   {% endif %}
@@ -65,14 +65,14 @@
   <div class="deck-details rounded-corner relative">
     <p class="deck-details-title">Deck Details</p>
     <p class="deck-details-body">Created: {{deck.created_at}}</p>
-    <p class="deck-details-body">{{deck.cards | length }}</p>
-    <p class="deck-details-body">{{deck.description}}</p>
-    <p class="deck-details-body">{{deck.user}}</p>
+    <p class="deck-details-body">Description: {{deck.description}}</p>
+    <p class="deck-details-body">Created By: {{deck.created_by}}</p>
+    <p class="deck-details-body">Length: {{cards | length }} Cards</p>
   </div>
 
 <div class="deck-bottom">
     <a href={% url 'edit-deck' pk=deck.pk %}>
-    <i class="minilinks fas fa-pencil-alt"></i></a>
+    <i class="fas fa-pencil-alt minilinks "></i></a>
   <a href={% url 'flashcards' pk=deck.pk %}><i class="minilinks fas fa-play"></i></a>
     <a href={% url 'add-card' pk=deck.pk %}><i class="minilinks fas fa-plus"></i></a>
 </div>

@@ -14,10 +14,9 @@ class DeckForm(forms.ModelForm):
             'name': forms.TextInput(attrs={'placeholder': 'Deck Name',
             'autocomplete': 'off'}),
             'subject': forms.TextInput(attrs={'placeholder': 'Deck Subject'}),
-            'description': forms.Textarea(attrs={'placeholder': 'Deck Description',"style": "resize: none","rows":10, "cols":20})
-            }
-
+            'description': forms.Textarea(attrs={'placeholder': 'Deck Description', "style": "resize: none", "rows": 10, "cols": 20}),
             
+            }
 
 
 class LoginForm(forms.Form):

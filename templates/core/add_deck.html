@@ -8,6 +8,8 @@
     <span>{{form.name}}</span>
     <span>{{form.subject}}</span>
     <span>{{form.description}}</span>
+    <span class='hidden'>{{request.user}}</span>
+    {% comment %} <span>{{form.created_by}}</span> {% endcomment %}
 
     <button type="submit">Add</button>
 </form>

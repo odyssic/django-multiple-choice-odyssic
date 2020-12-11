@@ -4,8 +4,8 @@
     {% csrf_token %}
     <table class="form">
         <p>{{form.deck.as_hidden}}</p>
-        <p><strong>Question:</strong> {{form.question}}</p>
-        <p><strong>Answer:</strong> {{ form.answer}}</p>
+        <label>Question:</label>{{form.question}}</p>
+        <label>Answer:</label>{{form.answer}}</p>
     </table>
     <button type="submit" value="Save">Save</button>
 </form>
